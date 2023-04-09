@@ -563,10 +563,12 @@ lg:justify-end lg:space-x-6">
                       border:'1px solid #ddd',
                       width:'62%',marginLeft:'auto'}}
                        aria-label="Search"/> */}
- <i class="fa-solid fa-magnifying-glass"
-                      onClick={openDrawer}
+<button className="se"   onClick={openDrawer}>
+<i class="fa-solid fa-magnifying-glass"
+                    
  
- ></i>
+ ></i>search
+</button>
               {/* searchbar */}
   {/* <div    className="ms-2  d-sm-none" >
 
@@ -589,6 +591,7 @@ lg:justify-end lg:space-x-6">
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
+                    Bag
                 
                     <span className="sr-only">items in cart, view bag</span>
                   </p>

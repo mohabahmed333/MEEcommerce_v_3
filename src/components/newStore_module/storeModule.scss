@@ -174,11 +174,16 @@ form.hidden.lg\:block::-webkit-scrollbar {
     border-radius: 6px;
     color: gray !IMPORTANT;
     box-shadow: rgb(251 251 251 / 25%) 0px 8px 24px;
+    box-shadow: rgba(251, 251, 251, 0.25) 0px 8px 24px;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 10px;
 }
 .lg\:col-span-3.centerlize {
     background: rgba(249, 249, 249, 0.631372549);
     border-radius: 0px;
-     width: 80%;
+     width: 100%;
     margin-left: auto;
 }.main_image {
      height: 300px;
@@ -200,7 +205,22 @@ form.hidden.lg\:block::-webkit-scrollbar {
     /* text-decoration-line: underline; */
     font-weight: 100;
     z-index: 2;
-}.tabs {
+}
+
+.categories_flex ul li a{
+    color:#333
+    ;
+    transition: 0.5s all ease-in-out;
+    color: #333;
+    transition: 0.5s all ease-in-out;
+    font-family: auto;
+    text-transform: capitalize;
+    margin-bottom: 14px;
+    &:hover{
+        color:#195cff
+    }
+}
+.tabs {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -213,6 +233,10 @@ form.hidden.lg\:block::-webkit-scrollbar {
      top: 60px;    background: #fff;
     border-left: 0px;
     z-index: 3;
+    background: rgba(255,255,255,0.7);
+     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px)
+    
  
 }.buttons_contaner {
     display: flex;
@@ -259,8 +283,7 @@ button.cart_button_new {
     font-size: 14px;
 }
 .new_item_image {
-    width: max-content;
-
+ 
     .image-overlay {
         position: absolute;
         z-index: 1;
@@ -306,19 +329,25 @@ button.cart_button_new {
     border-radius: 5px;
     overflow: hidden;
     border: 0px;
+    display: flex;
+    justify-content: end;
     .item_rating {
-        border: 1px solid #dc354582;
-        font-size: 13px;
+         font-size: 13px;
         color: #fff;
         padding: 0px 7px;
         border-radius: 2px;
-        background: #dc354582;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 8px;
-        margin-right: 6px;
-        margin-bottom: 0px;
+      
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 17px;
+    margin-right: 6px;
+    margin-bottom: 0px;
+    padding: 3px;
+    color: #333;
+    font-size: 18px;
+    background: #ffffffa6;
     
         i{
-            color: #ffc107;        }
+            color: #ffc107;  
+        font-size: 10px;      }
     }
     
 }
@@ -373,6 +402,7 @@ button.cart_button_new {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1210px;
     .new_item{
         width: 200px;
          transition: 0.5s all ease-in-out;
@@ -425,8 +455,7 @@ button.cart_button_new {
         margin: 0px !IMPORTANT;
         padding: 0px;
     }.new_item_image {
-        width: max-content;
-        height: 297px;
+         height: 297px;
         background-position: center top;
         background-origin: border-box;
         background-size: cover;
@@ -439,8 +468,7 @@ button.cart_button_new {
         border: 1px solid #ffffff;
         transition: 0.5s all ease-in-out;
  
-    width: max-content;
-
+ 
     }.image-overlay._2 {
         
         z-index: 1;
@@ -529,7 +557,10 @@ button.cart_button_new {
     height: 120px;
 }
 }
-
+.new_item {
+    background: #fff;
+    margin-bottom: 10px;
+ }
 // media query
 button.cart_button_new {
     display: flex;
@@ -548,7 +579,12 @@ button.cart_button_new {
     justify-content: space-between;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transition: 0.6s all ease-in-out;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.6s all ease-in-out;
+    background-color: rgba(255, 255, 255, 0.7);
 
+    backdrop-filter: blur(10px);
+    color:#333;
     &:hover{
         opacity: 0.8;
      }
@@ -561,4 +597,27 @@ h1.head {
     margin: 20px;
     font-family: auto;
     text-align: center;
+}
+p.product_name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 19px;
+    i{
+        font-size: 15px;
+        background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    }
+}.b_new .flex.items-center a {
+    color: #333;
+    border-left: 1px solid;
+    padding-left: 4px;
+    text-transform: capitalize;
+    text-shadow: 0 0 black;
+    font-family: auto;
+}
+.footers {
+    margin: 10px 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

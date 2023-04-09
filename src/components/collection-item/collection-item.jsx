@@ -136,18 +136,18 @@ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
       
        <div    className={col?col:'item' }>
        <div className='new_item  '>
-    <div className='new_item_image' style={{backgroundImage:`url(${imageUrl})`}}>
-        <p className='product_name'>   {name} 
+       <p className='product_name'>   {name} 
         <i class="fa-solid fa-bookmark"></i>
         </p>
+    <div className='new_item_image' style={{backgroundImage:`url(${imageUrl})`}}>
+      
       <div className='rating_name'>
           <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart <p className="button_price"> 25$</p></button>
         <p className='item_rating'>
           4 <i class="fa-solid fa-star"></i>
         </p>
       </div>
-      <div className="image-overlay"></div>
-
+ 
     </div>
     <div className='p_end'>
 

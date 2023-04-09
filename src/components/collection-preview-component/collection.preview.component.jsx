@@ -26,8 +26,8 @@ if(!!user){
     
           const options = {
                responsiveClass: true,
-              nav: true,
-              dots: false,
+              nav: false,
+              dots: true,
               autoplay: false,
                smartSpeed: 1000,
                center: false
@@ -74,22 +74,28 @@ return (<>
  IsloadingSpin?(<Loading/>):ca['categories'].map(collec=>{
   return<>
   <div className='all_container'>
-  <img src={collec.collImg
-} />
+  <div className='collection_preview_background' style={{backgroundImage:`url(${collec.collImg})`}
+}  >
+
+<div className='collection_text_preview'>
+    <p>get New Our New Collections <br/>
+    Check out offers !
+    </p>
+    <h3> {collec.title}   <Link className='logo-container' to={ `${route}${collec.title.toLowerCase()}`} >
+
+<div className='more'><p>
+shop All Collections 
+  </p>        <i class="fa-solid fa-arrow-right arrow-right"></i>
+</div>  
+</Link></h3>
+
+</div>
+</div>
    <div className="container-fluid"  style={{zIndex:'2 !important'}}>
   
   <div  key={collec.title}  className="collection-preview title  position-sticky mt-1 pt-1 p_t">
     <div className=" title_parent">
-    <div className="flex  flex-direction-column justify-content-between align-items-center">
-    <h4 className=' ' >{collec.title.toUpperCase()} </h4>
-   <Link className='logo-container' to={ `${route}${collec.title}`} >
-
-         <div className='more'><p>
-         shop All Collections 
-           </p><i class="fa-solid fa-arrow-right"></i></div>  
-   </Link>
-
-</div>
+    
 </div>
 
     </div>

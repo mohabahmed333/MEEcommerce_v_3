@@ -8,4 +8,20 @@
     .directory-menu{
       flex-direction: column;
     }
-  }
+  } 
+.menu-item {
+  border: 0px;
+  border-radius: 0px;
+  width: 103% !Important;
+  border: 1px solid;
+  height: 333px;
+}
+.directory-menu h2{
+  font-family: auto;
+    padding: 12px;
+    text-align: left !IMPORTANT;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    text-decoration-line:unset !Important;
+    margin: 10px !IMPORTANT;
+}

@@ -132,6 +132,7 @@ let FiltersItem = [];
   }
 
 export const StoreModule =()=>{
+  const [col,setCol]=useState('col-md-4')
   const catogriesItems = useSelector(CatougriesSelector);
   
   const  {cat}  = useParams() ;
@@ -302,70 +303,7 @@ export const StoreModule =()=>{
         </Transition.Root>
       
         <main className="mx-auto max-w-8xl    px-2">
-          <div className="flex items-baseline justify-between     " style={{height:'60px'}}>
-
-                <img src="https://th.bing.com/th/id/OIG.Z8qNOhAZ38VDcSaHf6_3?pid=ImgGn" width={'60px'} className='logo_store'/ >
-<div className='search_bar_form'>
-    <label htmlFor="search">
-    <i class="fa-solid fa-magnifying-glass text-gray"></i>
-    </label>
-    <input type="text" placeholder='search' id='search' />
-</div>
-            <div className="flex items-center">
-            
-{/* Profile dropdown */}
-<Menu as="div" className="relative ml-3">
-                        <div>
-                          <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
-                          </Menu.Button>
-                        </div>
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {userNavigation.map((item) => (
-                              <Menu.Item key={item.name}>
-                                {({ active }) => (
-                                  <a
-                                    href={item.href}
-                                    className={classNames(
-                                      active ? 'bg-gray-100' : '',
-                                      'block px-4 py-2 text-sm text-gray-700'
-                                    )}
-                                  >
-                                    {item.name}
-                                  </a>
-                                )}
-                              </Menu.Item>
-                            ))}
-                          </Menu.Items>
-                        </Transition>
-                      </Menu>
-              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-                <span className="sr-only">View grid</span>
-                <i class="fa-regular fa-bookmark"></i>
-
-              </button>
-              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-                <span className="sr-only">View grid</span>
-                <i class="fa-solid fa-bag-shopping"></i>
-
-              </button>
-              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-                <span className="sr-only">View grid</span>
-                <i class="fa-regular fa-heart" style={{color:'gray !important'}}></i>
-                              </button>
-           
-            </div>
-          </div>
+ 
 
           <section aria-labelledby="products-heading" className="pb-24 pt-1">
             <h2 id="products-heading" className="sr-only">
@@ -374,134 +312,12 @@ export const StoreModule =()=>{
 
             <div className="flex all_page ">
               {/* Filters */}
-              <form className="hidden lg:block">
-            {/* <h4 className="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h4> */}
-
-              {/* <p className='filter_head'> filters 
-              <FunnelIcon className="h-5 w-5"   />
-              
-              </p> */}
-              <p className='filter_head_2'>
-              <i class="fa-solid fa-house"></i> Home
-              </p>
-              <p className='filter_head_2'>
-              <i class="fa-solid fa-user"></i>Profile
-              </p>
-              <p className='filter_head_2'>
-              <i class="fa-solid fa-clock-rotate-left"></i>History
-              </p>
-              <p className='filter_head_2' style={{display:'flex',justifyContent:'space-between'}}>
-
-              <p className='filter_head_number'>
-              <i class="fa-solid fa-cart-shopping"></i>
-              Your Cart  
-              </p>
-              <p>5</p>
-              </p>
-
-              {/* <p>categories</p>
-             <ul>
-                
-<li className='filter_head'>
-    hats <p className="numbers">
-        5
-    </p>
-</li>
-<li className='filter_head'>
-    hats <p className="numbers">
-        5
-    </p>
-</li>
-<li className='filter_head'>
-    hats <p className="numbers">
-        5
-    </p>
-</li>
-<li className='filter_head'>
-    hats <p className="numbers">
-        5
-    </p>
-</li>
-
-                </ul> */}
-                <p  className='filter_head_2'><i class="fa-solid fa-filter"></i> filters</p>
-                <h3 className="sr-only">Categories</h3>
-                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                  
-                    <li  className='categories'>
-                      <a  ></a>
-                    </li>
-                 
-                </ul>
-
-                {filters.map((section) => (
-                  <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                            <span className="font-medium text-gray-900">{section.name}</span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                              ) : (
-                                <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                            {section.options.map((option, optionIdx) => (
-                              <div key={option.value} className="flex items-center">
-                                <input
-                                  id={`filter-${section.id}-${optionIdx}`}
-                                  name={`${section.id}[]`}
-                                  defaultValue={option.value}
-                                  type="checkbox"
-                                  defaultChecked={option.checked}
-                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label
-                                  htmlFor={`filter-${section.id}-${optionIdx}`}
-                                  className="ml-3 text-sm text-gray-600"
-                                >
-                                  {option.label}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                ))}
-              </form>
+           
 
               {/* Product grid */}
               <div className="lg:col-span-3 centerlize">
-              <nav aria-label="Breadcrumb">
-            <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-              
-                <li  >
-                  <div className="flex items-center">
-                    <Link   to={`/`} >
-                    <i class="fa-solid fa-house me-3"></i>\
-                    </Link>
-                    <Link className='me-1 ms-1'  to={`/shop`} >
-                     shop \
-                    </Link>
-                    <Link className='me-1 ms-1'  to={`/shop/${'cat'}`} >
-                     {'hats'} 
-                    </Link>
-               
-                   
-                  </div>
-                </li>
-    
-              
-            </ol>
-          </nav>
+             
+          
               <div className='main_image'
                style={{background:`url(${'https://cdn.shopify.com/s/files/1/0112/6468/8186/files/slider-1_1512x.jpg?v=1663991033'})`
                ,position:'relative'
@@ -518,6 +334,28 @@ export const StoreModule =()=>{
         <li className='tab_inner_value'>Wommans</li>
         <li className='tab_inner_value'>Boys</li> 
     </ul> */}
+     <nav aria-label="Breadcrumb " className='b_new'>
+            <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+              
+                <li  >
+                  <div className="flex items-center">
+                    <Link   to={`/`} >
+                    <i class="fa-solid fa-house me-3"></i>\
+                    </Link>
+                    <Link className='me-1 ms-1'  to={`/shop`} >
+                     shop \
+                    </Link>
+                    <Link className='me-1 ms-1'  to={`/shop/${'cat'}`} >
+                     {cat} 
+                    </Link>
+               
+                   
+                  </div>
+                </li>
+    
+              
+            </ol>
+          </nav>
                    <div className='categories_flex'>
            <ul role="list" className="px-2 py-3 font-medium text-gray-900">
                       {FiltersItem.map((category) => (
@@ -613,9 +451,10 @@ export const StoreModule =()=>{
 {
           products &&  products.filter((product,idx)=>idx<5).map(item=>{
 
-return          (  <div className='new_item  '>
+return          (  <div className='new_item  ' style={{background:'none'}}>
             <div className='new_item_image'
-             style={{backgroundImage: `url(${item.imageUrl})`,borderRadius:'0px',height:'450px',marginBottom:'20px'}}  >
+             style={{backgroundImage: `url(${item.imageUrl})
+             `,borderRadius:'0px',height:'450px',marginBottom:'20px'}}  >
                 <p className='product_name'> {item.name}
                 <i class="fa-solid fa-bookmark"></i>
                 </p>
@@ -636,7 +475,7 @@ return          (  <div className='new_item  '>
   { 
          //safe gards 
          products &&  products.map(product=> 
-         < CollectionItem cat={cat} col={'col-md-3 col-sm-12'} 
+         < CollectionItem cat={cat} col={col} 
           key={product.name}  item={product}/>)
       
       } 

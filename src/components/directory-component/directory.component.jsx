@@ -10,41 +10,41 @@ constructor(){
         sections: [
             {
               title: 'hats',
-              imageUrl: 'https://cdn.shopify.com/s/files/1/0397/0396/9949/products/TREMELO-BLACK-BAKERBOY_1600x.jpg?v=1664458330',
+              imageUrl: '             https://images.canadagoose.com/c_scale,f_auto,q_auto:best,w_1920/cg-global/pages/plp-category-banners/flagship/5426M-EMEA_PLP_Desktop.jpg',
               id: 1,
               linkUrl: 'shop/hats'
             },
             {
               title: 'jackets',
-              imageUrl: 'https://cdn.shopify.com/s/files/1/0112/6468/8186/products/5_360x.jpg?v=1664941790',
+              imageUrl: 'https://images.canadagoose.com/c_scale,f_auto,q_auto:best,w_1920/cg-global/pages/plp-category-banners/flagship/Flagship_Desktop_PLP_Mens07_Puffers.jpg',
               id: 2,
               linkUrl: 'shop/jackets'
             },
             {
               title: 'sneakers',
-              imageUrl: 'https://cdn.shopify.com/s/files/1/0112/6468/8186/files/banner3_8a1523b1-2845-4f9e-851a-6f3779baa171_360x.jpg?v=1664270357',
+              imageUrl: 'https://cdn.shopify.com/s/files/1/0112/6468/8186/files/banner1-2_109f8dce-43a9-4909-a7cd-e5b65ee60100.jpg?v=1665631686',
               id: 3,
               linkUrl: 'shop/sneakers'
             },
             {
               title: 'womens',
-              imageUrl: 'https://cdn.shopify.com/s/files/1/0112/6468/8186/products/45_360x.jpg?v=1664955136',
+              imageUrl: '             https://images.canadagoose.com/c_scale,f_auto,q_auto:best,w_1920/cg-global/pages/plp-category-banners/flagship/2836LB_Flagship_Desktop_PLP_Womens.jpg',
               size: 'large',
               id: 4,
               linkUrl: 'shop/womens'
             },
             {
               title: 'mens',
-              imageUrl: 'https://cdn.shopify.com/s/files/1/0112/6468/8186/products/100_360x.jpg?v=1664960073',
+              imageUrl: '             https://images.canadagoose.com/c_scale,f_auto,q_auto:best,w_1920/cg-global/pages/plp-category-banners/flagship/fs-shop-men-blacklabel.jpg',
               size: 'large',
               id: 5,
               linkUrl: 'shop/mens'
             }
           ],
           options :{
-            margin: 3,
+            margin: 2,
            responsiveClass: true,
-           nav: true,
+           nav: false,
            dots: true,
           
             smartSpeed: 1000,
@@ -75,13 +75,13 @@ constructor(){
 
                },
                1000:{
-                  items:3,
-            stagePadding:100
+                  items:2,
+            stagePadding:50
 
                },
                1500: {
-                   items: 3,
-                   stagePadding:100
+                   items: 2,
+                   stagePadding:50
        
                }
            },

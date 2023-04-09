@@ -214,16 +214,11 @@ Add To Cart
 </button>
 </div>
     </div>
-    <div className="footer_all">
- 
- 
-    
-     <SimillarProduct/>
-    </div>
+  
 
     
 </div>
-<div className="next_PREV_PRODUCT">
+{/* <div className="next_PREV_PRODUCT">
   <div className="Next_product p">
     <p className="text-s">previous Product
     
@@ -244,7 +239,13 @@ Add To Cart
         <i class="fa-solid fa-arrow-right-long arrow-left"></i>
       </div>
   </div>
+</div> */}
 </div>
+<div className="footers">
+ 
+ 
+    
+ <SimillarProduct/>
 </div>
     </>
      )

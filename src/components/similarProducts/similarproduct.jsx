@@ -42,10 +42,10 @@ const SimillarProduct= ()=>{
  
          },
          1000:{
-            items:1,
+            items:5,
          },
          1500: {
-             items: 1,
+             items: 4,
   
          }
      },
@@ -55,7 +55,7 @@ const SimillarProduct= ()=>{
   },
 [cat,item])
 return(<>
-     <h6>You May Be Like Too</h6>
+     <h6 className='heading'>You May Be Like Too</h6>
     <OwlCarouselComponent {...options} >
 
 

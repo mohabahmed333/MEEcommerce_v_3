@@ -79,9 +79,9 @@ const SearchDrawer = () => {
      onChange={HandleChange}
      type="search"
     />
-     <label htmlFor="search" >
+     <button   className='se' onClick={searchStart} >
    search <i class="fa-solid fa-magnifying-glass text-gray"></i>
-    </label>
+    </button>
 </div>
  
       {/* <input class="form-control me-2" 

@@ -120,8 +120,14 @@
     left: 0px;
     height: auto;
     padding: 6px;
+    box-shadow: rgb(255 255 255 / 61%) 3px 18px 8px 0px;
+    transition: 0.5s all ease-in-out;
+    left: 0px;
+    height: auto;
+    padding: 6px;
     border-bottom: 0px;
     z-index: 7;
+    border: 0px !IMPORTANT;
 }
 
 // second_header
@@ -186,7 +192,7 @@ button.ant-btn.css-dev-only-do-not-override-k83k30.ant-btn-default.ant-btn-lg.an
     height: 60px;
     background: #fff;
     z-index: 19;
-    // overflow: hidden  !important;
+    overflow: hidden  !important;
 }
 button.vis.bg-light {
     margin-right: 22px;
@@ -465,4 +471,14 @@ $h-hide-distance: $h-width + $h-padding;
         border: 1px solid #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
+}
+button.se {
+    width: 103px;
+    padding: 5px;
+    color: gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: revert;
+    text-transform: capitalize;
 }
