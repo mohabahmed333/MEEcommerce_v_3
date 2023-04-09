@@ -10,6 +10,7 @@ import { categoriesTypes } from '../../store/categories/category.action.types';
 import FooterSection from '../../components/footerSection/footer.component';
 import { searchContext } from '../../contexts/searchContext';
 import { CollectonShop } from '../../components/collectionOfShop/collectionShop';
+import { StoreModule } from '../../components/newStore_module/storeModule';
 
  const ShopPage=()=>{
  
@@ -31,7 +32,7 @@ return (
      
      <Routes>
         <Route index element={ <CollectionPreview  />}/>
-        <Route path=":cat"  element={ <Categories/>}/>
+        <Route path=":cat"  element={ <StoreModule/>}/>
         <Route path=':cat/:item'   element={<SingleItem/>} />
 
       </Routes>

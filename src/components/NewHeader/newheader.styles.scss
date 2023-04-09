@@ -130,7 +130,7 @@
     justify-content: center;
     align-items: center;
     height: 60px;
-    overflow: hidden  !important;
+    // overflow: hidden  !important;
 
 }
 .ant-input-group-wrapper{
@@ -186,7 +186,7 @@ button.ant-btn.css-dev-only-do-not-override-k83k30.ant-btn-default.ant-btn-lg.an
     height: 60px;
     background: #fff;
     z-index: 19;
-    overflow: hidden  !important;
+    // overflow: hidden  !important;
 }
 button.vis.bg-light {
     margin-right: 22px;
@@ -440,4 +440,29 @@ $h-hide-distance: $h-width + $h-padding;
     }
   }
 
+}
+#dropdown-basic{
+    background: none;
+    border: 0px;
+    color: gray;
+}
+#searchDropDown.dropdown-menu.show {
+     height: fit-content;
+    width: fit-content;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid #eee;
+ 
+    &div#searchDropDown::before {
+        position: absolute;
+        content: '';
+        height: 30px px
+    ;
+        width: 20px;
+        background: #fff;
+        top: -10px;
+        left: 50%;
+        transform: rotate(26deg);
+        border: 1px solid #fff;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
 }

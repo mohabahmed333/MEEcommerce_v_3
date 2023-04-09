@@ -135,169 +135,44 @@ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
       return <>
       
        <div    className={col?col:'item' }>
-      
-       <div class="itemcontainer">
-        {/* <div className="item_header">
-          <div className="d-flex h_l">
-          <Tooltip placement="top"  title={'Add To Collection'}  >
-                 
-                 <i className="fa-regular fa-bookmark"></i>
-                 </Tooltip>
+       <div className='new_item  '>
+    <div className='new_item_image' style={{backgroundImage:`url(${imageUrl})`}}>
+        <p className='product_name'>   {name} 
+        <i class="fa-solid fa-bookmark"></i>
+        </p>
+      <div className='rating_name'>
+          <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart <p className="button_price"> 25$</p></button>
+        <p className='item_rating'>
+          4 <i class="fa-solid fa-star"></i>
+        </p>
+      </div>
+      <div className="image-overlay"></div>
 
-          </div>
-          <div className="h_c">
-          <div class="see_numbers"> 
+    </div>
+    <div className='p_end'>
 
-0
- <Tooltip placement="top" color="geekblue"  title={'comments'}  >
+    <div className='rev'>
+ 
+      <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i class="fa-regular fa-heart"></i> 250 <p>loves</p> </p>
+      <p className='rev_inner'><i class="fa-regular fa-message"></i>250 <p>review</p> </p>
 
-<i className="fa-regular fa-comment"></i>
-</Tooltip>     
-</div>
-          <div class="see_numbers">
-                            0
-                         
-                            <Tooltip placement="top"  title={'Rate'}  >
 
-                            <StarOutlined />
-</Tooltip>
-                        </div>
-          </div>
-          <div className="d-flex h_r">
-          <div class="menu">
-            <Dropdown menu={{ items }}>
-    <a onClick={(e) => e.preventDefault()}>
-      <Space>
-      <i className="fa-solid fa-share"></i>       
-      </Space>
-    </a>
-  </Dropdown>            </div>
+    </div>
 
-          </div>
-        </div> */}
-        
-        <div class="created_container">
-                <h6>
-                    {name} 
-                    </h6> 
-           <div class="menu">
+
+    <i class="fa-regular fa-eye" onClick={openPreviewItem}></i>
+    <div class="menu">
           
-    <a onClick={(e) => showModal(e)}>
-      <Space>
-      <i class="fa-solid fa-ellipsis-vertical"></i>
-            </Space>
-    </a>
-             </div>
-            </div>
-        <div className="c_all">
+          <a onClick={(e) => showModal(e)}>
+            <Space>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </Space>
+          </a>
+                   </div>
 
-         <div class="image_preview">
-
-            <Image  style={{height:'250px'}} width={'100%'}src={imageUrl} alt="" srcset=""/>
-        
-        <div class="add_love_creator">
-     
-            
-        </div>
-        </div>
-      <div className="i_foot">
-      <div className="c">
-        <div class="item_header">
-
-            <div class="car">
-       
-            {/* <div className="d-flex h_l">
-          <Tooltip placement="top"  title={'Add To Collection'}  >
-                 
-                 <i className="fa-regular fa-bookmark"></i>
-                 </Tooltip>
-
-          </div>
-          <div className="h_c">
-         
-          <div class="see_numbers">
-                            0
-                         
-                            <Tooltip placement="top"  title={'Rate'}  >
-
-                            <StarOutlined />
-</Tooltip>
-                        </div>
-          </div>   */}
-              <p className="price">   {price} $</p>
-          {/* <i class="fa-solid fa-bag-shopping" ></i> */}
-          <i class="fa-solid fa-plus "onClick={HandleCartSubmit}></i>
-            </div>
-            <div class="name_price">
-
-               
-<div class="d-flex">
-
-<div className="d-flex h_l">
-          <Tooltip placement="top"   title={'Add To Collection'}  >
-                 
-                 <i className="fa-regular i_top fa-bookmark" id="book"></i>
-                 </Tooltip>
-
-          </div>
-          <div className="h_c">
-         
-          {/* <div class="see_numbers">
-                            0
-                         
-                            <Tooltip placement="top" 
-                             title={'Rate'}  >
-
-                            <StarOutlined />
-</Tooltip>
-                        </div> */}
-          </div>  
- 
-    <div class="see_numbers">
-        115
-        <br/>
-        <Tooltip placement="top" color="geekblue"  title={'Preview'}  >
-
-        <i onClick={openPreviewItem}className="fa-regular fa-eye"></i>
-    </Tooltip>
     </div>
-    <div class="love_numbers">
-        19
-        <br/>
-<Tooltip placement="top"  title={'Add To Wishlist'}  color="red
-" >
-
-        <i className="fa-regular fa-heart" onClick={()=>HandleWishList(user,product)}></i>
-        </Tooltip>
-    </div>
-</div>
-</div>
-        </div>
-         
-            <div class="cart_name">
-               
-
-             
-            </div>
-         
-    </div>
-
-    {/* <div class="cartEnd c_2">
-     <button class="add_TO_button" >Add To Cart
- </button>
-      </div> */}
-    
-{/* <div class="stock">
-        <div className="d-flex">
-        <div class="created_by">ME </div>   
-        </div>
-         <p class='in_stoke'>
-          </p> Mohab Elbasiry
-        </div> */}
-       </div>
- 
-    </div>
-    </div>
+  </div>
+  
 
        
   </div>

@@ -72,19 +72,30 @@ const SearchDrawer = () => {
      
      <div className="search_wrapper">
 <form >
-      <input class="form-control me-2" 
+<div className='search_bar_form'>
+   
+    <input    placeholder='start type..' id='search'
+     aria-label="Search" value={SearchValue}
+     onChange={HandleChange}
+     type="search"
+    />
+     <label htmlFor="search" >
+   search <i class="fa-solid fa-magnifying-glass text-gray"></i>
+    </label>
+</div>
+ 
+      {/* <input class="form-control me-2" 
                       placeholder="search products"
-                      onChange={HandleChange}
-                      type="search"
+                     
                        style={{
                         background:'#dddddd47',
                       border:'1px solid #ddd',
                       width:'62%',marginLeft:'auto'}}
-                       aria-label="Search" value={SearchValue}/>
+                      /> */}
   
-                       <button type='submit' onClick={searchStart} style={{width:'fit-content !important'}}
+                       {/* <button type='submit' onClick={searchStart} style={{width:'fit-content !important'}}
                         className='flex justify-content-between align-items-center w-20'>  <i class="fa-solid fa-magnifying-glass"></i> </button>
-                       
+                        */}
              {SearchValue !==''&& <ul class='recently_search'>
                 {categories.map(item=>{
                 return   item.map(itemE=>{

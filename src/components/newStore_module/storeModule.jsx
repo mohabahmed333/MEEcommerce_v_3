@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
@@ -7,7 +7,13 @@ import { ExpandAltOutlined } from '@ant-design/icons';
 import grid_1 from '../../assets/icons_grid/grid-2-h-svgrepo-com.svg'
 import grid_3 from '../../assets/icons_grid/grid-2-vertical-svgrepo-com.svg'
 import grid_2 from '../../assets/icons_grid/grid-aspect-ratio-svgrepo-com (2).svg'
-import OwlCarouselComponent from '../customs/owlCarousel/owlCarousel'
+import OwlCarouselComponent from '../customs/owlCarousel/owlCarousel';
+import './compass/pulse.scss'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { CatougriesSelector } from '../../store/categories/category.selector'
+import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
+import CollectionItem from '../collection-item/collection-item'
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -28,11 +34,7 @@ const sortOptions = [
     { name: 'Price: High to Low', href: '#', current: false },
   ]
   const subCategories = [
-    { name: 'Totes', href: '#' },
-    { name: 'Backpacks', href: '#' },
-    { name: 'Travel Bags', href: '#' },
-    { name: 'Hip Bags', href: '#' },
-    { name: 'Laptop Sleeves', href: '#' },
+ 
   ]
   const filters = [
     {
@@ -123,14 +125,73 @@ const sortOptions = [
 
 }
 }
+let FiltersItem = [];
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
 
 export const StoreModule =()=>{
+  const catogriesItems = useSelector(CatougriesSelector);
   
+  const  {cat}  = useParams() ;
+  console.log(cat)
+  const [products,setProducts]=useState(catogriesItems[cat]);
+ 
+    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+    const navigate = useNavigate()
+    const GOCategoy = (cat)=>{
+      setMobileFiltersOpen(!mobileFiltersOpen)
+      navigate(cat);
+    }
+  useEffect(()=>{
+   document.body.scrollTop = 0;
+   document.documentElement.scrollTop = 0;
+   setProducts(catogriesItems[cat]);
 
-    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+
+  },[products,catogriesItems[cat] ]);
+   useEffect(()=>{
+     const categoree = []
+     const Itemid=0;
+     catogriesItems&& Object.keys(catogriesItems).map((categ,idx)=>{
+       subCategories.push({name:categ,href:categ,id:idx++});
+       // categoree.filter((cat,idx,self)=>)
+       const ids = subCategories.map(o => o.id)
+ FiltersItem =HandleDuplicate(subCategories)
+      //   subCategories.filter((cat,i,self)=>{
+     //      const Duplicated = self.findIndex((cdat)=>cdat.id===cat.id);
+     //    return cat[i]  !==Duplicated 
+     //   })
+      })
+     //  console.log(subCategories)
+     },[cat])
+    const  sortingData=(option)=>{
+      switch(option){
+        case 'Price: High to Low':
+         const HighToLow=   catogriesItems[cat].sort((a,b)=>{
+              const price1= a.price
+              const price2= b.price
+           if(price1>price2)return -1;               
+           else if(price1===price2)return 1;               
+           else return 0;               
+           });
+           return   setProducts(HighToLow.splice())
+
+        case 'Price: Low to High':  
+         const LowTOHigh=   catogriesItems[cat].sort((a,b)=>{
+              const price1= a.price
+              const price2= b.price
+           if(price1>price2)return  1;               
+           if(price1<price2)return -1;               
+           });
+           
+            return setProducts(LowTOHigh.splice())
+
+             
+      }
+   }
+
 
     return(
 
@@ -239,7 +300,7 @@ export const StoreModule =()=>{
             </div>
           </Dialog>
         </Transition.Root>
-
+      
         <main className="mx-auto max-w-8xl    px-2">
           <div className="flex items-baseline justify-between     " style={{height:'60px'}}>
 
@@ -419,7 +480,28 @@ export const StoreModule =()=>{
 
               {/* Product grid */}
               <div className="lg:col-span-3 centerlize">
-            
+              <nav aria-label="Breadcrumb">
+            <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+              
+                <li  >
+                  <div className="flex items-center">
+                    <Link   to={`/`} >
+                    <i class="fa-solid fa-house me-3"></i>\
+                    </Link>
+                    <Link className='me-1 ms-1'  to={`/shop`} >
+                     shop \
+                    </Link>
+                    <Link className='me-1 ms-1'  to={`/shop/${'cat'}`} >
+                     {'hats'} 
+                    </Link>
+               
+                   
+                  </div>
+                </li>
+    
+              
+            </ol>
+          </nav>
               <div className='main_image'
                style={{background:`url(${'https://cdn.shopify.com/s/files/1/0112/6468/8186/files/slider-1_1512x.jpg?v=1663991033'})`
                ,position:'relative'
@@ -429,14 +511,27 @@ export const StoreModule =()=>{
 
 </div> 
   <div className='tabs'>
-    <ul className='tab_inner'>
+    {/* <ul className='tab_inner'>
         <li className='tab_inner_value'>Hats</li>
         <li className='tab_inner_value'>sneakers</li>
         <li className='tab_inner_value'>Mens</li>
         <li className='tab_inner_value'>Wommans</li>
-        <li className='tab_inner_value'>Boys</li>
-    </ul>
-    <Menu as="div" className="relative inline-block text-left">
+        <li className='tab_inner_value'>Boys</li> 
+    </ul> */}
+                   <div className='categories_flex'>
+           <ul role="list" className="px-2 py-3 font-medium text-gray-900">
+                      {FiltersItem.map((category) => (
+                        <li key={category.name}   >
+                          <Link to={`/shop/${category.href}`} className="block px-2 py-3">
+                            {category.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+           </div>
+ 
+              <div className='buttons_contaner'>
+              <Menu as="div" className="relative inline-block text-left">
                 <div>
                   
                   <Menu.Button className="  inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
@@ -481,7 +576,6 @@ export const StoreModule =()=>{
                 <ExpandAltOutlined  className='i_icon'/>
 
               </button>
-              <div className='buttons_contaner'>
               <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
                 <span className="sr-only">View grid</span>
                 <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
@@ -513,118 +607,39 @@ export const StoreModule =()=>{
               </button>
 </div>  
  <div className='best_product'>
-  <h3>Best Products</h3>
+
+ <h1 className='head'>Best Broducts</h1>
   <div className='best_container'>
+{
+          products &&  products.filter((product,idx)=>idx<5).map(item=>{
 
-    <div className='new_item  '>
-    <div className='new_item_image' style={{backgroundImage:'url(https://cdn.shopify.com/s/files/1/0112/6468/8186/products/153_360x.jpg?v=1664962967)'}}>
-        <p className='product_name'> Chollie Halool 
-        <i class="fa-solid fa-bookmark"></i>
-        </p>
-      {/* <div className='rating_name'>
-          <button className='cart_button_new'>add To Cart <p className="button_price"> 25$</p></button>
-        <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
-        </p>
-      </div>
-      <div className="image-overlay"></div> */}
- 
-    </div>
-    </div>
-    <div className='new_item  '>
-    <div className='new_item_image' style={{backgroundImage:'url(https://cdn.shopify.com/s/files/1/0112/6468/8186/products/T-Shirt-1_360x.jpg?v=1665395583)'}}>
-        <p className='product_name'> Chollie Halool 
-        <i class="fa-solid fa-bookmark"></i>
-        </p>
-      {/* <div className='rating_name'>
-          <button className='cart_button_new'>add To Cart <p className="button_price"> 25$</p></button>
-        <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
-        </p>
-      </div>
-      <div className="image-overlay"></div> */}
- 
-    </div>
-    </div>
-    <div className='new_item  '>
-    <div className='new_item_image' style={{backgroundImage:'url(https://cdn.shopify.com/s/files/1/0112/6468/8186/products/184_0b13b867-958d-4eec-b61f-3c3a098288ac_360x.jpg?v=1665549524)'}}>
-        <p className='product_name'> Chollie Halool 
-        <i class="fa-solid fa-bookmark"></i>
-        </p>
-      {/* <div className='rating_name'>
-          <button className='cart_button_new'>add To Cart <p className="button_price"> 25$</p></button>
-        <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
-        </p>
-      </div>
-      <div className="image-overlay"></div> */}
- 
-    </div>
-    </div>
-    <div className='new_item  '>
-    <div className='new_item_image' 
-    style={{backgroundImage:'url(https://cdn.shopify.com/s/files/1/0112/6468/8186/products/201_8f0ef5a5-9a26-4660-8392-6a264237addd_180x.jpg?v=1665549361)'}}>
-        <p className='product_name'> Chollie Halool 
-        <i class="fa-solid fa-bookmark"></i>
-        </p>
-      {/* <div className='rating_name'>
-          <button className='cart_button_new'>add To Cart <p className="button_price"> 25$</p></button>
-        <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
-        </p>
-      </div>
-      <div className="image-overlay"></div> */}
- 
-    </div>
-    </div>
-    <div className='new_item  '>
-    <div className='new_item_image'
-     style={{backgroundImage:'url(https://cdn.shopify.com/s/files/1/0112/6468/8186/products/147_360x.jpg?v=1664962652)'}}>
-        <p className='product_name'> Chollie Halool 
-        <i class="fa-solid fa-bookmark"></i>
-        </p>
+return          (  <div className='new_item  '>
+            <div className='new_item_image'
+             style={{backgroundImage: `url(${item.imageUrl})`,borderRadius:'0px',height:'450px',marginBottom:'20px'}}  >
+                <p className='product_name'> {item.name}
+                <i class="fa-solid fa-bookmark"></i>
+                </p>
+                <div class="blob blue">+</div>
         
-      {/* <div className='rating_name'>
-          <button className='cart_button_new'>add To Cart <p className="button_price"> 25$</p></button>
-        <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
-        </p>
-      </div>
-      <div className="image-overlay"></div> */}
+         
+            </div>
+            </div>)
+          })
+}
  
-    </div>
-    </div>
+ 
   </div>
   </div>
+  <h1 className='head'>New Arraival</h1>
 <div className='row'>
-  <div className='new_item col-md-3'>
-    <div className='new_item_image' style={{backgroundImage:'url(https://cdn.shopify.com/s/files/1/0112/6468/8186/products/184_0b13b867-958d-4eec-b61f-3c3a098288ac_360x.jpg?v=1665549524)'}}>
-        <p className='product_name'> Chollie Halool 
-        <i class="fa-solid fa-bookmark"></i>
-        </p>
-      <div className='rating_name'>
-          <button className='cart_button_new'>add To Cart <p className="button_price"> 25$</p></button>
-        <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
-        </p>
-      </div>
-      <div className="image-overlay"></div>
 
-    </div>
-    <div className='p_end'>
-
-    <div className='rev'>
- 
-      <p className='rev_inner'><i class="fa-regular fa-heart"></i> 250 <p>loves</p> </p>
-      <p className='rev_inner'><i class="fa-regular fa-message"></i>250 <p>review</p> </p>
-
-
-    </div>
-
-
- <i class="fa-solid fa-ellipsis"></i>
-    </div>
-  </div>
+  { 
+         //safe gards 
+         products &&  products.map(product=> 
+         < CollectionItem cat={cat} col={'col-md-3 col-sm-12'} 
+          key={product.name}  item={product}/>)
+      
+      } 
  </div>
 
                 </div>
