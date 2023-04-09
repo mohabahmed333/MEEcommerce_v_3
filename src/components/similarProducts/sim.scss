@@ -1,0 +1,45 @@
+.product_similar {
+    /* height: 47px; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow-y: hidden;
+    background: #fff;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.product_similar img {
+     height: auto;
+ 
+     margin-right: 5px;
+}
+ 
+.product_similar p {
+    margin: unset;
+    font-size: 12px;
+    font-weight: 200;
+}
+ .product_similar h6 {
+    color: #0000009c;
+    font-size: 16px;
+    margin: unset;
+    font-family: math;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+.collections::-webkit-scrollbar {
+    height: 6px;
+    background: #eee; 
+ 
+  }
+   ::-webkit-scrollbar-track {
+    background: #eee; 
+  }
+ ::-webkit-scrollbar-thumb:hover {
+    background: #333; 
+  }

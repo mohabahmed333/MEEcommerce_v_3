@@ -1,0 +1,16 @@
+ 
+export const USERTYPES = {
+    SET_CURRENT_USER:"USER/SET_CURRENT_USER",
+    CHECK_USER_SESSION:"USER/CHECK_USER_SESSION",
+    EMAIL_SIGN_IN_START:"USER/EMAIL_SIGN_IN_START",
+    EMAIL_SIGN_UP_START:"USER/EMAIL_SIGN_UP_START",
+    GOOGLE_SIGN_IN_START:"USER/GOOGLE_SIGN_IN_START",
+    SIGN_IN_SUCCESS:"USER/SIGN_IN_SUCCESS",
+    SIGN_IN_FAIID:"USER/SIGN_IN_FAIID",
+    SIGN_OUT_START:"USER/SIGN_OUT_START",
+    SIGN_OUT:"USER/SIGN_OUT",
+    UploadUserImageStart:"USER/UploadUserImageStart",
+    UploadUserImageSuccess:"USER/UploadUserImageSuccess",
+    UploadUserDataStart:"USER/UploadUserDataStart",
+    UploadUserDataSuccess:"USER/UploadUserDataSuccess"
+}

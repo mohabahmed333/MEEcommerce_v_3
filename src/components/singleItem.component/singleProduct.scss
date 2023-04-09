@@ -1,0 +1,133 @@
+.product_info{
+    display:flex;
+    flex-direction: column;
+ }
+.Product_flex{
+    display:flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+}
+.love {
+    background: none !IMPORTANT;
+    color: #333 !IMPORTANT;
+    border: none !IMPORTANT;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media (max-width:768px){
+    .product_button{
+        display: none   !important;
+    }
+}
+
+@media(min-width:768px){
+    .product_mobile_buttons{
+        display: none   !important;
+
+    }
+}
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next
+
+ {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    background: #c11818;
+    background: rgba(255, 255, 255, 0.7215686275) !important;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    font-size: 30px;
+    width: 50px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 1px 0px 11px 0px !important;
+    border: 1px solid #ddd !IMPORTANT;
+}
+.h2{
+    font-size: unset;
+    width: 96px;
+    color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-left: 10px;
+    font-size: 13px !IMPORTANT;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    font-size: unset;
+display: flex;
+justify-content: space-between;
+width: 151px;
+}
+.product_mobile_buttons {
+    position: fixed;
+    bottom: 73px;
+    background: rgba(2, 22, 22, 0);
+    z-index: 5;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 8px;
+    overflow: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background: #fff;
+    transition: 0.5s all ease-in-out;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    border-radius: 6px !important;
+    padding-left: 0px !important;
+    margin: auto;
+    width: -moz-fit-content;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: inherit;
+ 
+    h6{
+        margin:0px
+    }
+    
+    .product_mobile_buttons button.ant-btn.css-dev-only-do-not-override-k83k30.ant-btn-text{
+        background: none;
+        width: 76px;
+        border-bottom: 1px solid #ddd;
+        border-radius: 0px;
+   
+    }
+    .product_mobile_buttons button.ant-btn.css-dev-only-do-not-override-k83k30.ant-btn-text {
+         color: #fff;
+    }
+    .image_mobile {
+        width: 123px;
+        background-origin: padding-box;
+        background-size: cover !important;
+        height: 59px;
+        border-radius: 7px !important;
+        background-position: center top !important;
+    }
+    button{
+       
+    background: #4f46e5;
+    margin: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+       
+    }
+    .cart_add {
+        font-size: 11px;
+        padding: 2px;
+        margin-right: 17px !IMPORTANT;
+    }
+}

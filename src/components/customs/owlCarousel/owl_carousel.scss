@@ -1,0 +1,26 @@
+button.owl-next {
+    border: 1px solid #ddd !important;
+    padding: 10px !important;
+    width: 30px;
+    background: #f8f9fa !important;
+}
+button.owl-prev {
+    border: 1px solid #ddd !important;
+    padding: 10px  !important;
+    width: 30px;
+    background: #f8f9fa !important;
+}
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    text-align: right;
+    -webkit-tap-highlight-color: transparent;
+}
+.owl-carousel.owl-theme.owl-carousel.owl-loaded.owl-drag {
+    padding: 10px;
+     border-radius: 10px;
+    margin-top: 10px;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: #869791 !important;
+    color: #FFF;
+    text-decoration: none;}

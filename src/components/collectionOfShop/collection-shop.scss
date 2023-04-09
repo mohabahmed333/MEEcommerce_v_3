@@ -1,0 +1,23 @@
+// .title {
+//     width: fit-content;
+//     background: #57595cf2;
+//     border: 1px solid #eee;
+//     padding: 0px 15px;
+//     border-radius: 26px;
+//     color: #fff;
+//     text-transform: UPPERCASE;
+//     cursor: pointer;
+//     text-align: center;
+//     box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+// }
+// @media(max-width:768px){
+//     .title{
+//         width: unset;
+//     }
+// }
+.no_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     flex-direction: column;
+}

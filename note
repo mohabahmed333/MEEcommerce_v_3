@@ -1,0 +1,5 @@
+//git latest changes git hub
+
+git reset --hard HEAD
+git clean -xffd
+git pull 

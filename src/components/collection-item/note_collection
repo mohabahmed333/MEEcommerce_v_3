@@ -1,0 +1,85 @@
+   <div    className={col?col:'item' }>
+     <div className="product-card  position-relative"
+     >
+        	<div className="product-image overflow-hidden" onClick={handleLink}>
+							<img  src={`${imageUrl}`}  
+                             className="product-thumbnail rounded-lg"/>
+						</div>
+
+                        <div className="  product-details">
+							<h4 className="font-weight-bold d-flex justify-content-between cart_love">
+							 <p className="link" onClick={handleLink}>
+                             {name}
+
+                             </p>
+                             <div className="d-flex align-items-baseline mb-2">
+								{/* <h6 className="text-striked text-muted mr-3 font-weight-regular">
+                                    $20</h6>
+								<h6 className="text-success">42% off</h6> */}
+              <h6>
+              {product.price }$
+                </h6> 
+                              
+							</div>      
+                         
+							</h4>
+              
+{/*       
+                        	<a    href="#!" 
+                            className="text-uppercase text  py-0 px-2 rounded-lg border mb-2 d-inline-block">
+				 <small className="font-weight-bold">Decoration</small>  
+							</a> */}
+                            {/* <div className="d-flex align-items-center mb-2">
+
+                           <RateComponent></RateComponent> 
+                      
+                            <h6 className="mr-2 item_price">{price}$</h6>
+
+								{/* <a href="#!" className="ml-2 text-muted">(245)</a>  
+							</div> */}
+              <div id="add_love" >
+                              <ToolTip text={'add to wishList'}>
+                                <a  onClick={()=>HandleWishList(user,product)}
+                                  className="ml-2 text-muted"><i style={{color:`${color}`}} className="fa fa-heart-o"></i></a>
+
+                                </ToolTip>
+                              <ToolTip text={'compare list'}>
+                                <a 
+                                  className="ml-2 text-muted">
+                                    <i class="fa-solid fa-scale-unbalanced-flip"></i>
+                                   
+                                   </a>
+
+                                </ToolTip>
+                                </div>
+                            <div style={{zIndex:'0'}} className="w-100 
+                             d-flex justify-content-around mb-1">
+
+
+  <Button   className="cart_button" onClick={HandleCartSubmit} type="text">
+  <i className="fa-solid fa-cart-plus"></i>
+    AddToCart
+  </Button>
+    <div className="right_c">
+  <button className=""  onClick={openPreviewItem} >
+
+<span className="material-symbols-outlined">
+visibility
+</span>     
+          </button>
+          <Dropdown menu={{ items }}>
+    <a onClick={(e) => e.preventDefault()}>
+      <Space>
+      <i className="fa-solid fa-share-nodes share"></i>
+       
+      </Space>
+    </a>
+  </Dropdown>  
+    </div>
+                        
+                  
+                      
+                            </div>
+  </div>
+  </div>
+  </div>

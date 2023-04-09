@@ -1,0 +1,103 @@
+
+.collection {
+    padding: 10PX;
+}.collection ul {
+    list-style: none;
+    padding: 2px;
+    height: 200px;
+    overflow: auto;
+}
+ 
+
+
+  /* .collection ul:hover::-webkit-scrollbar {
+     background: #333;
+  } */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+ 
+button.add_TO_collection {
+    background: none;
+    border: 0px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+li.co_item {
+    padding: 10px;
+transition: 0.5s all ease-in-out;
+    margin: 10px;
+}li.co_item:hover{
+    background: #fbfbfb;
+    border: 1px solid #fbfbfb;
+}
+
+.collections_uttons {
+    display: flex;
+    justify-content: space-around;
+}   button.add_TO_collection {
+    background: none;
+    border: 0px;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 164px;
+     border-radius: 6px;
+}  .collection_add_input {
+    display: flex;
+    justify-content: space-around;
+    /* width: 300px; */
+    align-items: center;
+    margin: 25px auto;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    /* background: #fff; */
+    border: 0px;
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+}button.button_save_collections {
+    border: 0px;
+    padding: 6px;
+    width: 53px;
+    background: rgb(20, 110, 190);
+    color: #fff;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}input.co_add_button {
+    border: 1px solid #fff;
+    border-radius: 14px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-block: 4px 7px;
+    padding-inline: 14px;
+    background: rgba(255, 255, 255, 1);
+    outline: transparent solid 1px;
+    min-height: 8px;
+    border-radius: 12px;
+}.collection {
+    width: fit-content;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 2px 0px;
+}
+.a_collection{
+  
+    width: 150px;
+    border: 1px solid #ddd;
+    background: #146ebe;
+    color: #fff;
+  
+}

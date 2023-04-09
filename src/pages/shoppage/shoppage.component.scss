@@ -1,0 +1,29 @@
+.shop-header{
+    background: url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2xvdGhlcyUyMHNob3B8ZW58MHx8MHx8&w=1000&q=80');
+    height: 300px;
+    width: 300px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-position: center center;
+    position: relative;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    overflow: hidden;
+ 
+    h1{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color:#fff
+    }
+    .backd{
+        width: 100%;
+        height:100%;
+        position: absolute;
+        top: 0px;
+        left:0px;
+        background: black;
+        opacity: 0.5;
+    }
+}

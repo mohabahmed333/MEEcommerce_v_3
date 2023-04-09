@@ -1,0 +1,135 @@
+ 
+a{
+    text-decoration:none;
+    color:black
+}
+html,body{
+    height:auto !important;
+     padding-right:0px I !important;
+  background: #fff !important;
+ }
+ 
+.ant-btn-primary {
+    color: #fff;
+    border-color: #1890ff !important;
+    background: #1890ff !important;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+}
+/* div#chat-widget-container {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2147483639;
+    position: fixed;
+    bottom: 124px   !important; 
+    width: 100px;
+    height: 84px;
+    max-width: 100%;
+    max-height: calc(100% - 0px);
+    min-height: 0px;
+    min-width: 0px;
+    background-color: transparent;
+    border: 0px;
+    overflow: hidden;
+    right: 8px !important;
+    transition: none 0s ease 0s !important;
+} */
+
+@media (max-width:768px) {
+    .only_m{
+display: none;
+    }
+    .only_s{
+display: block;
+    }
+}
+@media (min-width:768px) {
+    #current_sm{
+        display: none !important;
+    }
+    .only_m{
+display: flex;
+    }
+    .only_s{
+display: block;
+    }
+}
+button {
+    z-index: 1   !important;
+}   
+body,html{
+    margin-bottom: 100px;
+}
+/* span.anticon.anticon-vertical-align-top{
+    color: #fff;
+}
+:where(.css-dev-only-do-not-override-k83k30).ant-float-btn-default .ant-float-btn-body {
+    background-color: #1a1a1af7;} */
+
+    .carousel-control-next, .carousel-control-prev{
+         background: rgba(51, 51, 51, 0.425) !important;
+        color: #333 !important;
+        width: 41px !important;
+        height: 19% !important;
+        border-radius: 10px;
+        margin: auto   !important; 
+    }
+    @media(min-width:768px){
+        .copyright-area {
+          
+            margin-bottom: -104px;}
+    }
+    
+ 
+@media (max-width: 768px){
+.col-sm-6 {
+    flex: 0 0 auto;
+    width: 50% !important;
+}}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  body{
+    background: #dddfef70;
+    overflow-x: hidden !important;
+  }
+  .custom_button_1{
+    height: 26px !important; 
+    background: #333 !important;
+    width: fit-content !important;
+    border-radius: 3px;
+    margin-right: 23px !important;
+    font-size: 10px;
+    padding: 0px 6px !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+    border: 1px solid #333 !important;
+ 
+  } 
+  .name_3{
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    white-space: pre-wrap;
+  }
+  @media(max-width:768px){
+
+
+      div#root {
+          overflow-x: hidden;
+        }
+}

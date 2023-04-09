@@ -1,0 +1,61 @@
+.share_box_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s all ease-in-out;
+    margin: 4px;
+    padding: 6px;
+    height: 51px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #333;
+}
+.share_box_inner:hover {
+    background: #fff;
+    box-shadow: rgba(187, 181, 181, 0.2) 0px 2px 8px 0px;
+    border: 1px solid rgb(255, 254, 254);
+
+}
+.share_box {
+    /* width: 235px; */
+    /* padding: 16px; */
+    background: rgb(251 251 251);
+}
+.fa-facebook:before {
+    content: "\f09a";
+    color: blue;
+}
+.fa-facebook-messenger:before {
+    content: "\f39f";
+    color: #2196F3;
+}
+i.fa-brands.fa-whatsapp {
+    color: green;
+}   .fa-heart:before {
+    content: "\f004";
+    color: gray;
+}i.fa-regular.fa-bookmark {
+    color: #9E9E9E;
+}
+.collect-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        margin-bottom: 0px;
+        margin-right: 3px;
+    }
+}.mobile_flex {
+    display: flex;
+    justify-content: space-around;
+.share_box_inner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #c4baba36;
+    border: 1px solid #fdfdfd;
+    i{
+        font-size: 16px;
+    }
+}
+}

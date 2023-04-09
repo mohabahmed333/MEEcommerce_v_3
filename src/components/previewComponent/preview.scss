@@ -1,0 +1,184 @@
+// #preview .ant-drawer-content-wrapper {
+//     border-top-left-radius: 20px !important;
+//     border-top-right-radius: 20px !important;
+//     overflow: hidden;
+// }
+// .ant-drawer-content-wrapper{
+//     height: 62% !important;
+//     border-top-left-radius: 20px  !important;
+//     overflow: hidden;
+//     border-top-right-radius: 20px  !important;
+//     background : none;
+// }
+// .smilar {
+//     position: fixed;
+//     top: 0px;
+//     background: #333;
+//     color: #fff;
+//     width: 100%;
+//     height: 20%;
+//     left: 0px;
+// }
+// :where(.css-dev-only-do-not-override-k83k30).ant-drawer-bottom>.ant-drawer-content-wrapper {
+//     height: 100% !IMPORTANT;
+//     box-shadow: none !important;
+//     bottom: 0;
+// }
+div#p_img {
+    background-image: url(https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png);
+    height: 600px;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    background-attachment: fixed;
+}
+button.ant-modal-close {
+    position: unset;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-left: auto;
+    background: none;
+}
+.ant-modal-content {
+    padding: 0px !important;
+}
+ 
+button.ant-modal-close {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-size: 10px !important;
+    padding-bottom: 6px   !important;
+}
+ @media(max-width:768px){
+  .grid.w-full.grid-cols-1.items-start.gap-y-8.gap-x-6.sm\:grid-cols-12.lg\:gap-x-8 {
+    padding-bottom: 44px !IMPORTANT;
+}
+ }
+.customize {
+    width: 50% !IMPORTANT;
+}
+.leftPopUp {
+    z-index: 100000;
+    width: 69%;
+    top: 0px;
+    left: 34%;
+    height: 100%;
+    transform: translate(-50%, 0%);
+    padding: 20px !important;
+    display: flex;
+    align-items: center;
+    /* height: 706px !important; */
+    overflow: auto !important;
+    flex-direction: column;
+    position: fixed;
+}
+.product_add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preview_button    {background: #333;
+height: 20px;
+width: -webkit-fill-available;
+margin: auto;
+border-radius: 4px;
+padding: 21px !IMPORTANT;
+}
+.i_number{
+    height: 40px;
+    border-radius: 0px !IMPORTANT;
+    background: #00000000;
+    border: 1px solid #33333373;
+}
+.nav-tabs .nav-link {
+    margin-bottom: calc(var(--bs-nav-tabs-border-width) * -1);
+    background: 0 0;
+    border: var(--bs-nav-tabs-border-width) solid transparent;
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+    border: 0px;
+}
+.image_header_preview {
+    position: absolute;
+    top: 5px;
+    background: #ffffffc9 !IMPORTANT;
+    right: 4px;
+    border-radius: 6%;
+    color: #ddd !IMPORTANT;
+    overflow: hidden;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    color: #333 !IMPORTANT;
+    padding: 0px 10px;
+    cursor: pointer;
+ 
+ 
+    
+}
+
+
+.picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+     margin-block-end: 1rem;
+
+   
+  }
+  .p{
+    background: #dddddd24;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .picker legend {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    padding-inline: .5rem;
+  }
+  
+  .picker label {
+    position: relative;
+    inline-size: 3rem;
+    block-size: 3rem;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+  }
+  
+  .picker label > span {  
+    position: absolute;
+    inset: 0;
+    block-size: 100%;
+    inline-size: 100%;
+  }
+  
+  .picker label > input:focus ~ span {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+  }
+  
+  /* Size pickers */
+  
+  label[for*="size"] > span {
+    font-size: 1rem;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+        background-color: #eee;
+    border-radius: .25rem;
+  }
+  
+  label[for*=size] > input:checked ~ span {
+    background-color: #333;
+    color: #eee;
+}
