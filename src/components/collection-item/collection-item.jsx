@@ -139,7 +139,7 @@ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
        <p className='product_name'>   {name} 
         <i class="fa-solid fa-bookmark"></i>
         </p>
-    <div className='new_item_image' style={{backgroundImage:`url(${imageUrl})`}}>
+    <div className='new_item_image' onClick={handleLink} style={{backgroundImage:`url(${imageUrl})`}}>
       
       <div className='rating_name'>
           <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart <p className="button_price"> 25$</p></button>

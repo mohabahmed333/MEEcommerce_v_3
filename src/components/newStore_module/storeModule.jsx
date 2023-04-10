@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux'
 import { CatougriesSelector } from '../../store/categories/category.selector'
 import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
 import CollectionItem from '../collection-item/collection-item'
+import { handleRouteGuide } from '../../componentsutlts/handleRouteGuide'
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -27,9 +28,9 @@ const user = {
   ]
   
 const sortOptions = [
-    { name: 'Most Popular', href: '#', current: true },
-    { name: 'Best Rating', href: '#', current: false },
-    { name: 'Newest', href: '#', current: false },
+    // { name: 'Most Popular', href: '#', current: true },
+    // { name: 'Best Rating', href: '#', current: false },
+    // { name: 'Newest', href: '#', current: false },
     { name: 'Price: Low to High', href: '#', current: false },
     { name: 'Price: High to Low', href: '#', current: false },
   ]
@@ -152,6 +153,10 @@ export const StoreModule =()=>{
 
 
   },[products,catogriesItems[cat] ]);
+  // const  handleLink = ()=>{
+  //   handleRouteGuide(catogriesItems,location,name)
+
+  //  }
    useEffect(()=>{
      const categoree = []
      const Itemid=0;
@@ -371,9 +376,12 @@ export const StoreModule =()=>{
               <div className='buttons_contaner'>
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  
-                  <Menu.Button className="  inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                  <i className="fa-solid fa-sort i_icon"></i>
+                  <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                    Sort
+                    <ChevronDownIcon
+                      className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                      aria-hidden="true"
+                    />
                   </Menu.Button>
                 </div>
 
@@ -386,22 +394,22 @@ export const StoreModule =()=>{
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right 
-                  rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
-                            <a
-                              href={option.href}
-                              className={classNames(
+                            <p
+                               className={classNames(
                                 option.current ? 'font-medium text-gray-900' : 'text-gray-500',
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm'
                               )}
+                              style={{cursor:'pointer'}}
+                              onClick={sortingData.bind(null,option.name)}
                             >
                               {option.name}
-                            </a>
+                            </p>
                           )}
                         </Menu.Item>
                       ))}
@@ -409,26 +417,32 @@ export const StoreModule =()=>{
                   </Menu.Items>
                 </Transition>
               </Menu>
-   <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 ">
-                <span className="sr-only">View grid</span>
-                <ExpandAltOutlined  className='i_icon'/>
 
-              </button>
-              <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
+   <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
+     onClick={()=>setCol('col-md-3')}>
                 <span className="sr-only">View grid</span>
                 <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
+
               </button>
-              <button type="button"  >
+   <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
+     onClick={()=>setCol('col-md-4')}>
+                <span className="sr-only">View grid</span>
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              {/* <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
+                <span className="sr-only">View grid</span>
+              </button> */}
+              <button type="button"    onClick={()=>setCol('col-md-6')}>
                 <span className="sr-only">View grid</span>
  
  <img src={grid_3}   className='grid_icon' alt="" srcset="" />
                </button>
-              <button type="button"  >
+              {/* <button type="button"   >
                 <span className="sr-only">View grid</span>
  
  <img src={grid_2}  className='grid_icon' alt="" srcset="" />
-               </button>
-              <button type="button"  >
+               </button> */}
+              <button type="button"  onClick={()=>setCol('col-md-12')} >
                 <span className="sr-only">View grid</span>
  
  <img src={grid_1}   className='grid_icon' alt="" srcset="" />
@@ -458,7 +472,7 @@ return          (  <div className='new_item  ' style={{background:'none'}}>
                 <p className='product_name'> {item.name}
                 <i class="fa-solid fa-bookmark"></i>
                 </p>
-                <div class="blob blue">+</div>
+                <div class="blob blue"  >+</div>
         
          
             </div>
