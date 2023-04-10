@@ -142,7 +142,8 @@ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
     <div className='new_item_image' onClick={handleLink} style={{backgroundImage:`url(${imageUrl})`}}>
       
       <div className='rating_name'>
-          <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart <p className="button_price"> 25$</p></button>
+          <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart 
+          <p className="button_price"> {price}</p></button>
         <p className='item_rating'>
           4 <i class="fa-solid fa-star"></i>
         </p>
@@ -154,7 +155,7 @@ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
     <div className='rev'>
  
       <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i class="fa-regular fa-heart"></i> 250 <p>loves</p> </p>
-      <p className='rev_inner'><i class="fa-regular fa-message"></i>250 <p>review</p> </p>
+      <p className='rev_inner'><i class="fa-regular fa-message"></i>25 <p>review</p> </p>
 
 
     </div>
