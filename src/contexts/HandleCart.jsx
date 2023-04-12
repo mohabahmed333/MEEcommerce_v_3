@@ -55,6 +55,9 @@ return [...items ,{...productItem,quantity:1}]
  
 export const CartProvider = ({children})=>{
     const [{totalPaid,totalCart,items,open},dispatch]= useReducer(CartReducer,INITIALSTATE);
+
+
+    
     const HandleReducerFunction= (newItems)=>{
         const PaidItems = newItems.reduce((price,item)=>{
              return price+item.price*item.quantity

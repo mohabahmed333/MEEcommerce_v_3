@@ -4,6 +4,7 @@ git reset --hard HEAD
 git clean -xffd
 git pull 
 
+rmdir /s node_modules
 
 
    {/* <form className="hidden lg:block">

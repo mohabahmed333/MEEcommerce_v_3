@@ -132,7 +132,7 @@ let FiltersItem = [];
     return classes.filter(Boolean).join(' ')
   }
 
-export const StoreModule =()=>{
+const StoreModule =()=>{
   const [col,setCol]=useState('col-md-4')
   const catogriesItems = useSelector(CatougriesSelector);
   
@@ -432,7 +432,7 @@ export const StoreModule =()=>{
               {/* <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
                 <span className="sr-only">View grid</span>
               </button> */}
-              <button type="button"    onClick={()=>setCol('col-md-6')}>
+              <button type="button"    onClick={()=>setCol('col-md-6 col-sm-6')}>
                 <span className="sr-only">View grid</span>
  
  <img src={grid_3}   className='grid_icon' alt="" srcset="" />
@@ -505,3 +505,4 @@ return          (  <div className='new_item  ' style={{background:'none'}}>
         </>
     )
 }
+export default StoreModule

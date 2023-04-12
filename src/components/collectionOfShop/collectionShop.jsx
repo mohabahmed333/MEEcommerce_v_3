@@ -10,7 +10,7 @@ import './collection-shop.scss'
 import { useNavigate } from "react-router-dom";
 import { searchContext } from "../../contexts/searchContext";
 import ImageWithText from "../ImageWithText/ImageWithText";
-export const CollectonShop =(  )=>{
+ const CollectonShop =(  )=>{
     const catogriesItems = useSelector(CatougriesSelector);
      const [categories,SetCategories]=useState([]);
      const [DataTF ,SetDataTF]=useState(false)
@@ -133,3 +133,4 @@ const options = {
         </div>
         </> 
 }
+export default CollectonShop

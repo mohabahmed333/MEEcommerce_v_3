@@ -5,7 +5,7 @@ import {  selectImageUser, userSelectMemo } from "../../../store/user/user.selec
  
 import FileUpladManger from "../../../components/customs/fileUpload/fileUpload";
 import { UploadUserDataStart } from "../../../store/user/user.actions";
-export const UserSetting = ()=>{
+const UserSetting = ()=>{
   const dispatch = useDispatch()
   const userD ={}
   const user = useSelector(userSelectMemo);
@@ -208,3 +208,5 @@ export const UserSetting = ()=>{
             </>
     )
 }
+
+export default UserSetting

@@ -2,10 +2,9 @@ import { useParams } from "react-router-dom"
 import SignIn from "../signIn/sign-in.component"
 import SignUp from "../signUp/signUp"
 
-export const SignInAndSignComponent =  ()=>{
+const SignInAndSignComponent =  ()=>{
 const {singUser} = useParams();
-console.log(singUser)
-    return(
+     return(
 
 
     <>
@@ -24,3 +23,4 @@ console.log(singUser)
 
     )
 }
+export default SignInAndSignComponent

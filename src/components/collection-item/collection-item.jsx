@@ -20,6 +20,7 @@ import { userSelectMemo } from "../../store/user/user.selector";
 import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
+import {LazyLoadImage} from 'react-lazy-load-image-component'
  const CollectionItem = ({ col,url='',item,cat})=>{
  //js script
  const items=[
@@ -139,8 +140,8 @@ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
        <p className='product_name'>   {name} 
         <i class="fa-solid fa-bookmark"></i>
         </p>
-    <div className='new_item_image' onClick={handleLink} style={{backgroundImage:`url(${imageUrl})`}}>
-      
+    <div className='new_item_image'    >
+      <LazyLoadImage src={imageUrl}  filter='blur'  onClick={handleLink}/>
       <div className='rating_name'>
           <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart 
           <p className="button_price"> {price}</p></button>

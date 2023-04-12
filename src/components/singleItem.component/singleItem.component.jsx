@@ -16,7 +16,7 @@ import { userSelectMemo } from "../../store/user/user.selector";
 import{useContext} from 'react'
 import { PreviewContext } from "../../contexts/previewContext";
 import './newSingle.scss'
- export const SingleItem = ()=>{
+ const SingleItem = ()=>{
 
 const catogriesItems = useSelector(CatougriesSelector);
 const {HandleWishList} = useContext(WishListContext)
@@ -251,3 +251,4 @@ Add To Cart
      )
 }
 
+export default SingleItem
