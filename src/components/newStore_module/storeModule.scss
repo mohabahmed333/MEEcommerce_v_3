@@ -399,23 +399,30 @@ button.cart_button_new {
 }
 
 .best_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1210px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: fit-content;
+        margin: auto;
+   
     .new_item{
         width: 200px;
          transition: 0.5s all ease-in-out;
          border-radius: 0px;
          border-left: 1px solid #eeee;
-&:first-child{
-    width: 500px;
-}
+ 
                 &:hover  {
-            width: 600px;
+            width: 500px;
 
         }
     }
+}
+.active_hover{
+    width: 600px   !important;
+}
+ul.px-2.py-3.font-medium.text-gray-900 {
+    display: flex;
 }
 .best_product {
     h3{

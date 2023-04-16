@@ -11,10 +11,12 @@ import OwlCarouselComponent from '../customs/owlCarousel/owlCarousel';
 import './compass/pulse.scss'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { CatougriesSelector } from '../../store/categories/category.selector'
+import { CategoryImage, CatougriesSelector } from '../../store/categories/category.selector'
 import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
 import CollectionItem from '../collection-item/collection-item'
 import { handleRouteGuide } from '../../componentsutlts/handleRouteGuide'
+import $ from 'jquery'; 
+
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -135,7 +137,8 @@ let FiltersItem = [];
 const StoreModule =()=>{
   const [col,setCol]=useState('col-md-4')
   const catogriesItems = useSelector(CatougriesSelector);
-  
+  const category_image = useSelector(CategoryImage);
+  const [cat_image,Setmage]=useState(category_image);
   const  {cat}  = useParams() ;
   console.log(cat)
   const [products,setProducts]=useState(catogriesItems[cat]);
@@ -147,6 +150,14 @@ const StoreModule =()=>{
       navigate(cat);
     }
   useEffect(()=>{
+  //adding  active width;
+  document.querySelector('.best_container .new_item:nth-child(1)').classList.add('active_hover')
+     
+
+  $('.best_container .new_item').hover(function(){
+$(this).addClass('active_hover').siblings().removeClass('active_hover')
+  })
+  //adding  active width;
    document.body.scrollTop = 0;
    document.documentElement.scrollTop = 0;
    setProducts(catogriesItems[cat]);
@@ -158,6 +169,13 @@ const StoreModule =()=>{
 
   //  }
    useEffect(()=>{
+     
+  
+
+      //  category_image
+  Setmage( category_image[cat] );
+       //  category_image
+  
      const categoree = []
      const Itemid=0;
      catogriesItems&& Object.keys(catogriesItems).map((categ,idx)=>{
@@ -171,7 +189,9 @@ const StoreModule =()=>{
      //   })
       })
      //  console.log(subCategories)
-     },[cat])
+     },[cat]);
+
+  
     const  sortingData=(option)=>{
       switch(option){
         case 'Price: High to Low':
@@ -323,14 +343,14 @@ const StoreModule =()=>{
               <div className="lg:col-span-3 centerlize">
              
           
-              <div className='main_image'
-               style={{background:`url(${'https://cdn.shopify.com/s/files/1/0112/6468/8186/files/slider-1_1512x.jpg?v=1663991033'})`
+           {   category_image  &&  <div className='main_image'
+               style={{background:`url(${cat_image&&cat_image.collImg})`
                ,position:'relative'
                }}>
                 <div className="image-overlay"></div>
                 <h1 className='Main_image_text'>Shop All Collection of mens</h1>
 
-</div> 
+</div> }
   <div className='tabs'>
     {/* <ul className='tab_inner'>
         <li className='tab_inner_value'>Hats</li>
@@ -345,10 +365,10 @@ const StoreModule =()=>{
                 <li  >
                   <div className="flex items-center">
                     <Link   to={`/`} >
-                    <i class="fa-solid fa-house me-3"></i>\
+                    <i class="fa-solid fa-house me-3"></i>
                     </Link>
                     <Link className='me-1 ms-1'  to={`/shop`} >
-                     shop \
+                     shop 
                     </Link>
                     <Link className='me-1 ms-1'  to={`/shop/${'cat'}`} >
                      {cat} 
@@ -362,7 +382,7 @@ const StoreModule =()=>{
             </ol>
           </nav>
                    <div className='categories_flex'>
-           <ul role="list" className="px-2 py-3 font-medium text-gray-900">
+           <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}>
                       {FiltersItem.map((category) => (
                         <li key={category.name}   >
                           <Link to={`/shop/${category.href}`} className="block px-2 py-3">
@@ -465,7 +485,7 @@ const StoreModule =()=>{
 {
           products &&  products.filter((product,idx)=>idx<5).map(item=>{
 
-return          (  <div className='new_item  ' style={{background:'none'}}>
+return          (  <div className='new_item  ' key={item.name} style={{background:'none'}}>
             <div className='new_item_image'
              style={{backgroundImage: `url(${item.imageUrl})
              `,borderRadius:'0px',height:'450px',marginBottom:'20px'}}  >
@@ -489,8 +509,8 @@ return          (  <div className='new_item  ' style={{background:'none'}}>
   { 
          //safe gards 
          products &&  products.map(product=> 
-         < CollectionItem cat={cat} col={col} 
-          key={product.name}  item={product}/>)
+         < CollectionItem key={product.id} cat={cat} col={col} 
+      item={product}/>)
       
       } 
  </div>
