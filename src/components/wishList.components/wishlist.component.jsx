@@ -8,7 +8,7 @@ const WishListContainer = ()=>{
     if(!user)return;
     const {wishList}=user
       return(
-        wishList&& wishList.map((item,idx)=><WishListItem key={idx} product={item}/>)
+        wishList&& wishList.map((item,idx)=><WishListItem key={item.name} product={item}/>)
 
 )
 }

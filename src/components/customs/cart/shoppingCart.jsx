@@ -80,8 +80,8 @@ const ShopNavigate=()=>{
                           </button>
                         </div>
                       </div>
-                      {/* <div class="rSlider">
-  <span class="slide"></span>
+                      {/* <div className="rSlider">
+  <span className="slide"></span>
 <input id="range" type="range" min="0" max="50000" />
 </div>
 <span id="demo"></span> */}
@@ -95,7 +95,7 @@ const ShopNavigate=()=>{
                         <p>{userCart()}</p>
                       </div>
                       <hr/>
-                      <div class="marquee">
+                      <div className="marquee">
   <div>
     <span>Free Shipping Into Cairo </span>
     <span>All charges are billed in USD. While the content of your cart is currently displayed in EGP, the checkout will use USD at the most current exchange rate.

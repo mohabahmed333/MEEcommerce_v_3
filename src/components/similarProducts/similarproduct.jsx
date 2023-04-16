@@ -67,7 +67,7 @@ return(<>
          return      < CollectionItem style={{width:'257px'}}   
          key={product.name}  item={product}/>
           //  < CollectionItem col={'col-md-3 col-sm-12'} 
-          //   key={product.name}  item={product}/><div class="collections">
+          //   key={product.name}  item={product}/><div className"collections">
 
         
         

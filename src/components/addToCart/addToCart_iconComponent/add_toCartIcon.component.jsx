@@ -9,7 +9,7 @@ export const CartIcon =({...props})=>{
 
         <ShoppingIcon className="shopping0icon " {...props}/>
         {
-          <div class="marquee">
+          <div className"marquee">
           <div>
             <span>You spin me right round, baby. Like a record, baby.</span>
             <span>You spin me right round, baby. Like a record, baby.</span>

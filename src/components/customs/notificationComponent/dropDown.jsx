@@ -48,7 +48,7 @@ export const DropDown = ({user,position}) => {
 );
   return(<Space direction="vertical">
     <Space wrap>
-      <Dropdown overlay={menu} placement={position}>
+      <Dropdown menu={menu} placement={position}>
         {user.imageUrl?
       <Avatar  src={`${user&&user.imageUrl&&user.imageUrl}`}  style={{cursor:'pointer'}} /> :
       <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>

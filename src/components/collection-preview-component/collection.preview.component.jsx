@@ -14,14 +14,7 @@ const ca = useSelector(categoriesSelectorReducer);
 console.log(ca);
 
 const ProductAfterWishList  =[];
-if(!!user){
-    const {wishList  }= user 
-    console.log(user,wishList);
-    catogriesItems&&  Object.values(catogriesItems).map(item=>{
  
- console.log(item);
-     })
-}
      const IsloadingSpin = useSelector(IsLoadingSelector);
     
           const options = {
@@ -73,7 +66,7 @@ return (<>
 {
  IsloadingSpin?(<Loading/>):ca['categories'].map(collec=>{
   return<>
-  <div className='all_container'>
+  <div className='all_container' key={collec.title}>
   <div className='collection_preview_background' style={{backgroundImage:`url(${collec.collImg})`}
 }  >
 
@@ -85,7 +78,7 @@ return (<>
 
 <div className='more'><p>
 shop All Collections 
-  </p>        <i class="fa-solid fa-arrow-right arrow-right"></i>
+  </p>        <i className="fa-solid fa-arrow-right arrow-right"></i>
 </div>  
 </Link></h3>
 

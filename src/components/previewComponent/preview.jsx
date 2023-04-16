@@ -164,15 +164,15 @@ return message.success(`added ${item.name} to cart`)
                           <div className="flex items-center">
                             <div className="flex items-center">
                             <Tag color="#87d068">#new</Tag>
-                            <div class="name_price">
+                            <div className="name_price">
 
                   
 
-     <div class="d-flex">
+     <div className="d-flex">
 
      
          
-        <div class="see_numbers">
+        <div className="see_numbers">
             115
             <br/>
 
@@ -204,25 +204,25 @@ return message.success(`added ${item.name} to cart`)
                         <h3 id="options-heading" className="sr-only">
                           Product options
                         </h3>
-                        <div class="cart_name">
-                <div class="name_price">
+                        <div className="cart_name">
+                <div className="name_price">
 
                   
                 <i className="fa-regular fa-bookmark"></i>
-                     <div class="d-flex">
+                     <div className="d-flex">
 
-                        <div class="see_numbers">
+                        <div className="see_numbers">
                             0
                          
  
                           </div>
-                        <div class="see_numbers"> 
+                        <div className="see_numbers"> 
 
                             0
  
                             <i className="fa-regular fa-comment"></i>
                          </div>
-                        <div class="see_numbers">
+                        <div className="see_numbers">
                             115
                             <br/>
  
@@ -237,7 +237,7 @@ return message.success(`added ${item.name} to cart`)
             <Divider/>
 
     <p className='p'>Avalible Sizes</p>
-            <fieldset class="picker">
+            <fieldset className="picker">
     <label for="size-s">
       <input type="radio" name="sizes" id="size-s"/>
       <span>S</span>

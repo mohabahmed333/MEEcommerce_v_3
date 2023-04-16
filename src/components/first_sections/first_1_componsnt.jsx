@@ -57,7 +57,7 @@ import OwlCarouselComponent from '../customs/owlCarousel/owlCarousel';
         <>
         <div className="container-fluid mt-3 mb-4">
             <div className="row">
-            <div class="col-md-12">
+            <div className="col-md-12">
 <NoTransitionExample />
 
             </div>

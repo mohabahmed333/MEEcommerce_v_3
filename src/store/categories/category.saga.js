@@ -1,12 +1,8 @@
-import { OnAuthChangesAsync } from "../../firebase/firebase.utls";
-import { GETCollection } from "../../firebase/firebaseMtethods/addCollectionAndDocuments";
-import { GetUserFromDocs } from "../../firebase/firebaseMtethods/connectuserToDocs";
-import { userSelectMemo } from "../user/user.selector";
-import { FETCHCATEGORIESFAILD, FetchCategoriesSuccess } from "./category.action";
+ import { GETCollection } from "../../firebase/firebaseMtethods/addCollectionAndDocuments";
+  import { FETCHCATEGORIESFAILD, FetchCategoriesSuccess } from "./category.action";
 import{categoriesTypes} from './category.action.types'
 import{all,call,put,takeLatest} from 'redux-saga/effects'
-import { useSelector } from 'react-redux';
-
+ 
  
 function* FetchCategorySagaAsync({payload}){
  

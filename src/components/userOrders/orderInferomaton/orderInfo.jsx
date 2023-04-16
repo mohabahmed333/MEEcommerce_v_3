@@ -61,19 +61,19 @@ const handleCancel = () => {
       <Panel className="position-sticky" style={{top:'100px',background:'#fff'}} header="user Inferomation" key="1" >
       <div className="d-flex justify-content-between">
 
-<h6> <i style={{fontSize:'10px', }}class="fa-regular fa-user me-3"></i>customer name</h6>
+<h6> <i style={{fontSize:'10px', }}className="fa-regular fa-user me-3"></i>customer name</h6>
 <p>{order.userInferomation['first-name']}</p>
 </div>
 
 
 <div className="d-flex justify-content-between">
 
- <h6> <i style={{fontSize:'13px', }} class="me-3 fa-regular fa-envelope"></i> Email Address</h6>
+ <h6> <i style={{fontSize:'13px', }} className="me-3 fa-regular fa-envelope"></i> Email Address</h6>
 <p>{order.userInferomation['email-address']}</p>
 </div>
 
 <div className="d-flex justify-content-between"> 
-<h6><i class="fa-regular fa-address-book me-3"></i> Address </h6>
+<h6><i className="fa-regular fa-address-book me-3"></i> Address </h6>
 <p>{order.userInferomation['street-address']}</p>
 
 </div>
@@ -83,7 +83,7 @@ const handleCancel = () => {
 
 <Panel className="position-sticky" style={{top:'100px',background:'#fff'}} key="2"header="Order Details">
 <div className="d-flex justify-content-between">
-<h6><i class="fa-regular fa-calendar-days"></i> purchesed At </h6>
+<h6><i className="fa-regular fa-calendar-days"></i> purchesed At </h6>
 <p>01/1/2023</p>
 </div>
 <div className="payment">

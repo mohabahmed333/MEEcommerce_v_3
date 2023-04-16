@@ -80,11 +80,11 @@ const SearchDrawer = () => {
      type="search"
     />
      <button   className='se' onClick={searchStart} >
-   search <i class="fa-solid fa-magnifying-glass text-gray"></i>
+   search <i className="fa-solid fa-magnifying-glass text-gray"></i>
     </button>
 </div>
  
-      {/* <input class="form-control me-2" 
+      {/* <input className="form-control me-2" 
                       placeholder="search products"
                      
                        style={{
@@ -94,13 +94,13 @@ const SearchDrawer = () => {
                       /> */}
   
                        {/* <button type='submit' onClick={searchStart} style={{width:'fit-content !important'}}
-                        className='flex justify-content-between align-items-center w-20'>  <i class="fa-solid fa-magnifying-glass"></i> </button>
+                        className='flex justify-content-between align-items-center w-20'>  <i className="fa-solid fa-magnifying-glass"></i> </button>
                         */}
-             {SearchValue !==''&& <ul class='recently_search'>
+             {SearchValue !==''&& <ul className='recently_search'>
                 {categories.map(item=>{
                 return   item.map(itemE=>{
                
-                     return  (<li key={itemE.name} class='recently_item' onClick={()=>{
+                     return  (<li key={itemE.name} className='recently_item' onClick={()=>{
                         handleRouteGuide(categoriesItems,navigate,itemE.name);
                         SetSearchOpen(false);
                         SetSearchtem(itemE.name)
@@ -117,9 +117,10 @@ const SearchDrawer = () => {
    <i className="fa-solid fa-arrow-right ms-3"></i></Button> </h6>
  <ul className='recently_search_item' style={{maxHeight:'300px',overflow:'auto'}}>
   {user&&user.recentSearch&&
-  user.recentSearch.reverse().filter((item,idx)=>idx<5).map(s=>{
-    return(
-<li onClick={()=>{navigate(`/search/${s}`) ; SetSearchOpen(false) }}
+  user.recentSearch.reverse().filter((item,idx)=>idx<5).map((s,idx)=>{
+    console.log(Math.random());
+     return(
+<li key={Math.floor(idx)} onClick={()=>{navigate(`/search/${s}`) ; SetSearchOpen(false) }}
  className='recently_item justify-content-between d-flex align-items-center' >
   {s}   <i className="fa-solid fa-magnifying-glass me-2"></i>
  </li>

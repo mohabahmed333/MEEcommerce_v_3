@@ -149,19 +149,19 @@ const product = {
 <ul className="product-color">
     <li>
       <input type="radio" name="color" id="red"/>
-      <label for="red" style={{backgroundColor:'red'}}></label>
+      <label htmlFor="red" style={{backgroundColor:'red'}}></label>
     </li>
     <li>
       <input type="radio" name="color" id="#A2C2C9"/>
-      <label for="#A2C2C9" style={{backgroundColor:'#A2C2C9'}}></label>
+      <label htmlFor="#A2C2C9" style={{backgroundColor:'#A2C2C9'}}></label>
     </li>
     <li>
       <input type="radio" name="color" id="#EFDBD4"/>
-      <label for="#EFDBD4" style={{backgroundColor:'#EFDBD4' }}></label>
+      <label htmlFor="#EFDBD4" style={{backgroundColor:'#EFDBD4' }}></label>
     </li>
     <li>
         <input type="radio" name="color" id="#00BCD4" checked="checked"/>
-        <label for="#00BCD4" style={{backgroundColor:'#00BCD4'}}></label>
+        <label htmlFor="#00BCD4" style={{backgroundColor:'#00BCD4'}}></label>
       </li>
     </ul>
 
@@ -169,23 +169,23 @@ const product = {
 <div className="avalible_sze">
  <fieldset className="picker">
     <legend>select Size </legend>
-    <label for="size-s">
+    <label htmlFor="size-s">
         <input type="radio" name="sizes" id="size-s"/>
         <span>S</span>
     </label>
-    <label for="size-m">
+    <label htmlFor="size-m">
         <input type="radio" name="sizes" id="size-m"/>
         <span>M</span>
     </label>
-    <label for="size-l">
+    <label htmlFor="size-l">
         <input type="radio" name="sizes" id="size-l"/>
         <span>L</span>
     </label>
-    <label for="size-xl">
+    <label htmlFor="size-xl">
         <input type="radio" name="sizes" id="size-xl"/>
         <span>XL</span>
     </label>
-    <label for="size-xxl">
+    <label htmlFor="size-xxl">
         <input type="radio" name="sizes" id="size-xxl"/>
         <span>XXL</span>
     </label>
@@ -225,7 +225,7 @@ Add To Cart
     </p>
       
       <div className="product">
-        <i class="fa-solid fa-arrow-left arrow-right"></i>
+        <i className"fa-solid fa-arrow-left arrow-right"></i>
         <p>product Name</p>
        </div>
   </div>
@@ -236,7 +236,7 @@ Add To Cart
     <div id="fb-root"></div>
       <div className="product">
         <p>product Name</p>
-        <i class="fa-solid fa-arrow-right-long arrow-left"></i>
+        <i className"fa-solid fa-arrow-right-long arrow-left"></i>
       </div>
   </div>
 </div> */}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUserDataBase } from "../../../firebase/firebaseMtethods/adduserData";
-import {  selectImageUser, userSelectMemo } from "../../../store/user/user.selector";
+import { userSelectMemo } from "../../../store/user/user.selector";
  
 import FileUpladManger from "../../../components/customs/fileUpload/fileUpload";
 import { UploadUserDataStart } from "../../../store/user/user.actions";
@@ -37,7 +37,7 @@ const UserSetting = ()=>{
                             <label className="block text-sm font-medium text-gray-700">Photo</label>
                             <div className="mt-1 flex items-center">
                               <span className="inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100">
-                               <img src={user.imageUrl?`${user.imageUrl}`:''} alt="" srcset="" />
+                               <img src={user.imageUrl?`${user.imageUrl}`:''} alt="" />
                               </span>
                               <FileUpladManger user={user}/>
                                 

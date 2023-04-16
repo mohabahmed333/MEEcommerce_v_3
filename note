@@ -15,18 +15,18 @@ rmdir /s node_modules
               
               </p> */}
               <p className='filter_head_2'>
-              <i class="fa-solid fa-house"></i> Home
+              <i className"fa-solid fa-house"></i> Home
               </p>
               <p className='filter_head_2'>
-              <i class="fa-solid fa-user"></i>Profile
+              <i className"fa-solid fa-user"></i>Profile
               </p>
               <p className='filter_head_2'>
-              <i class="fa-solid fa-clock-rotate-left"></i>History
+              <i className"fa-solid fa-clock-rotate-left"></i>History
               </p>
               <p className='filter_head_2' style={{display:'flex',justifyContent:'space-between'}}>
 
               <p className='filter_head_number'>
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className"fa-solid fa-cart-shopping"></i>
               Your Cart  
               </p>
               <p>5</p>
@@ -57,7 +57,7 @@ rmdir /s node_modules
 </li>
 
                 </ul> */}
-                <p  className='filter_head_2'><i class="fa-solid fa-filter"></i> filters</p>
+                <p  className='filter_head_2'><i className"fa-solid fa-filter"></i> filters</p>
                 <h3 className="sr-only">Categories</h3>
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
                   

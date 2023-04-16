@@ -21,7 +21,7 @@ const HandleChange = (event)=>{
         <>
      
       <button className="chatbox-open">
-      <i class="fa-solid fa-message"></i>
+      <i className="fa-solid fa-message"></i>
   </button>
 <button className="chatbox-close">
     <i className="fa fa-close fa-2x" aria-hidden="true"></i>
@@ -100,7 +100,7 @@ const HandleChange = (event)=>{
   <footer className="chatbox-panel__footer">
     
     <div style={{flex:1,color:'#888',textAlign:'center'}}>
-      <i class="fa fa-camera" aria-hidden="true"></i>
+      <i className="fa fa-camera" aria-hidden="true"></i>
     </div>
     <div style={{flex:10}}>
       <textarea type="text" placeholder="Type your message here..."
@@ -108,7 +108,7 @@ const HandleChange = (event)=>{
       autofocus></textarea>
     </div>
     <div style= {{flex:'1',color:'#888',textAlign:'center'}} >
-      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      <i className="fa fa-paper-plane" aria-hidden="true"></i>
     </div>
   </footer>
 </section>

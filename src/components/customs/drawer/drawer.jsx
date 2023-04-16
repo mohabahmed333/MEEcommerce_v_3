@@ -9,7 +9,7 @@ const onClose = () => {
 };
   return (
     
-    <Drawer title="WishList" placement="right" onClose={onClose}    visible={isOpen}>
+    <Drawer title="WishList" placement="right" onClose={onClose}    open={isOpen}>
       {children}
     </Drawer>
     
