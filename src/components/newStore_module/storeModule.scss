@@ -194,12 +194,15 @@ form.hidden.lg\:block::-webkit-scrollbar {
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }h1.Main_image_text {
     font-size: 3rem;
     width: 420px;
     margin-left: 10px;
     text-transform: uppercase;
     text-shadow: 0 0 black;
+    position: absolute;
+    left: 0px;
     /* border-bottom: 3px solid #9E9E9E; */
     text-rendering: geometricPrecision;
     /* text-decoration-line: underline; */
@@ -363,7 +366,8 @@ button.cart_button_new {
          margin-bottom: 0px  !important;
         i{
             margin-right: 5px;
-            color: gray I !important;
+            color: gray  !important;
+            margin-left: auto;
         }
     }
 }
@@ -376,6 +380,8 @@ button.cart_button_new {
   height: 25px;
   align-items: center;
   margin-bottom: 10px;
+  position: absolute;
+  bottom: 22px;
 }
 .new_item_image p.product_name {
     text-transform: uppercase;
@@ -399,14 +405,19 @@ button.cart_button_new {
 }
 
 .best_container {
-    
+     
         display: flex;
         justify-content: center;
         align-items: center;
         max-width: fit-content;
         margin: auto;
    
-    .new_item{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+     .new_item{
         width: 200px;
          transition: 0.5s all ease-in-out;
          border-radius: 0px;

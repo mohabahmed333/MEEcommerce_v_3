@@ -138,7 +138,7 @@ import {LazyLoadImage} from 'react-lazy-load-image-component'
        <div    className={col?col:'item' }>
        <div className='new_item  '>
        <p className='product_name'>   {name} 
-        <i class="fa-solid fa-bookmark"></i>
+        <i className="fa-solid fa-bookmark"></i>
         </p>
     <div className='new_item_image'    >
       <LazyLoadImage src={imageUrl}  filter='blur'  onClick={handleLink}/>
@@ -146,7 +146,7 @@ import {LazyLoadImage} from 'react-lazy-load-image-component'
           <button className='cart_button_new' onClick={HandleCartSubmit}>add To Cart 
           <p className="button_price"> {price}</p></button>
         <p className='item_rating'>
-          4 <i class="fa-solid fa-star"></i>
+          4 <i className="fa-solid fa-star"></i>
         </p>
       </div>
  
@@ -155,19 +155,19 @@ import {LazyLoadImage} from 'react-lazy-load-image-component'
 
     <div className='rev'>
  
-      <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i class="fa-regular fa-heart"></i> 250 <p>loves</p> </p>
-      <p className='rev_inner'><i class="fa-regular fa-message"></i>25 <p>review</p> </p>
+      <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i className="fa-regular fa-heart"></i> 250 <p>loves</p> </p>
+      <p className='rev_inner'><i className="fa-regular fa-message"></i>25 <p>review</p> </p>
 
 
     </div>
 
 
-    <i class="fa-regular fa-eye" onClick={openPreviewItem}></i>
-    <div class="menu">
+    <i className="fa-regular fa-eye" onClick={openPreviewItem}></i>
+    <div className="menu">
           
           <a onClick={(e) => showModal(e)}>
             <Space>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i className="fa-solid fa-ellipsis-vertical"></i>
                   </Space>
           </a>
                    </div>

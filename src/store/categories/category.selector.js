@@ -21,7 +21,11 @@ export const CatougriesSelector = createSelector([selectCategories],(categories)
 export const CategoryImage = createSelector([selectCategories],(categories)=>{
  return   categories.reduce((acc,itemsArray)=>{
       const {routeName,title,items,collImg} = itemsArray;
+ 
       acc[title.toLowerCase()]={collImg}  
+ 
+      acc[title.toLowerCase()] ={collImg}  
+ 
          return acc
       },{}); 
 

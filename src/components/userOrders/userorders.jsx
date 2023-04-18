@@ -39,7 +39,7 @@ const [product,setproduct]
 
 {/* total orders */}
 
-{/* <div>orders{totalOrders} <i class="fa-solid fa-bag-shopping"></i></div> */}
+{/* <div>orders{totalOrders} <i className="fa-solid fa-bag-shopping"></i></div> */}
 
 
 <div className="row">
@@ -76,7 +76,7 @@ const [product,setproduct]
   <td> {item.deliveried?'Delivery':<p>no</p>} </td>
   <td> {item.userInferomation['street-address']} </td>
   <td>
-                <Button className='primary' onClick={HandleProductPreview.bind(null,item)}   type='text'>Details<i class="fa-regular ms-2 fa-pen-to-square"></i></Button>
+                <Button className='primary' onClick={HandleProductPreview.bind(null,item)}   type='text'>Details<i className="fa-regular ms-2 fa-pen-to-square"></i></Button>
                 </td>
             </tr>
             // <tr key={itemI.id}>

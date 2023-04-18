@@ -133,7 +133,7 @@ const  Categories =()=>{
                 <li  >
                   <div className="flex items-center">
                     <Link   to={`/`} >
-                    <i class="fa-solid fa-house me-3"></i>\
+                    <i className"fa-solid fa-house me-3"></i>\
                     </Link>
                     <Link className='me-1 ms-1'  to={`/shop`} >
                      shop \
@@ -170,8 +170,8 @@ const  Categories =()=>{
          marginLeft:'20px'
       }}
     >
-      <Radio.Button value="a"><i class="fa-solid fa-list"></i></Radio.Button>
-      <Radio.Button value="b"><i class="fa-brands fa-buromobelexperte"></i></Radio.Button>
+      <Radio.Button value="a"><i className"fa-solid fa-list"></i></Radio.Button>
+      <Radio.Button value="b"><i className"fa-brands fa-buromobelexperte"></i></Radio.Button>
   
     </Radio.Group> */}
            <div className='categories_flex'>

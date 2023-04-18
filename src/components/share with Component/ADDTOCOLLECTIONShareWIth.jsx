@@ -31,31 +31,31 @@ setMatch(false)
         <Offcanvas.Header closeButton>
          </Offcanvas.Header>
         <Offcanvas.Body>
-        <p class="share_header">
+        <p className="share_header">
             Add To
         </p>
-        <div class="share_box_inner">
-            <p>Add To WishList</p><i class="fa-regular fa-heart"></i>
+        <div className="share_box_inner">
+            <p>Add To WishList</p><i className="fa-regular fa-heart"></i>
         </div>
-        <div class="share_box_inner">
-            <p>Add To Collection</p><i class="fa-regular fa-bookmark"></i>  
+        <div className="share_box_inner">
+            <p>Add To Collection</p><i className="fa-regular fa-bookmark"></i>  
          </div>
-        <p class="share_header">
+        <p className="share_header">
             Share With
         </p>
         <div className='mobile_flex'>
 
-        <div class="share_box_inner">
-           <i class="fa-brands fa-facebook"></i>
+        <div className="share_box_inner">
+           <i className="fa-brands fa-facebook"></i>
         </div>
-        <div class="share_box_inner">
-           <i class="fa-brands fa-facebook-messenger"></i>
+        <div className="share_box_inner">
+           <i className="fa-brands fa-facebook-messenger"></i>
         </div>
-        <div class="share_box_inner">
-            <i class="fa-brands fa-instagram"></i>
+        <div className="share_box_inner">
+            <i className="fa-brands fa-instagram"></i>
         </div>
-        <div class="share_box_inner">
-           <i class="fa-brands fa-whatsapp"></i>
+        <div className="share_box_inner">
+           <i className="fa-brands fa-whatsapp"></i>
         </div>
         </div>
 
@@ -67,30 +67,30 @@ setMatch(false)
       <Modal.Header closeButton></Modal.Header>
         <Modal.Body  >
 
-      <div class="share_box">
-      <p class="share_header">
+      <div className="share_box">
+      <p className="share_header">
             Add To
         </p>
-        <div class="share_box_inner">
-            <p>Add To WishList</p><i class="fa-regular fa-heart"></i>
+        <div className="share_box_inner">
+            <p>Add To WishList</p><i className="fa-regular fa-heart"></i>
         </div>
-        <div class="share_box_inner">
-            <p>Add To Collection</p><i class="fa-regular fa-bookmark"></i>  
+        <div className="share_box_inner">
+            <p>Add To Collection</p><i className="fa-regular fa-bookmark"></i>  
          </div>
-        <p class="share_header">
+        <p className="share_header">
             Share With
         </p>
-        <div class="share_box_inner">
-            <p>facebook</p>  <i class="fa-brands fa-facebook"></i>
+        <div className="share_box_inner">
+            <p>facebook</p>  <i className="fa-brands fa-facebook"></i>
         </div>
-        <div class="share_box_inner">
-            <p>Messanger</p>  <i class="fa-brands fa-facebook-messenger"></i>
+        <div className="share_box_inner">
+            <p>Messanger</p>  <i className="fa-brands fa-facebook-messenger"></i>
         </div>
-        <div class="share_box_inner">
-            <p>instgram</p>  <i class="fa-brands fa-instagram"></i>
+        <div className="share_box_inner">
+            <p>instgram</p>  <i className="fa-brands fa-instagram"></i>
         </div>
-        <div class="share_box_inner">
-            <p>whatsapp</p><i class="fa-brands fa-whatsapp"></i>
+        <div className="share_box_inner">
+            <p>whatsapp</p><i className="fa-brands fa-whatsapp"></i>
         </div>
         
 

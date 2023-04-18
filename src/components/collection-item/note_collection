@@ -46,7 +46,7 @@
                               <ToolTip text={'compare list'}>
                                 <a 
                                   className="ml-2 text-muted">
-                                    <i class="fa-solid fa-scale-unbalanced-flip"></i>
+                                    <i className"fa-solid fa-scale-unbalanced-flip"></i>
                                    
                                    </a>
 

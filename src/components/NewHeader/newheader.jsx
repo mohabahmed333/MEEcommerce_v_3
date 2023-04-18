@@ -564,7 +564,7 @@ lg:justify-end lg:space-x-6">
                       width:'62%',marginLeft:'auto'}}
                        aria-label="Search"/> */}
 <button className="se"   onClick={openDrawer}>
-<i class="fa-solid fa-magnifying-glass"
+<i className="fa-solid fa-magnifying-glass"
                     
  
  ></i>search

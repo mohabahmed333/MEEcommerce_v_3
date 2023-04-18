@@ -7,31 +7,31 @@ export const Collection =({open,setOpen})=>{
     return <Modal show={open} onHide={()=>setOpen(false)}>
 
 <Modal.Body>
-<div class="collection">
+<div className"collection">
         <p>collections</p>
         <!-- <p>there 's no collecton yet </p> -->
 <ul>
-    <li class="co_item">
+    <li className"co_item">
 first
     </li>
-    <li class="co_item">
+    <li className"co_item">
 first
     </li>
     
     
 </ul>
-<div class="collections_uttons">
+<div className"collections_uttons">
 
-    <button class="add_TO_collection ">
-        add New Collection <i class="fa-solid fa-plus"></i>
+    <button className"add_TO_collection ">
+        add New Collection <i className"fa-solid fa-plus"></i>
     </button>
-    <button class="add_TO_collection">
+    <button className"add_TO_collection">
         Go To Collections  Page
     </button>
 </div>
-<div class="collection_add_input">
-    <input class="co_add_button" placeholder="title"/>
-    <button class="button_save_collections">add</button>
+<div className"collection_add_input">
+    <input className"co_add_button" placeholder="title"/>
+    <button className"button_save_collections">add</button>
 </div>
     </div>
 

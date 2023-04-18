@@ -12,23 +12,13 @@ import './compass/pulse.scss'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { CategoryImage, CatougriesSelector } from '../../store/categories/category.selector'
-import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
+ import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
 import CollectionItem from '../collection-item/collection-item'
 import { handleRouteGuide } from '../../componentsutlts/handleRouteGuide'
 import $ from 'jquery'; 
 
-const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  }
-  const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
-  ]
-  
+ 
+ 
 const sortOptions = [
     // { name: 'Most Popular', href: '#', current: true },
     // { name: 'Best Rating', href: '#', current: false },
@@ -76,58 +66,7 @@ const sortOptions = [
       ],
     },
   ]
-  const   options = {
-    margin: 3,
-   responsiveClass: true,
-   nav: true,
-   dots: true,
   
-    smartSpeed: 1000,
-    merge:true,
- margin:10,
-   
-
-   responsive: {
-       0: {
-           items: 1,
-           stagePadding:25
-       },
-       400: {
-           items:1,
-           stagePadding:25,
-
-    margin: 2,
-
-       },
-       600: {
-           items: 1,
-           stagePadding:25
-
-       },
-       700: {
-           items: 1,
-          //  stagePadding:25
-
-       },
-       1000:{
-          items:3,
-    // stagePadding:100
-
-       },
-       1500: {
-           items: 1,
- 
-       }
-   },
-   678:{
-    mergeFit:true
-},
-1000:{
-    mergeFit:false
-    ,
-
-}
-}
 let FiltersItem = [];
 
   function classNames(...classes) {
@@ -139,8 +78,10 @@ const StoreModule =()=>{
   const catogriesItems = useSelector(CatougriesSelector);
   const category_image = useSelector(CategoryImage);
   const [cat_image,Setmage]=useState(category_image);
-  const  {cat}  = useParams() ;
-  console.log(cat)
+   const  {cat}  = useParams() ;
+  const catimage = useSelector(CategoryImage);
+  const [categoryImage,SetCategoryImage]=useState(catimage)
+ 
   const [products,setProducts]=useState(catogriesItems[cat]);
  
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -161,7 +102,8 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
    document.body.scrollTop = 0;
    document.documentElement.scrollTop = 0;
    setProducts(catogriesItems[cat]);
-
+console.log(catogriesItems[cat]);
+SetCategoryImage(catimage[cat])
 
   },[products,catogriesItems[cat] ]);
   // const  handleLink = ()=>{
@@ -351,6 +293,17 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
                 <h1 className='Main_image_text'>Shop All Collection of mens</h1>
 
 </div> }
+            {/* {
+              
+  categoryImage &&<div className='main_image'
+  style={{  position:'relative'
+  }}>
+    <img src={categoryImage.collImg}/>
+    <h1 className='Main_image_text'>Shop All Collection of mens</h1>
+
+</div> 
+
+            } */}
   <div className='tabs'>
     {/* <ul className='tab_inner'>
         <li className='tab_inner_value'>Hats</li>
@@ -366,6 +319,7 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
                   <div className="flex items-center">
                     <Link   to={`/`} >
                     <i class="fa-solid fa-house me-3"></i>
+                    <i className="fa-solid fa-house me-3"></i>
                     </Link>
                     <Link className='me-1 ms-1'  to={`/shop`} >
                      shop 
@@ -382,7 +336,7 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
             </ol>
           </nav>
                    <div className='categories_flex'>
-           <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}>
+            <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
                       {FiltersItem.map((category) => (
                         <li key={category.name}   >
                           <Link to={`/shop/${category.href}`} className="block px-2 py-3">
@@ -447,7 +401,7 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
    <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
      onClick={()=>setCol('col-md-4')}>
                 <span className="sr-only">View grid</span>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
               </button>
               {/* <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
                 <span className="sr-only">View grid</span>
@@ -455,17 +409,17 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
               <button type="button"    onClick={()=>setCol('col-md-6 col-sm-6')}>
                 <span className="sr-only">View grid</span>
  
- <img src={grid_3}   className='grid_icon' alt="" srcset="" />
+ <img src={grid_3}   className='grid_icon' alt=""  />
                </button>
               {/* <button type="button"   >
                 <span className="sr-only">View grid</span>
  
- <img src={grid_2}  className='grid_icon' alt="" srcset="" />
+ <img src={grid_2}  className='grid_icon' alt=""   />
                </button> */}
               <button type="button"  onClick={()=>setCol('col-md-12')} >
                 <span className="sr-only">View grid</span>
  
- <img src={grid_1}   className='grid_icon' alt="" srcset="" />
+ <img src={grid_1}   className='grid_icon' alt=""  />
                </button>
               </div>
            
@@ -483,16 +437,16 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
  <h1 className='head'>Best Broducts</h1>
   <div className='best_container'>
 {
-          products &&  products.filter((product,idx)=>idx<5).map(item=>{
+          products &&  products.reverse().filter((product,idx)=>idx<5).map(item=>{
 
 return          (  <div className='new_item  ' key={item.name} style={{background:'none'}}>
             <div className='new_item_image'
              style={{backgroundImage: `url(${item.imageUrl})
              `,borderRadius:'0px',height:'450px',marginBottom:'20px'}}  >
                 <p className='product_name'> {item.name}
-                <i class="fa-solid fa-bookmark"></i>
+                <i className="fa-solid fa-bookmark"></i>
                 </p>
-                <div class="blob blue"  >+</div>
+                <div className="blob blue"  >+</div>
         
          
             </div>
@@ -508,15 +462,17 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
 
   { 
          //safe gards 
-         products &&  products.map(product=> 
-         < CollectionItem key={product.id} cat={cat} col={col} 
-      item={product}/>)
-      
-      } 
- </div>
-
-                </div>
-            </div>
+         products &&  products.map(product=>  (
+             < CollectionItem  cat={cat} col={col}   key={product.name}  item={product}/>
+          
+          
+          ))
+          
+        }
+          </div>
+          
+          </div>
+          </div>
           </section>
         </main>
       </div>
@@ -524,5 +480,5 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
 
         </>
     )
-}
+};
 export default StoreModule
