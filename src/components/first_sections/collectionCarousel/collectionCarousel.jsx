@@ -79,11 +79,11 @@ function NoTransitionExample() {
   Explore Now
 </button>
   <h6 className='trend'>
-  <svg width="30px" height="30px" viewBox="-3.6 -3.6 31.20 31.20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" strokewidth="0.00024000000000000003">
+  <svg width="30px" height="30px" viewBox="-3.6 -3.6 31.20 31.20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" strokeWidth="0.00024000000000000003">
 
-<g id="SVGRepo_bgCarrier" strokewidth="0"/>
+<g id="SVGRepo_bgCarrier" strokeWidth="0"/>
 
-<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokelinejoin="round" stroke="#CCCCCC" strokewidth="0.192"/>
+<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.192"/>
 
 <g id="SVGRepo_iconCarrier">
 
