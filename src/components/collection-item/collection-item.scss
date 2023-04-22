@@ -244,11 +244,11 @@ button.d-flex.add_cart_button {
 			left: var(--svg-left, 0);
 			top: var(--svg-top, 0);
 			stroke-linecap: round;
-			strokelinejoin: round;
+			strokeLinejoin: round;
 			path {
 				fill: var(--svg-fill, none);
 				stroke: var(--svg-stroke, none);
-				strokewidth: var(--svg-strokewidth, 2);
+				strokeWidth: var(--svg-strokeWidth, 2);
 			}
 		}
 		.morph {
@@ -306,7 +306,7 @@ button.d-flex.add_cart_button {
 			}
 			path {
 				&.wheel {
-					--svg-strokewidth: 1.5;
+					--svg-strokeWidth: 1.5;
 				}
 				&.tick {
 					--svg-stroke: var(--cart-tick-color);

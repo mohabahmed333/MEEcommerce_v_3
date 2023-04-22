@@ -319,8 +319,7 @@ SetCategoryImage(catimage[cat])
                   <div className="flex items-center">
                     <Link   to={`/`} >
                     <i class="fa-solid fa-house me-3"></i>
-                    <i className="fa-solid fa-house me-3"></i>
-                    </Link>
+                     </Link>
                     <Link className='me-1 ms-1'  to={`/shop`} >
                      shop 
                     </Link>
@@ -431,6 +430,8 @@ SetCategoryImage(catimage[cat])
                 <span className="sr-only">Filters</span>
                 <FunnelIcon className="h-5 w-5" aria-hidden="true" />
               </button>
+
+              <p className='Results'>  {products.length}/Results</p>
 </div>  
  <div className='best_product'>
 

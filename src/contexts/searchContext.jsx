@@ -34,7 +34,7 @@ export const  SearchContextProvider = ({children})=>{
     // }
     useEffect(()=>{
       console.log(SearchValue);
-      user!==null&&   dispatch( UploadUserDataStart({'recentSearch': 
+      user!==null&&user.search&&   dispatch( UploadUserDataStart({'recentSearch': 
       
       [...user.recentSearch,searchItem]},user));
 

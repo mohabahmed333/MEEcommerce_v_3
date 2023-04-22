@@ -99,7 +99,7 @@ const SearchDrawer = () => {
              {SearchValue !==''&& <ul className='recently_search'>
                 {categories.map(item=>{
                 return   item.map(itemE=>{
-               
+               console.log(itemE);
                      return  (<li key={itemE.name} className='recently_item' onClick={()=>{
                         handleRouteGuide(categoriesItems,navigate,itemE.name);
                         SetSearchOpen(false);
@@ -118,9 +118,9 @@ const SearchDrawer = () => {
  <ul className='recently_search_item' style={{maxHeight:'300px',overflow:'auto'}}>
   {user&&user.recentSearch&&
   user.recentSearch.reverse().filter((item,idx)=>idx<5).map((s,idx)=>{
-    console.log(Math.random());
-     return(
-<li key={Math.floor(idx)} onClick={()=>{navigate(`/search/${s}`) ; SetSearchOpen(false) }}
+    console.log(s);
+      return(
+<li key={s.name} onClick={()=>{navigate(`/search/${s}`) ; SetSearchOpen(false) }}
  className='recently_item justify-content-between d-flex align-items-center' >
   {s}   <i className="fa-solid fa-magnifying-glass me-2"></i>
  </li>
