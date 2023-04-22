@@ -79,11 +79,8 @@ const StoreModule =()=>{
   const category_image = useSelector(CategoryImage);
   const [cat_image,Setmage]=useState(category_image);
    const  {cat}  = useParams() ;
-  const catimage = useSelector(CategoryImage);
-  const [categoryImage,SetCategoryImage]=useState(catimage)
- 
   const [products,setProducts]=useState(catogriesItems[cat]);
- 
+  const [options,setOptions]=useState('')
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const navigate = useNavigate()
     const GOCategoy = (cat)=>{
@@ -103,8 +100,7 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
    document.documentElement.scrollTop = 0;
    setProducts(catogriesItems[cat]);
 console.log(catogriesItems[cat]);
-SetCategoryImage(catimage[cat])
-
+ 
   },[products,catogriesItems[cat] ]);
   // const  handleLink = ()=>{
   //   handleRouteGuide(catogriesItems,location,name)
@@ -133,33 +129,48 @@ SetCategoryImage(catimage[cat])
      //  console.log(subCategories)
      },[cat]);
 
+
+// useEffect(()=>{
   
-    const  sortingData=(option)=>{
-      switch(option){
-        case 'Price: High to Low':
-         const HighToLow=   catogriesItems[cat].sort((a,b)=>{
-              const price1= a.price
-              const price2= b.price
-           if(price1>price2)return -1;               
-           else if(price1===price2)return 1;               
-           else return 0;               
-           });
-           return   setProducts(HighToLow.splice())
+//   switch(options.name){
+//     case 'Price: High to Low':
+//   console.log(products.sort((a,b)=>{
+//     const price1= a.price
+//     const price2= b.price
+//  if(price1>price2)return -1;               
+//  else if(price1===price2)return 1;               
+//  else return 0;               
+//        }).slice())
+//       return      products.sort((a,b)=>{
+//         const price1= a.price
+//         const price2= b.price
+//      if(price1>price2)return -1;               
+//      else if(price1===price2)return 1;               
+//      else return 0;               
+//            }).slice()
+          
+//             // return setProducts(LowTOHigh.splice())
+  
 
-        case 'Price: Low to High':  
-         const LowTOHigh=   catogriesItems[cat].sort((a,b)=>{
-              const price1= a.price
-              const price2= b.price
-           if(price1>price2)return  1;               
-           if(price1<price2)return -1;               
-           });
-           
-            return setProducts(LowTOHigh.splice())
+//     case 'Price: Low to High':  
 
-             
-      }
-   }
+//        return    setProducts(()=>{
 
+//   return      products.sort((a,b)=>{
+//           const price1= a.price
+//           const price2= b.price
+//        if(price1>price2)return  1;               
+//        if(price1<price2)return -1;               
+//        }).slice()
+      
+//        })    // return setProducts(LowTOHigh.splice())
+
+         
+//   }
+// },[])
+
+ 
+ 
 
     return(
 
@@ -380,7 +391,7 @@ SetCategoryImage(catimage[cat])
                                 'block px-4 py-2 text-sm'
                               )}
                               style={{cursor:'pointer'}}
-                              onClick={sortingData.bind(null,option.name)}
+                              onClick={()=>setOptions(option)}
                             >
                               {option.name}
                             </p>
