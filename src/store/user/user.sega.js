@@ -9,13 +9,20 @@ import { signUserOut } from '../../firebase/firebaseMtethods/signOut';
 import { CreateUser } from '../../firebase/firebaseMtethods/signUpWithEmail&password';
 import { adduserImageToStorage } from '../../firebase/firebaseMtethods/adduserImageToStorage';
 import { addUserDataBase } from '../../firebase/firebaseMtethods/adduserData';
-//signing user and connect him||her to docs
+import { HandleReducerFunction } from '../cart/cart.reducer';
+ //signing user and connect him||her to docs
 
 function* GetUserSnapShotData (userAuth, additionalDetails ){
          try{
                 const snapShot = yield call(GetUserFromDocs,userAuth, additionalDetails );
                 const {id} =snapShot;
                      yield put( SIGN_IN_SUCCESS({id,...snapShot.data()}))
+                     const {cart} =snapShot.data() 
+                     console.log(cart
+                            )
+                            //once user sign in 
+         yield put(HandleReducerFunction(cart));
+
              }
          catch(err){
  
@@ -29,7 +36,9 @@ function* CheckuserSession(){
  
             const {currentUser} = yield call(OnAuthChangesAsync);
              if(!currentUser) return;
-             yield call(GetUserSnapShotData,currentUser)
+             yield call(GetUserSnapShotData,currentUser);
+        console.log(currentUser)
+
     }
     catch(error){
         console.log(error)

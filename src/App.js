@@ -22,7 +22,7 @@ const SignInOutLazy = lazy(()=>import('./pages/signInSignOutPage/signInAndSignOu
 const UserSettinglazy = lazy(()=>import('./pages/userPage/usersettings/usersettings'));
 const UserPage_lazy = lazy(()=>import('./pages/userPage/userpage'))
 const Shop_lazy = lazy(()=>import('./pages/shoppage/shoppage.component'));
-const checkOutPage_lazy = lazy(()=>import('./pages/checkoutpage/checkout.page'));
+const CheckOutPage_lazy = lazy(()=>import('./pages/checkoutpage/checkout.page'));
 const  App = ()=> {
    const dispatch = useDispatch();
    const cart = useSelector(cartItems);
@@ -33,19 +33,10 @@ const  App = ()=> {
   useEffect(()=>{
  dispatch(checkUserSession());
  dispatch(FetchCategoriesStart());
+//  user&&dispatch(UploadUserDataStart({...cart,cart:cart},user));
 
   },[])
-  useEffect(() => {
-    const cartObj= {
-      'cart':{
-        'items':cart,
-        total,
-        quantity
-      }
-     }
-     user&&dispatch(UploadUserDataStart({'cart':cartObj},user));
-    //  dispatch(AddItemToCartFunc())
-   },[cart])
+ 
   
 
    return (
@@ -59,7 +50,7 @@ const  App = ()=> {
         <Route path='shop/*'   element={<ShopPage/>}/>
         <Route path='checkOutPage'   element={
         <Suspense fallback='loading...'>
- <checkOutPage_lazy/>
+ <CheckOutPage_lazy/>
         </Suspense>
        }/>
         <Route path='user'  element={

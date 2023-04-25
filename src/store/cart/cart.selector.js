@@ -1,17 +1,21 @@
 import { createSelector } from "reselect";
-const cartItemsReducer = (state)=>state.cart.items;
+const cartItemsReducer = (state)=>state.cart;
 const CartOpenReducer = (state)=>state.cart.open;
 
 
 
 
-export const cartItems = createSelector([cartItemsReducer],(items)=>  items)
-export const CartOpen = createSelector([CartOpenReducer],(isOpen)=>  isOpen)
-export const totalPaid = createSelector([cartItemsReducer],(items)=>  items.reduce((price,item)=>{
+export const cartItems = createSelector([cartItemsReducer],({items})=> 
+ items)
+export const CartOpen = createSelector([CartOpenReducer],(isOpen)=> 
+ isOpen)
+export const totalPaid = createSelector([cartItemsReducer],({items})=> 
+ items.reduce((price,item)=>{
      return price+item.price*item.quantity
 },0)
 )
-export const totalCart  = createSelector([cartItemsReducer],(items)=>  items.reduce((total,product)=>{
+export const totalCart  = createSelector([cartItemsReducer],({items})=>  
+items.reduce((total,product)=>{
     return total+product.quantity
 },0)
 )

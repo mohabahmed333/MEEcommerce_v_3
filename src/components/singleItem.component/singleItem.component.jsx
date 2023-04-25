@@ -24,6 +24,9 @@ const {HandleWishList} = useContext(WishListContext)
   const ItemsCart = useSelector(cartItems);
      const [productIT,setProduct] = useState(catogriesItems);
      const user = useSelector(userSelectMemo);
+     const cart = useSelector(cartItems)
+//  user&&dispatch(UploadUserDataStart({...cart,cart:cart},user));
+
   const {setOpen,setItem} = useContext(PreviewContext);
   const openPreviewItem = ()=>{
     setOpen(true);
@@ -33,7 +36,7 @@ const {HandleWishList} = useContext(WishListContext)
     const{name,imageUrl,price} = productIT;
      const dispatch = useDispatch()
     const HandleCartSubmit = (e)=>{
-       dispatch(AddItemToCartFunc(product,ItemsCart));
+       dispatch(AddItemToCartFunc(item,ItemsCart));
       return message.success(`added ${name} to cart ` )
     }
 

@@ -75,6 +75,8 @@ import {LazyLoadImage} from 'react-lazy-load-image-component'
 // cart js
 
 // js script
+const cart = useSelector(cartItems)
+const{setWishListItems,wishList,HandleWishList} = useContext(WishListContext);
   const {setOpen,setItem} = useContext(PreviewContext);
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -95,12 +97,13 @@ import {LazyLoadImage} from 'react-lazy-load-image-component'
 
    }
    let  str = name.replaceAll(' ', '')   ;
-   const{setWishListItems,wishList,HandleWishList} = useContext(WishListContext);
-   
 
     const HandleCartSubmit = (e)=>{
-      dispatch(AddItemToCartFunc(product,ItemsCart));
-      return message.success(`added ${name} to cart ` )
+  const dispatchReturn=     dispatch(AddItemToCartFunc(product,ItemsCart));
+      console.log(dispatchReturn)
+ user&&dispatch(UploadUserDataStart({cart:cart},user));
+
+      // return message.success(`added ${name} to cart ` )
     }
     // useEffect(()=>{
     //   // var cartButtons = document.querySelectorAll('.cart-button');

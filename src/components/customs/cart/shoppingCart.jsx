@@ -15,12 +15,7 @@ export default function ShoppingCart({children}) {
   const dispatch = useDispatch();
    const open = useSelector(CartOpen);
    const user=useSelector(userSelectMemo);
-   const userCart =()=>{;
-    if(user&&user.cart){
-      }else{
-      return totalpaid
-    }
-      }
+    
  const GoToCheckOut = ()=>{
   navigate('./checkOutPage');
   dispatch( setOpen(!open))
@@ -92,7 +87,7 @@ const ShopNavigate=()=>{
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
 
-                        <p>{userCart()}</p>
+                        <p>{totalpaid }$</p>
                       </div>
                       <hr/>
                       <div className="marquee">

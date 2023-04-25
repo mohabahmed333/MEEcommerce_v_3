@@ -14,7 +14,7 @@ import { DropDownComponent } from
 import { useContext } from 'react'
 import { WishListContext } from '../../contexts/wishList';
 import  * as Set  from '../../store/cart/cart.action';
-import { totalCart,CartOpen } from '../../store/cart/cart.selector';
+import {  CartOpen, totalCart,totalPaid } from '../../store/cart/cart.selector';
 import * as styles from './newHeder.styles'
 import { CatougriesSelector } from '../../store/categories/category.selector'
 import { handleRouteGuide } from '../../componentsutlts/handleRouteGuide'
@@ -28,6 +28,7 @@ import './newheader.styles.scss'
 import SignIn from '../login/signIn/sign-in.component';
 import {searchContext} from '../../contexts/searchContext'
 import SearchDrawer from '../SearchDrawerComponent/Search.Drawer.component'
+import { cartItems } from '../../store/cart/cart.selector'
 
     const navigation = {
 
@@ -97,7 +98,10 @@ function classNames(...classes) {
 export default function NEWlyHeader() {
   const { Search } = Input;
   const [searchValue,SetSearchValue]=useState('');
-  const {setSearch,openS,SetSearchOpen} = useContext(searchContext)
+  const {setSearch,openS,SetSearchOpen} = useContext(searchContext);
+  const cart = useSelector(cartItems)
+  const quantity = useSelector(totalCart);
+  const total = useSelector(totalPaid)
   const searchStart = (e)=>{
     console.log(e.target.value);
     setSearch(e.target.value)
@@ -195,7 +199,7 @@ function First() {
          setOpenNav(false);
        }
   const totalcartItems=()=>{
-    if(currentUser&&currentUser.cart.length>0){
+    if(cart.length>0){
       
       const { cart:{total,quantity}} = currentUser.cart;
 
@@ -586,7 +590,7 @@ lg:justify-end lg:space-x-6">
                      <div className="ml-4 flow-root lg:ml-6 ms-4" style={{marginRight:'30px'}}>
                   <p   className="group -m-2 flex items-center p-2" onClick={HandleDropDown}>
                   <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      {totalcartItems()}</span>
+                      {quantity}</span>
                     <ShoppingBagIcon    
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
@@ -623,7 +627,7 @@ lg:justify-end lg:space-x-6">
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      {totalcartItems()}</span>
+                      {quantity}</span>
                   </p>
                 </div>
                 <WishList className="ms-2 me-2" 

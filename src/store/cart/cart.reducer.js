@@ -1,5 +1,4 @@
-import { useReducer } from "react";
-import { CartActions } from "./cart.types";
+ import { CartActions } from "./cart.types";
 import {CreateAction}from '../utl/createAction'
 const INITIALSTATE = {
     items:[],
@@ -39,6 +38,7 @@ if(existingItem){
 return [...items ,{...productItem,quantity:1}]
 }
 export const HandleReducerFunction= (newItems)=>{  
+    
        return  CreateAction(
             CartActions.SET_CART_ITEM,
             {items:newItems})

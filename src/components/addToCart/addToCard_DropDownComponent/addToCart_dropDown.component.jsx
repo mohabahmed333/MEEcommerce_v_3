@@ -9,16 +9,17 @@ import ImageWithText from '../../ImageWithText/ImageWithText';
 const cart =  useSelector(cartItems);
 const user = useSelector(userSelectMemo);
 const ItemsTo = ()=>{
-  if(user&&user.cart.cart.items.length>0 ){
-    const{cart:{cart:{items}}} =user;
+  // if(user&&user.cart.items.length>0 ){
+  //   const{cart:{items}} =user;
 
     
-    return user.cart.cart.items
-  }
-  console.log(user?user:null);
-return cart;
+  //   return user.cart.cart.items
+  // }
+  // console.log(user?user:null);
+ 
+  if(cart) return cart;
 }
-console.log(ItemsTo())
+ 
       return(
         <div className="mt-8">
         <div className="flow-root cart_container">
@@ -29,7 +30,7 @@ console.log(ItemsTo())
 
           <ul role="list" className="-my-6 divide-y divide-gray-200 ">
           {
-               ItemsTo().map((item,idx)=>{
+           ItemsTo().length!==0 &&ItemsTo()&&    ItemsTo().map((item,idx)=>{
 
                    return (<CartItem key={item.name}  cartItem={item} className='card-items'/>)
                 })
