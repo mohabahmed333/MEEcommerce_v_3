@@ -97,12 +97,19 @@ const{setWishListItems,wishList,HandleWishList} = useContext(WishListContext);
 
    }
    let  str = name.replaceAll(' ', '')   ;
+const addToUSer = (user_name)=>{
+  setTimeout(()=>{
+    user_name&&dispatch(UploadUserDataStart({cart:cart},user));
 
+    console.log(cart);
+  },1000)
+}
+console.log({cart:cart});
     const HandleCartSubmit = (e)=>{
   const dispatchReturn=     dispatch(AddItemToCartFunc(product,ItemsCart));
       console.log(dispatchReturn)
- user&&dispatch(UploadUserDataStart({cart:cart},user));
 
+      addToUSer(user)
       // return message.success(`added ${name} to cart ` )
     }
     // useEffect(()=>{

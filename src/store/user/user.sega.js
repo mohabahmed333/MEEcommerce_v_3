@@ -21,7 +21,7 @@ function* GetUserSnapShotData (userAuth, additionalDetails ){
                      console.log(cart
                             )
                             //once user sign in 
-         yield put(HandleReducerFunction(cart));
+        if(snapShot)return  yield put(HandleReducerFunction(cart));
 
              }
          catch(err){

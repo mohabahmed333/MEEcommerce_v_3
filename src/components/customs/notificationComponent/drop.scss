@@ -1,0 +1,20 @@
+.drop_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #333;
+    padding: 8px;
+    width: 90%;
+    margin: auto;
+    white-space: nowrap;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+    &:hover{
+        background: #eee;
+
+    }
+}

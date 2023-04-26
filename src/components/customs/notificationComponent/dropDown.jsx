@@ -1,11 +1,12 @@
-import { Avatar, Dropdown, Image, Menu, Space } from 'antd';
+import { Avatar,   Image, Menu, Space } from 'antd';
 import React from 'react';
 import{UserOutlined,SettingOutlined,LogoutOutlined}from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SIGNUSEROUT_Start } from '../../../store/user/user.actions';
- 
-
+ import { Dropdown } from 'react-bootstrap';
+import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
+import './drop.scss'
 export const DropDown = ({user,position}) => {
   const dispatch =useDispatch();
   if(!user)return;
@@ -46,23 +47,41 @@ export const DropDown = ({user,position}) => {
     ]}
   />
 );
-  return(<Space direction="vertical">
+  return(
+  <>
+  <Space direction="vertical">
     <Space wrap>
-      <Dropdown menu={menu} placement={position}>
-        {user.imageUrl?
-      <Avatar  src={`${user&&user.imageUrl&&user.imageUrl}`}  style={{cursor:'pointer'}} /> :
-      <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
-        {user&&user.displayName?user.displayName[0]:null}</Avatar>
+   <>
+   <Dropdown  placement={position}>
+   <Dropdown.Toggle variant="success" id="dropdown-basic">
+   {user.imageUrl?
+<Avatar  src={`${user&&user.imageUrl&&user.imageUrl}`}  style={{cursor:'pointer'}} /> :
+<Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+{user&&user.displayName?user.displayName[0]:null}</Avatar>
+
+ 
 
 
+}
+      </Dropdown.Toggle>
+        <DropdownMenu>
+        <Link className='drop_link' to='/user'>
+           profile  
+           <UserOutlined/>
+        </Link>
+        <p className='drop_link' onClick={signUserOut} rel="noopener noreferrer">
+            signOut<LogoutOutlined />
+          </p>
+          <Link className='drop_link' to='/usersetting'>
+            Account settings <SettingOutlined />
+          </Link>
+        </DropdownMenu>
 
 
-        }
-
-        {/* <Button>{user.displayName} <UserOutlined /></Button> */}
-      </Dropdown>
+{/* <Button>{user.displayName} <UserOutlined /></Button> */}
+</Dropdown></>
    
     </Space>
   
-  </Space>)
+  </Space></>)
 }
