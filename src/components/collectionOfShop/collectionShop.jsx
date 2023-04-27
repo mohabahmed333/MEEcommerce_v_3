@@ -23,7 +23,7 @@ import ImageWithText from "../ImageWithText/ImageWithText";
   
     SetSearchtem(searchValue)
 
-        // console.log(catogriesItems)
+
     
         //successed loading ;
        
@@ -35,14 +35,15 @@ useEffect(()=>{
         if(searchValue !=='' && Object.keys(catogriesItems).length>0){
 
         const CateggoriesAfterFiltered= Object.keys(catogriesItems).map(categortitle=>{
-            console.log(catogriesItems[categortitle].filter(item=>item.name.toUpperCase().trim().includes(searchValue.toUpperCase().trim()) ));
-        
+
+            
         const filterd = catogriesItems[categortitle].filter(item=>item.name.toUpperCase().trim().includes(searchValue.toUpperCase().trim()) );
-        console.log(filterd);
+        
+        
  
         if(filterd.length===0**filterd.length>1){
             SetDataTF(true)
-console.log('object')
+
         }else{
             console.log('disse')
             SetDataTF(false)

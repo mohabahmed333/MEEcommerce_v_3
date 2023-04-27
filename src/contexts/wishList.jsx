@@ -53,8 +53,8 @@ const removeItemFromWishList = (product)=>{
     setWishListCount(neWITEMS)
 }
  const HandleWishList = (user,product)=>{
-  console.log(product)
-    if(!user&&!!product){
+
+  if(!user&&!!product){
       openNotification('bottom');
       // navigate('/sign/signUp')
       return

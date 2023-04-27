@@ -103,7 +103,7 @@ export default function NEWlyHeader() {
   const quantity = useSelector(totalCart);
   const total = useSelector(totalPaid)
   const searchStart = (e)=>{
-    console.log(e.target.value);
+
     setSearch(e.target.value)
 
     }
@@ -180,7 +180,7 @@ function First() {
     const {isOpen,setIsOpen}= useContext(WishListContext)
   const openDrawer = ()=>{
     SetSearchOpen(!openS);
-    console.log(openS);
+
   }
     const showDrawer = () => {
         setIsOpen(!isOpen);

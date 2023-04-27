@@ -9,8 +9,7 @@ export const CartReducer = (state=INITIALSTATE,action={})=>{
     const {type,payload} = action;
     switch(type){
         case CartActions['SET_CART_ITEM']:
-            console.log(payload);
-            return{
+                    return{
                 ...state,
                 ...payload
             }

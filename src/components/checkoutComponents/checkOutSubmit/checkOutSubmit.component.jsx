@@ -11,7 +11,7 @@ import { UploadUserDataStart } from "../../../store/user/user.actions";
 import { Navigate, useNavigate } from "react-router-dom";
  const AddUserOrderData =(userInfo,currentUser)=>{
 
-  console.log(userInfo,currentUser)
+
   if(!currentUser){
     return
   }else{
@@ -26,7 +26,7 @@ return (paymentInferomation)=>{
     PaymentDate:new Date()
   };
  
-console.log(order)
+
   return order
 }
    
@@ -60,7 +60,7 @@ try{
 
 
 const {client_secret} =response;
-console.log(client_secret)
+
 const paymentResult = await stripe.confirmCardPayment(client_secret,{
   payment_method:{
     card:elements.getElement(CardElement),
@@ -77,7 +77,7 @@ if(user){
    if(!user.orders)dispatch(UploadUserDataStart({orders:[]},user));
   //  dispatch(UploadUserDataStart({orders:[]},user))
   if(paymentResult.error){
-    console.log(paymentResult.error);
+
     setLoadings(false)
   }else if(paymentResult.paymentIntent.status==='succeeded'){
     
@@ -85,7 +85,7 @@ if(user){
   
   
   
-    // console.log(ordersA);
+
     if(currentUser.orders.length!==0){
       // return [...ordersA,currentUser.orders]
     }

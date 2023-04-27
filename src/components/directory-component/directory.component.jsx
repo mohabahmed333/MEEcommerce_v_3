@@ -83,16 +83,17 @@ constructor(){
                    items: 2,
                    stagePadding:50
        
-               }
-           },
-           678:{
-            mergeFit:true
-        },
-        1000:{
-            mergeFit:false
-            ,
-
-        }
+               },
+               600:{
+                mergeFit:true
+            },
+            1000:{
+                mergeFit:false
+                ,
+    
+            }
+           }
+          
        }
     }
  

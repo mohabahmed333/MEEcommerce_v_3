@@ -37,7 +37,7 @@ const AutoCompleteSearchBar = () => {
     setOptions(value ? searchResult(value) : []);
   };
   const onSelect = (value) => {
-    console.log('onSelect', value);
+
   };
   return (
     <AutoComplete

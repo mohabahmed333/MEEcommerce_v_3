@@ -101,14 +101,14 @@ const addToUSer = (user_name)=>{
   setTimeout(()=>{
     user_name&&dispatch(UploadUserDataStart({cart:cart},user));
 
-    console.log(cart);
+
   },1000)
 }
-console.log({cart:cart});
-    const HandleCartSubmit = (e)=>{
-  const dispatchReturn=     dispatch(AddItemToCartFunc(product,ItemsCart));
-      console.log(dispatchReturn)
 
+const HandleCartSubmit = (e)=>{
+  const dispatchReturn=     dispatch(AddItemToCartFunc(product,ItemsCart));
+
+  
       addToUSer(user)
       // return message.success(`added ${name} to cart ` )
     }
@@ -165,8 +165,8 @@ console.log({cart:cart});
 
     <div className='rev'>
  
-      <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i className="fa-regular fa-heart"></i> 250 <p>loves</p> </p>
-      <p className='rev_inner'><i className="fa-regular fa-message"></i>25 <p>review</p> </p>
+      <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i className="fa-regular fa-heart"></i> 250 <span>loves</span> </p>
+      <p className='rev_inner'><i className="fa-regular fa-message"></i>25 <span>review</span> </p>
 
 
     </div>
@@ -176,10 +176,8 @@ console.log({cart:cart});
     <div className="menu">
           
           <a onClick={(e) => showModal(e)}>
-            <Space>
-            <i className="fa-solid fa-ellipsis-vertical"></i>
-                  </Space>
-          </a>
+             <i className="fa-solid fa-ellipsis-vertical"></i>
+           </a>
                    </div>
 
     </div>

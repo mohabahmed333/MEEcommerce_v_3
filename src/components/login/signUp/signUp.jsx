@@ -33,7 +33,7 @@ const finshedSubmition = ()=>{
 }
 const HandleSubmit = async (event)=>{
     event.preventDefault();
-    console.log(event)
+
     if(password!==confrimPassword){
         Error="password don't match";
      }
@@ -57,7 +57,7 @@ const HandleSubmit = async (event)=>{
 
 const HandleChange=(event)=>{
 const {value,name}= event.target;
-console.log(value,name)
+
 setFormFeilds({
     ...formFeilds,
     [name]:value}

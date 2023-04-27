@@ -37,7 +37,7 @@ if(!gettingUserDocSnapSot.exists()){
     }
 
     catch(err){
-        console.log('there is an error while access this user')
+
     }
 
 }

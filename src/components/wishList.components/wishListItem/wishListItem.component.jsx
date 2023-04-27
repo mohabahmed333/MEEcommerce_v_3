@@ -23,8 +23,7 @@ const {setIsOpen,isOpen}= useContext(WishListContext)
 const HandlerAddToCart =()=>dispatch(AddItemToCartFunc(product,cartItems)) ;
 const removeFromCart = ()=>{
  // setWishList(RemoveditemsList)
-console.log(wishList);
-dispatch(UploadUserDataStart({wishList: wishList.filter(item=>item.id !==product.id)},user))
+ dispatch(UploadUserDataStart({wishList: wishList.filter(item=>item.id !==product.id)},user))
 return message.warn(`remove ${product.name} from wishlist`)    ;
 }
 const catogriesItems = useSelector(CatougriesSelector);

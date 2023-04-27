@@ -23,19 +23,19 @@ const SearchDrawer = () => {
   const onClose = () => {
     SetSearchOpen(false);
   };
-  console.log(categories);
 
+  
   const searchStart = (e)=>{
     e.preventDefault()
- console.log(SearchValue);
-  navigate(`/search/${SearchValue}`)
+
+    navigate(`/search/${SearchValue}`)
   SetSearchOpen(false);
   setSearch('');
     };
     const HandleChange=(e)=>{
       setSearch(e.target.value)
       // Object.keys(categoriesItems).length!==0&&  SetCategoriesTitle(Object.keys(categories));
-      // console.log(categoriesTitle);
+
       // if(Object.keys(categoriesItems).length>0){
 
       //     const CateggoriesAfterFiltered= Object.keys(categoriesItems).map(categortitle=>{
@@ -99,8 +99,8 @@ const SearchDrawer = () => {
              {SearchValue !==''&& <ul className='recently_search'>
                 {categories.map(item=>{
                 return   item.map(itemE=>{
-               console.log(itemE);
-                     return  (<li key={itemE.name} className='recently_item' onClick={()=>{
+
+                  return  (<li key={itemE.name} className='recently_item' onClick={()=>{
                         handleRouteGuide(categoriesItems,navigate,itemE.name);
                         SetSearchOpen(false);
                         SetSearchtem(itemE.name)
@@ -118,9 +118,9 @@ const SearchDrawer = () => {
  <ul className='recently_search_item' style={{maxHeight:'300px',overflow:'auto'}}>
   {user&&user.recentSearch&&
   user.recentSearch.reverse().filter((item,idx)=>idx<5).map((s,idx)=>{
-    console.log(s);
-      return(
-<li key={s.name} onClick={()=>{navigate(`/search/${s}`) ; SetSearchOpen(false) }}
+
+    return(
+<li key={`${s.name}${Math.random().toString(36).substr(2, 9)}`} onClick={()=>{navigate(`/search/${s}`) ; SetSearchOpen(false) }}
  className='recently_item justify-content-between d-flex align-items-center' >
   {s}   <i className="fa-solid fa-magnifying-glass me-2"></i>
  </li>

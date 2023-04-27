@@ -19,19 +19,18 @@ const [product,setproduct]
      const i = 0;
     if(orders.length!==0){
       // SetUserOrders(orders);
-      // console.log(orders,UserOrdersArray)
+
       orders.forEach(ite => {
       const {orderDetails}= ite;
-        console.log(orderDetails.quantity)
-        totalOrders = orderDetails.quantity
+
+      totalOrders = orderDetails.quantity
       });
     }
     const HandleProductPreview = (item)=>{
-      console.log(item)
+
       setproduct(item)
     }
-    console.log(product)
-    return(
+     return(
     <>
     {orders.length===0?<ImageWithText image={Image} text={"there's no orders yet"}/>:
 

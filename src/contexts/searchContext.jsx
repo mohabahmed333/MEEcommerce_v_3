@@ -21,10 +21,8 @@ export const  SearchContextProvider = ({children})=>{
     const [openS,SetSearchOpen]= useState(null);
     const user = useSelector(userSelectMemo);
     const [searchItem,SetSearchtem]=useState('')
-    console.log(user);
-    const dispatch = useDispatch();
-    console.log(user);
-    // const SearchHandler = (array=[],item={})=>{
+     const dispatch = useDispatch();
+     // const SearchHandler = (array=[],item={})=>{
     //   //find exsting item
     //  const exist =  array.find(itemindex=>{itemindex.id===item.id})
     //  if(exist){

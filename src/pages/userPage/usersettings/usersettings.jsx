@@ -12,8 +12,8 @@ const UserSetting = ()=>{
   // const selectImage = useSelector(selectImageUser);
   const [userData,setUserData]=useState(userD);
   if(!user  )return;
-  console.log(user.imageUrl)
-   const addUserData = (event)=>{
+
+  const addUserData = (event)=>{
      const inputs = Array.from(event.target);
     event.preventDefault()
     inputs.map(input=>{

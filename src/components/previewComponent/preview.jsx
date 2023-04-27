@@ -46,8 +46,7 @@ const product = {
 export const PreviewComponent = ( )=>{
     const {item,open,setOpen} = useContext(PreviewContext);
     const onChange = (value) => {
-      console.log('changed', value);
-    };
+     };
      const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
     const products = useSelector(cartItems)
@@ -60,8 +59,7 @@ setOpen(false);
 return message.success(`added ${item.name} to cart`)
     }
   //  const el_height =  ;
-  //  console.log(el_height)
-    return (
+     return (
      <>
     
  

@@ -20,7 +20,7 @@ const UserInferomation  = {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userInfo , SetUserInferomation]=useState(UserInferomation);
 
-console.log(userInfo)
+
   const changingInput = (e)=>{
     const {name,value} = e.target;
     SetUserInferomation({...userInfo,[name]:value})

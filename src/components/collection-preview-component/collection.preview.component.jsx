@@ -60,13 +60,11 @@ const ProductAfterWishList  =[];
               },
           };
 
- console.log(route)
- 
+  
 return (<>
 {
  IsloadingSpin?(<Loading/>):ca['categories'].map(collec=>{
-  return<>
-  <div className='all_container' key={collec.title}>
+  return  <div className='all_container' key={collec.title}>
   <div className='collection_preview_background' style={{backgroundImage:`url(${collec.collImg})`}
 }  >
 
@@ -114,7 +112,7 @@ map((product)=>{
     
   </div>
  
-  </>
+ 
 
 })
 }

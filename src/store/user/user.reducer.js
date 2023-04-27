@@ -42,8 +42,8 @@ export const UserReduser = (state = initializingState,action)=>{
                 currentUser:payload
             }
         case USERTYPES.SIGN_IN_FAIID:
-            console.log(payload)
-          return  {...state,
+
+        return  {...state,
             error:payload
             }
      default :return state ;

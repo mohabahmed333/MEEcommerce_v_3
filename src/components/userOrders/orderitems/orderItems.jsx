@@ -2,8 +2,7 @@ import { Table } from "antd"
 
 
 const OrderItems =({items})=>{
-    console.log(items)
-return(
+ return(
 
     <>
     

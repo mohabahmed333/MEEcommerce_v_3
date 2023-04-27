@@ -22,8 +22,8 @@ const CartItem = ({cartItem})=>{
     const location =  useNavigate();
     
     const  handleLink = ()=>{
-      console.log('hallo')
 
+      
      handleRouteGuide(catogriesItems ,location,name)
      dispatch(setOpen(!opening))
  

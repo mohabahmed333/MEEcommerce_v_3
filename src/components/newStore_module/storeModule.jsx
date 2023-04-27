@@ -96,8 +96,8 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
    document.body.scrollTop = 0;
    document.documentElement.scrollTop = 0;
    setProducts(catogriesItems[cat]);
-console.log(catogriesItems[cat]);
- 
+
+   
   },[products,catogriesItems[cat] ]);
   // const  handleLink = ()=>{
   //   handleRouteGuide(catogriesItems,location,name)
@@ -123,21 +123,16 @@ console.log(catogriesItems[cat]);
      //    return cat[i]  !==Duplicated 
      //   })
       })
-     //  console.log(subCategories)
-     },[cat]);
+
+    },[cat]);
 
 
 useEffect(()=>{
   
   switch(options.name){
     case 'Price: High to Low':
-  console.log(products.sort((a,b)=>{
-    const price1= a.price
-    const price2= b.price
- if(price1>price2)return -1;               
- else if(price1===price2)return 1;               
- else return 0;               
-       }).slice())
+
+    
       return     setProducts(    products.sort((a,b)=>{
         const price1= a.price
         const price2= b.price

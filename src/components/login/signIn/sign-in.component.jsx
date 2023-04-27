@@ -24,15 +24,15 @@ const SignIn =  ()=> {
     const [stateValue,SetStateValue] = useState(initializingState);
     const {email,password} = stateValue;
     const navigate = useNavigate()
-console.log(email,password)
 
+    
     const resetForm = ()=>{
         SetStateValue(initializingState)
     }
     const HandeleErrorMessage =(error)=>{
-        console.log(error)
-console.log(error);
-switch(error){
+
+
+        switch(error){
     case 'Firebase: Error (auth/wrong-password).':
     return     SeetErrMessage('wrong password or email')
     

@@ -16,7 +16,7 @@ export const CheckOutCard = () => {
 const totalcart = useSelector(totalCart);
 const items = useSelector(cartItems);
 const totalpaid = useSelector(totalPaid);
-console.log(items,totalcart,totalpaid);
+
 // const cartItemsN=()=>{
 //     if(user&&user.cart.length!==0){
 //         const cart =items;

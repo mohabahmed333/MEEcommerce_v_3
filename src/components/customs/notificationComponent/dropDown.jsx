@@ -10,7 +10,7 @@ import './drop.scss'
 export const DropDown = ({user,position}) => {
   const dispatch =useDispatch();
   if(!user)return;
-  console.log(user)
+
   const signUserOut = ()=>{
     dispatch(SIGNUSEROUT_Start())
   }

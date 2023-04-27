@@ -10,7 +10,7 @@ import { userSelectMemo } from '../../../store/user/user.selector';
 const FileUpladManger = ({user}) => {
   const dispatch = useDispatch();
    if(!user)return;
-  console.log(user)
+
    const onChange = ({fileList}) => {
  
     dispatch(UploadUserImageStart(fileList[0].originFileObj,user))
@@ -21,7 +21,7 @@ const FileUpladManger = ({user}) => {
      if (!src) {
       src = await new Promise((resolve) => {
         const reader = new FileReader();
-        console.log(user)
+
         reader.readAsDataURL(file.originFileObj);
 
         reader.onload = () => resolve(reader.result);

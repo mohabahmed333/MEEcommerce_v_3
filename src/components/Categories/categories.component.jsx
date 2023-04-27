@@ -97,7 +97,7 @@ const  Categories =()=>{
       //    return cat[i]  !==Duplicated 
       //   })
        })
-      //  console.log(subCategories)
+
       },[cat])
      const  sortingData=(option)=>{
        switch(option){
