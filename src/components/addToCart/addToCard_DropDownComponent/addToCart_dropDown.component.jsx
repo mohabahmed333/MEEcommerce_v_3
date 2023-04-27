@@ -15,8 +15,8 @@ const ItemsTo = ()=>{
     
   //   return user.cart.cart.items
   // }
-  // console.log(user?user:null);
- 
+
+  
   if(cart) return cart;
 }
  

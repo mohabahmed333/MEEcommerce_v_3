@@ -16,25 +16,26 @@ export const CheckOutCard = () => {
 const totalcart = useSelector(totalCart);
 const items = useSelector(cartItems);
 const totalpaid = useSelector(totalPaid);
-const cartItemsN=()=>{
-    if(user&&user.cart.length!==0){
-        const {cart:cart}=user;
-        return{
-            totalcart:cart.cart.quantity,
-            totalPaid:cart.cart.total,
-            items:cart.cart.items
-        }
+console.log(items,totalcart,totalpaid);
+// const cartItemsN=()=>{
+//     if(user&&user.cart.length!==0){
+//         const cart =items;
+//         return{
+//             totalcart:cart.quantity,
+//             totalPaid:cart.total,
+//             items:cart.items
+//         }
  
         
-    }
-    return{  totalcart,
-        items,
-        totalpaid
-    }
+//     }
+//     return{  totalcart,
+//         items,
+//         totalpaid
+//     }
 
-}
+// }
 const goNext = ()=>{
-        if(cartItemsN().items.length === 0 ){
+        if(items.length === 0 ){
             return message.error('your cart empty')
         }
         else{
@@ -48,7 +49,7 @@ next()
                 <div className="col-md-9">
                     <div className="ibox ">
                         <div className="ibox-title">
-                            <span className="pull-right">(<strong>{cartItemsN().totalcart}</strong>) items</span>
+                            <span className="pull-right">(<strong>{totalcart}</strong>) items</span>
                             <h5>Items in your cart</h5>
                         </div>
                         <div className="ibox-content">
@@ -56,14 +57,14 @@ next()
                                 <table className="table shoping-cart-table">
                                     <tbody>
                                         {
-                                        cartItemsN().items.length === 0 ?
+                                        items.length === 0 ?
                                         (<ImageWithText image={imgToats} text={'there is no item in cart yet !'}/> ) 
                                         :
-                                            (cartItemsN().items.map(item => {
+                                            (items.map(item => {
 
 
                                                return (<CheckOutItem key={item.id}
-                                                 length={cartItemsN().items}
+                                                 length={items}
                                                 CartItem={item} />)
 
 
@@ -88,8 +89,8 @@ next()
                                 Total
                             </span>
                             <h2 className="font-bold">
-                                {cartItemsN().totalPaid}
-                            </h2>
+                                {totalpaid} $
+                             </h2>
 
                             <span className="text-muted small">
                                 *For United States, France and Germany applicable sales tax will be applied

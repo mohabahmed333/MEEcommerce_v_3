@@ -36,7 +36,9 @@ const CheckOutContainer=()=>{
   
     return(
         <>
-        <Steps current={current} className="position-sticky" style={{top:'60px',zIndex:4,flexDirection:'row',background:'#fff'}}>
+        <Steps current={current} className="position-sticky box_trans"
+        
+        style={{top:'60px',zIndex:4,flexDirection:'row',background:'#fff'}}>
           {steps.map((item) => (
             <Step key={item.title} title={item.title} />
           ))}

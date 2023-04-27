@@ -21,9 +21,7 @@ function* GetUserSnapShotData (userAuth, additionalDetails ){
                      console.log(cart
                             )
                             //once user sign in 
-        if(snapShot)return  yield put(HandleReducerFunction(cart));
-
-             }
+        if(snapShot)return  yield put(HandleReducerFunction(cart));  }
          catch(err){
  
                 yield put(SIGN_IN_FAIID(err))
@@ -112,7 +110,7 @@ function* SigningUserOut(){
         try {
                 yield call(signUserOut) ;
                 yield put(SIGNUSEROUT())
-
+                yield put(HandleReducerFunction([]));
         }catch(err){
                 yield put(SIGN_IN_FAIID(err))
 

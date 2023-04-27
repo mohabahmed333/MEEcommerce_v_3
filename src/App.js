@@ -25,16 +25,12 @@ const Shop_lazy = lazy(()=>import('./pages/shoppage/shoppage.component'));
 const CheckOutPage_lazy = lazy(()=>import('./pages/checkoutpage/checkout.page'));
 const  App = ()=> {
    const dispatch = useDispatch();
-   const cart = useSelector(cartItems);
-   const total = useSelector(totalPaid);
-   const quantity = useSelector(totalCart);
-   const user = useSelector(userSelectMemo);
+   
  
   useEffect(()=>{
  dispatch(checkUserSession());
  dispatch(FetchCategoriesStart());
-//  user&&dispatch(UploadUserDataStart({...cart,cart:cart},user));
-
+ 
   },[])
  
   
