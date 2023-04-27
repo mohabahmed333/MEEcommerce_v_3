@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState ,useContext} from 'react'
 import {  Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import './storeModule.scss'
-import { ExpandAltOutlined } from '@ant-design/icons';
+import { ExpandAltOutlined, FilterOutlined } from '@ant-design/icons';
 import grid_1 from '../../assets/icons_grid/grid-2-h-svgrepo-com.svg'
 import grid_3 from '../../assets/icons_grid/grid-2-vertical-svgrepo-com.svg'
 import grid_2 from '../../assets/icons_grid/grid-aspect-ratio-svgrepo-com (2).svg'
@@ -13,7 +13,8 @@ import { CategoryImage, CatougriesSelector } from '../../store/categories/catego
  import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
 import CollectionItem from '../collection-item/collection-item'
 import $ from 'jquery'; 
-
+import { FloatButton } from 'antd';
+import { PreviewContext } from '../../contexts/previewContext';
  
  
 const sortOptions = [
@@ -71,18 +72,36 @@ let FiltersItem = [];
   }
 
 const StoreModule =()=>{
-  const [col,setCol]=useState('col-md-4')
-  const catogriesItems = useSelector(CatougriesSelector);
-  const category_image = useSelector(CategoryImage);
-  const [cat_image,Setmage]=useState(category_image);
-   const  {cat}  = useParams() ;
-  const [products,setProducts]=useState(catogriesItems[cat]);
-  const [options,setOptions]=useState('')
-    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+const [col,setCol]=useState('col-md-4')
+const catogriesItems = useSelector(CatougriesSelector);
+const category_image = useSelector(CategoryImage);
+const [cat_image,Setmage]=useState(category_image);
+const  {cat}  = useParams() ;
+const [products,setProducts]=useState(catogriesItems[cat]);
+const [options,setOptions]=useState('')
+const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+const [prev_item,setPrev_item]=useState({item:{},open:false});
+const {setOpen,setItem} = useContext(PreviewContext);
+
     const navigate = useNavigate()
     const GOCategoy = (cat)=>{
       setMobileFiltersOpen(!mobileFiltersOpen)
       navigate(cat);
+    }
+    const openPreview=(item)=>{
+      setItem(item);
+      setOpen(true)
+    }
+    const previewitem = (item)=>{
+      console.log(item,this);
+      setPrev_item(()=>{
+        return{
+          ...prev_item,
+          open:true,
+          item:item
+        }
+      })
+      openPreview(item)
     }
   useEffect(()=>{
   //adding  active width;
@@ -210,20 +229,14 @@ useEffect(()=>{
 
             } */}
   <div className='tabs'>
-    {/* <ul className='tab_inner'>
-        <li className='tab_inner_value'>Hats</li>
-        <li className='tab_inner_value'>sneakers</li>
-        <li className='tab_inner_value'>Mens</li>
-        <li className='tab_inner_value'>Wommans</li>
-        <li className='tab_inner_value'>Boys</li> 
-    </ul> */}
+     
      <nav aria-label="Breadcrumb " className='b_new'>
             <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
               
                 <li  >
                   <div className="flex items-center">
                     <Link   to={`/`} >
-                    <i class="fa-solid fa-house me-3"></i>
+                    <i className="fa-solid fa-house me-3"></i>
                      </Link>
                     <Link className='me-1 ms-1'  to={`/shop`} >
                      shop 
@@ -239,7 +252,7 @@ useEffect(()=>{
               
             </ol>
           </nav>
-                   <div className='categories_flex'>
+                   {/* <div className='categories_flex'>
             <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
                       {FiltersItem.map((category) => (
                         <li key={category.name}   >
@@ -250,51 +263,9 @@ useEffect(()=>{
                       ))}
                     </ul>
            </div>
- 
+  */}
               <div className='buttons_contaner'>
-              <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Sort
-                    <ChevronDownIcon
-                      className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      {sortOptions.map((option) => (
-                        <Menu.Item key={option.name}>
-                          {({ active }) => (
-                            <p
-                               className={classNames(
-                                option.current ? 'font-medium text-gray-900' : 'text-gray-500',
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm'
-                              )}
-                              style={{cursor:'pointer'}}
-                              onClick={()=>setOptions(option)}
-                            >
-                              {option.name}
-                            </p>
-                          )}
-                        </Menu.Item>
-                      ))}
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+           
 
    <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
      onClick={()=>setCol('col-md-3')}>
@@ -353,9 +324,11 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
                 <p className='product_name'> {item.name}
                 <i className="fa-solid fa-bookmark"></i>
                 </p>
-                <div className="blob blue"  >+</div>
+                <div className="blob blue"  onClick={previewitem.bind(null,item)} >+</div>
         
-         
+            </div>
+            <div className='item_show'>
+       
             </div>
             </div>)
           })
@@ -365,7 +338,34 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
   </div>
   </div>
   <h1 className='head'>New Arraival</h1>
-<div className='row'>
+
+  <div className='row'>
+<div className='col-md-2'>
+<div className='sort_options'>
+  <p>sort <i className="fa-solid fa-sort"></i></p>
+
+<div className="sort_element"><i className="fa-solid fa-arrow-up-long"></i>  Hiest Price To low</div>
+<div className="sort_element"><i className="fa-solid fa-arrow-down-long"></i> low Price To heigh</div>
+<p>select Categores  </p>
+
+ <div className='categories_options'>
+<ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
+                      {FiltersItem.map((category) => (
+                        <li key={category.name}   >
+                          <Link to={`/shop/${category.href}`} className="block px-2 py-3">
+                            {category.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul> 
+</div>
+<div className="sort_element"style={{justifyContent:'flex-start'}}><i className="me-2 fa-solid fa-clock-rotate-left"></i> Order History </div>
+<div className="sort_element"style={{justifyContent:'flex-start'}}><i className="me-2 fa-regular fa-bookmark"></i> Collections
+</div>
+
+</div>
+</div>
+<div className='row col-md-10'>
 
   { 
          //safe gards 
@@ -377,6 +377,7 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
           
         }
           </div>
+  </div>
           
           </div>
           </div>
@@ -384,7 +385,16 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
         </main>
       </div>
     </div>
+    <FloatButton
 
+    className='float_mobile'
+      shape="square"
+      type="primary"
+      style={{
+        right: 24,
+      }}
+      icon={<FilterOutlined />}
+    />
         </>
     )
 };
