@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+ import { useDispatch, useSelector } from 'react-redux';
 import { CartContext } from '../../../contexts/HandleCart';
 import { setItemsAfterRemoved, setOpen } from '../../../store/cart/cart.action';
 import { CartOpen, cartItems } from '../../../store/cart/cart.selector';

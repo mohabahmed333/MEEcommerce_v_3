@@ -1,7 +1,6 @@
 import{ReactComponent as ShoppingIcon} from '../../../assets/cart.svg';
 import './addToCart_icon.scss';
-import { useContext } from 'react';
-import { CartContext } from '../../../contexts/HandleCart';
+ 
 export const CartIcon =({...props})=>{
      const {totalcart} = {...props};
      

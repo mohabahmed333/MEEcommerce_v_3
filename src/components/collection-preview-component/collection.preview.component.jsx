@@ -1,12 +1,11 @@
 import './collection.preview.scss';
 import CollectionItem from "../collection-item/collection-item";
 import OwlCarouselComponent from "../customs/owlCarousel/owlCarousel";
- import {Link, useParams } from "react-router-dom";
+ import {Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import{CatougriesSelector, IsLoadingSelector,categoriesSelectorReducer} from '../../store/categories/category.selector'
 import { Loading } from '../loadingComponents/load.component/loading.component';
-import { PreviewComponent } from '../previewComponent/preview';
-import { userSelectMemo } from '../../store/user/user.selector';
+ import { userSelectMemo } from '../../store/user/user.selector';
 const CollectionPreview = ({route=''})=>{
  const user = useSelector(userSelectMemo);
 const catogriesItems = useSelector(CatougriesSelector)

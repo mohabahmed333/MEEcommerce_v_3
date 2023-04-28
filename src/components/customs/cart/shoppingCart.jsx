@@ -8,6 +8,7 @@ import {setOpen} from '../../../store/cart/cart.action'
 import { CartOpen,totalPaid } from '../../../store/cart/cart.selector';
 import { userSelectMemo } from '../../../store/user/user.selector';
 import './s.scss'
+import { Offcanvas } from 'react-bootstrap';
 
 export default function ShoppingCart({children}) {
   const totalpaid = useSelector(totalPaid);
@@ -30,60 +31,21 @@ const ShopNavigate=()=>{
 
 }
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={HandleClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-in-out duration-100"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in-out duration-100"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
-
-        <div className="fixed inset-0 overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-              <Transition.Child
-                as={Fragment}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
-              >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl" >
-                    <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6" style={{zIindex:10000}}>
-                      <div className="flex items-start justify-between position-sticky bg-white"   
-                       style={{top:'-24px',    padding: '11px' }}>
-                        <Dialog.Title className="text-lg font-medium text-gray-900 " 
-                     
-                        >Shopping cart  </Dialog.Title>
-                        <div className="ml-3 flex h-7 items-center">
-                          <button
-                            type="button"
-                            className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                            onClose={HandleClose} 
-                          >
-                            <span className="sr-only">Close panel</span>
-                      <XMarkIcon className="h-6 w-6" aria-hidden="true"   /> 
-                          </button>
-                        </div>
-                      </div>
-                      {/* <div className="rSlider">
-  <span className="slide"></span>
-<input id="range" type="range" min="0" max="50000" />
-</div>
-<span id="demo"></span> */}
+   <Offcanvas show={open }placement='end' onHide={HandleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title style={{marginLeft:'auto'}}>Shopping Cart</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        <div className="flex h-full flex-col  
+  " >
+                    <div className="flex-1 
+                    overflow-y-auto py-6   sm:px-6" style={{zIindex:10000}}>
+                 
+                
                    {children}
                     </div>
 
-                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6 " style={{overflow:'hidden',marginTop:'auto'}}>
+                    <div className="border-t border-gray-200   px-4 sm:px-6 " style={{overflow:'hidden',marginTop:'auto'}}>
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
 
@@ -129,13 +91,8 @@ const ShopNavigate=()=>{
                         </p>
                       </div>
                     </div>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </div>
-      </Dialog>
-    </Transition.Root>
+                    </div>
+         </Offcanvas.Body>
+      </Offcanvas>
   )
 }

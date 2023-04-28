@@ -196,6 +196,9 @@ useEffect(()=>{
       
     }
   };
+const max_value =  Math.max(...products.map(item=>item.price))
+const min_value =  Math.min(...products.map(item=>item.price))
+  
     return(
 
         <>
@@ -297,7 +300,7 @@ useEffect(()=>{
  <h1 className='head'>Best Broducts</h1>
   <div className='best_container'>
 {
-          products &&  products.filter((product,idx)=>idx<5)
+          catogriesItems&&catogriesItems[cat].filter((product,idx)=>idx<5)
           .map(item=>{
 
 return          (  <div className='new_item  ' key={item.name} style={{background:'none'}}>
@@ -348,8 +351,8 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
 <price-range currency="$">
     <div>
       <div>
-        <input name="price-from" type="range" min="0" max="100" step="1" value="25" aria-label="From" />
-        <input name="price-to" type="range" min="0" max="100" step="1" value="75" aria-label="To" />
+        <input name="price-from" type="range" min="0" max={max_value} step="1" value={min_value}  aria-label="From" />
+        <input name="price-to" type="range" min="0" max={max_value} step="1" value={max_value} aria-label="To" />
       </div>
     </div>
     <output>
@@ -365,11 +368,14 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
         <Accordion.Body>
         <div className='categories_options'>
 <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
-                      {FiltersItem.map((category) => (
-                        <li key={category.name}   >
-                          <Link to={`/shop/${category.href}`} className="block px-2 py-3">
-                            {category.name}
-                          </Link>
+                      {
+                      
+                       catogriesItems&&Object.keys(catogriesItems).map((category) => (
+                        <li key={category}   >
+                          <Link to={`/shop/${category}`} className="block c_length px-2 py-3">
+                            {category}
+<p>{catogriesItems[category].length}</p>
+                           </Link>
                         </li>
                       ))}
                     </ul> 

@@ -84,13 +84,14 @@ button.ant-modal-close {
     align-items: center;
     justify-content: center;
 }
-.preview_button    {background: #333;
-height: 20px;
-width: -webkit-fill-available;
-margin: auto;
-border-radius: 4px;
-padding: 21px !IMPORTANT;
-}
+.preview_button    {
+  background: #333;
+  height: 20px;
+  width: -webkit-fill-available;
+  margin: auto;
+   padding: 20px !important;
+   border-radius: 0px;
+ }
 .i_number{
     height: 40px;
     border-radius: 0px !IMPORTANT;
@@ -106,26 +107,32 @@ padding: 21px !IMPORTANT;
     border: 0px;
 }
 .image_header_preview {
-    position: absolute;
-    top: 5px;
-    background: #ffffffc9 !IMPORTANT;
-    right: 4px;
-    border-radius: 6%;
-    color: #ddd !IMPORTANT;
-    overflow: hidden;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    color: #333 !IMPORTANT;
-    padding: 0px 10px;
-    cursor: pointer;
- 
- 
-    
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  border-radius: 6%;
+  color: #ddd !important;
+  overflow: hidden;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #333 !important;
+  padding: 0px 10px;
+  cursor: pointer;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  justify-content: flex-end;
+ i {
+    background: #fff;
+    padding: 10px !IMPORTANT;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 1px;
 }
-
+}
 
 .picker {
     display: flex;
@@ -135,11 +142,16 @@ padding: 21px !IMPORTANT;
 
    
   }
-  .p{
-    background: #dddddd24;
-    padding: 10px;
+  .p {
+    padding: 13px;
     border-radius: 10px;
-  }
+    color: #000000;
+    font-family: emoji;
+    text-align: left;
+    padding-left: 0px;
+    text-transform: uppercase;
+    font-size: smaller;
+}
   .picker legend {
     font-size: .75rem;
     text-transform: uppercase;
@@ -176,9 +188,78 @@ padding: 21px !IMPORTANT;
     place-items: center;
         background-color: #eee;
     border-radius: .25rem;
-  }
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 7px;
+}
   
   label[for*=size] > input:checked ~ span {
     background-color: #333;
     color: #eee;
+}
+
+button.btn-close {
+  position: fixed;
+  right: 223px;
+  background-color: #fff;
+  color: #fff !important;
+  font-family: emoji;
+  border-radius: 50%;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 8px 24px;
+}
+.let-right-buttons {
+  position: absolute;
+  left: -79px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  width: 119%;
+  top: 93%;
+  button {
+    font-size: 34px;
+    /* background: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    padding: 32px;
+    width: 50px;
+    border-radius: 6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    &:hover{
+      background: #fff;
+    }
+}
+}
+.modal-header{
+  border:0px;
+  padding: 10px;
+}
+ .info_pe {
+    height: 500px;
+    overflow: auto;
+    margin: auto;
+    &::-webkit-scrollbar-thumb:hover {
+      background: #333; 
+    }
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+}
+.modal-content{
+  border-radius: 0px;
+  border-bottom: 1px solid;
+}
+.mt-6.revi {
+  margin: 0px;
+  margin-bottom: 13px;
+  /* border-bottom: 1px solid; */
+  padding-bottom: 10px;
+}
+.modal-body ,.modal-header{
+  background: #f8f9fb;
+}
+
+p.pro_desc {
+  color: gray;
+  font-family: emoji;
+  text-transform: capitalize;
 }

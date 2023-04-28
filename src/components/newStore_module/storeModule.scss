@@ -871,3 +871,17 @@ p.header_p {
     font-family: initial;
     font-size: revert;
 }
+.c_length {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 0px;
+    height: 37px;
+    border-left: 1px solid;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    color: gray;
+    &:hover{
+        background: #eee;
+    }
+}
