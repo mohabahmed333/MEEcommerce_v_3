@@ -1,9 +1,9 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassCircleIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { DropDown } from '../customs/notificationComponent/dropDown'
-import{ReactComponent as WishList} from '../../assets/wishList.svg'
+import {ReactComponent as WishList} from '../../assets/wishList.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import {userSelectMemo} from '../../store/user/user.selector'
 import DrawerComponent from '../customs/drawer/drawer'
@@ -19,14 +19,11 @@ import * as styles from './newHeder.styles'
 import { CatougriesSelector } from '../../store/categories/category.selector'
 import { handleRouteGuide } from '../../componentsutlts/handleRouteGuide'
 import { PreviewComponent } from '../previewComponent/preview'
-import { BackTop, Button, FloatButton, Tooltip } from 'antd'
-import { ContactIcon
- } from '../contactUs/contactus.icon'
+import {   FloatButton    } from 'antd'
+ 
 import { Input } from 'antd';
-import ToolTip from '../customs/AntToolTip/ToolTip';
-import './newheader.styles.scss'
-import SignIn from '../login/signIn/sign-in.component';
-import {searchContext} from '../../contexts/searchContext'
+ import './newheader.styles.scss'
+ import {searchContext} from '../../contexts/searchContext'
 import SearchDrawer from '../SearchDrawerComponent/Search.Drawer.component'
 import { cartItems } from '../../store/cart/cart.selector'
 

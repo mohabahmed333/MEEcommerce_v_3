@@ -1,21 +1,21 @@
-import { Fragment, useEffect, useState ,useContext} from 'react'
-import {  Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import {   useEffect, useState ,useContext} from 'react'
+ import {   Squares2X2Icon } from '@heroicons/react/20/solid'
 import './storeModule.scss'
-import { ExpandAltOutlined, FilterOutlined } from '@ant-design/icons';
+import {   FilterOutlined } from '@ant-design/icons';
 import grid_1 from '../../assets/icons_grid/grid-2-h-svgrepo-com.svg'
 import grid_3 from '../../assets/icons_grid/grid-2-vertical-svgrepo-com.svg'
-import grid_2 from '../../assets/icons_grid/grid-aspect-ratio-svgrepo-com (2).svg'
-import './compass/pulse.scss'
+ import './compass/pulse.scss'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { CategoryImage, CatougriesSelector } from '../../store/categories/category.selector'
  import { HandleDuplicate } from '../../componentsutlts/arrayHandler'
 import CollectionItem from '../collection-item/collection-item'
 import $ from 'jquery'; 
-import { FloatButton } from 'antd';
+import { FloatButton,Radio } from 'antd';
 import { PreviewContext } from '../../contexts/previewContext';
- 
+import { Accordion } from 'react-bootstrap';
+  import './price_range.scss'
+import { FunnelIcon } from '@heroicons/react/24/outline';
  
 const sortOptions = [
     // { name: 'Most Popular', href: '#', current: true },
@@ -82,6 +82,7 @@ const [options,setOptions]=useState('')
 const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 const [prev_item,setPrev_item]=useState({item:{},open:false});
 const {setOpen,setItem} = useContext(PreviewContext);
+const [value, setValue] = useState(1);
 
     const navigate = useNavigate()
     const GOCategoy = (cat)=>{
@@ -112,10 +113,10 @@ const {setOpen,setItem} = useContext(PreviewContext);
 $(this).addClass('active_hover').siblings().removeClass('active_hover')
   })
   //adding  active width;
-   document.body.scrollTop = 0;
-   document.documentElement.scrollTop = 0;
+  //  document.body.scrollTop = 0;
+  //  document.documentElement.scrollTop = 0;
    setProducts(catogriesItems[cat]);
-
+console.log(products)
    
   },[products,catogriesItems[cat] ]);
   // const  handleLink = ()=>{
@@ -143,9 +144,8 @@ $(this).addClass('active_hover').siblings().removeClass('active_hover')
      //   })
       })
 
-    },[cat]);
-
-
+    },[cat ]);
+ 
 useEffect(()=>{
   
   switch(options.name){
@@ -179,10 +179,23 @@ useEffect(()=>{
          
   }
 },[])
-
  
  
+  const onChange = (e) => {
+    console.log('radio checked', e.target.value);
+    setValue(e.target.value);
 
+    // products,setProducts
+    if(e.target.value===1){
+      console.log('object')
+      setProducts( products.sort((a,b)=>{return b.price-a.price}).slice());
+      console.log(products.sort((a,b)=>(a-b)))
+    }else{
+      setProducts( products.sort((a,b)=>{return a.price-b.price}).slice())
+      console.log(products.sort((a,b)=>b-a))
+      
+    }
+  };
     return(
 
         <>
@@ -241,7 +254,7 @@ useEffect(()=>{
                     <Link className='me-1 ms-1'  to={`/shop`} >
                      shop 
                     </Link>
-                    <Link className='me-1 ms-1'  to={`/shop/${'cat'}`} >
+                    <Link className='me-1 ms-1 active_ro'  to={`/shop/${cat}`} >
                      {cat} 
                     </Link>
                
@@ -252,6 +265,8 @@ useEffect(()=>{
               
             </ol>
           </nav>
+  <h1  >New Arraival</h1>
+
                    {/* <div className='categories_flex'>
             <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
                       {FiltersItem.map((category) => (
@@ -264,39 +279,7 @@ useEffect(()=>{
                     </ul>
            </div>
   */}
-              <div className='buttons_contaner'>
            
-
-   <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
-     onClick={()=>setCol('col-md-3')}>
-                <span className="sr-only">View grid</span>
-                <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-
-              </button>
-   <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
-     onClick={()=>setCol('col-md-4')}>
-                <span className="sr-only">View grid</span>
-                <i className="fa-solid fa-bars"></i>
-              </button>
-              {/* <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
-                <span className="sr-only">View grid</span>
-              </button> */}
-              <button type="button"    onClick={()=>setCol('col-md-6 col-sm-6')}>
-                <span className="sr-only">View grid</span>
- 
- <img src={grid_3}   className='grid_icon' alt=""  />
-               </button>
-              {/* <button type="button"   >
-                <span className="sr-only">View grid</span>
- 
- <img src={grid_2}  className='grid_icon' alt=""   />
-               </button> */}
-              <button type="button"  onClick={()=>setCol('col-md-12')} >
-                <span className="sr-only">View grid</span>
- 
- <img src={grid_1}   className='grid_icon' alt=""  />
-               </button>
-              </div>
            
               <button
                 type="button"
@@ -337,18 +320,50 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
  
   </div>
   </div>
-  <h1 className='head'>New Arraival</h1>
 
   <div className='row'>
-<div className='col-md-2'>
-<div className='sort_options'>
-  <p>sort <i className="fa-solid fa-sort"></i></p>
+<div className='col-md-3 left_ope'  style={{padding:'0px'}}>
+<Accordion defaultActiveKey="0" flush alwaysOpen>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>  <p>sort By Price </p>
+</Accordion.Header>
+        <Accordion.Body>
 
-<div className="sort_element"><i className="fa-solid fa-arrow-up-long"></i>  Hiest Price To low</div>
+        <div className='categories_options'>
+        <Radio.Group onChange={onChange} value={value} className="radio_custom">
+      <Radio value={1}>
+<div className="sort_element"><i className="fa-solid fa-arrow-up-long"></i>  heighest Price To low</div>
+         </Radio>
+      <Radio value={2}>
 <div className="sort_element"><i className="fa-solid fa-arrow-down-long"></i> low Price To heigh</div>
-<p>select Categores  </p>
 
- <div className='categories_options'>
+      </Radio>
+
+
+    </Radio.Group>
+ 
+</div>
+<p className='header_p'>Select price range $</p>
+<div className="container">
+<price-range currency="$">
+    <div>
+      <div>
+        <input name="price-from" type="range" min="0" max="100" step="1" value="25" aria-label="From" />
+        <input name="price-to" type="range" min="0" max="100" step="1" value="75" aria-label="To" />
+      </div>
+    </div>
+    <output>
+      output
+    </output>
+  </price-range>
+
+</div>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1" alwaysOpen  >
+        <Accordion.Header>select Categores</Accordion.Header>
+        <Accordion.Body>
+        <div className='categories_options'>
 <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
                       {FiltersItem.map((category) => (
                         <li key={category.name}   >
@@ -359,13 +374,65 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
                       ))}
                     </ul> 
 </div>
-<div className="sort_element"style={{justifyContent:'flex-start'}}><i className="me-2 fa-solid fa-clock-rotate-left"></i> Order History </div>
-<div className="sort_element"style={{justifyContent:'flex-start'}}><i className="me-2 fa-regular fa-bookmark"></i> Collections
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
+<div className='acc_footer'>
+<div className='buttons_contaner' style={{width:'100%'}}>
+           
+
+           <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
+             onClick={()=>setCol('col-md-3')}>
+                        <span className="sr-only">View grid</span>
+                        <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
+        
+                      </button>
+           <button type="button" className="  ml-1 p-2 text-gray-400 hover:text-gray-500 "
+             onClick={()=>setCol('col-md-4')}>
+                        <span className="sr-only">View grid</span>
+                        <i className="fa-solid fa-bars"></i>
+                      </button>
+                      {/* <button type="button" className="mr-4   p-2 text-gray-400 hover:text-gray-500   ">
+                        <span className="sr-only">View grid</span>
+                      </button> */}
+                      <button type="button"    onClick={()=>setCol('col-md-6 col-sm-6')}>
+                        <span className="sr-only">View grid</span>
+         
+         <img src={grid_3}   className='grid_icon' alt=""  />
+                       </button>
+                      {/* <button type="button"   >
+                        <span className="sr-only">View grid</span>
+         
+         <img src={grid_2}  className='grid_icon' alt=""   />
+                       </button> */}
+                      <button type="button"  onClick={()=>setCol('col-md-12')} >
+                        <span className="sr-only">View grid</span>
+         
+         <img src={grid_1}   className='grid_icon' alt=""  />
+                       </button>
+
+
+
+                      </div>
+
+
+                 <div className='collections_order_history'>
+                  
+                  <button>
+                  collections <i class="fa-solid fa-bookmark"></i>
+                    </button>
+                    
+                    <button>
+
+                      order history
+                      <i class="fa-solid fa-clock-rotate-left"></i>
+                    </button>
+                  </div>     
 </div>
 
 </div>
-</div>
-<div className='row col-md-10'>
+<div className='row col-md-9'>
 
   { 
          //safe gards 

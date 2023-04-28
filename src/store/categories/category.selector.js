@@ -1,4 +1,4 @@
-import{createSelector,CreateSelectorFunction} from 'reselect'
+import{createSelector} from 'reselect'
  export const categoriesSelectorReducer = (state)=>state.Categories;
 
 export const selectCategories = createSelector(

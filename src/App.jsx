@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';   
  import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';   
@@ -15,7 +15,7 @@ import { userSelectMemo } from './store/user/user.selector';
   import { lazy } from 'react';
 import StoreModule from './components/newStore_module/storeModule';
 import ShopPage from './pages/shoppage/shoppage.component';
-
+import './price.range'
 
 const SignInOutLazy = lazy(()=>import('./pages/signInSignOutPage/signInAndSignOut.page'));
  const Search_page = lazy(()=>import('./components/collectionOfShop/collectionShop'));

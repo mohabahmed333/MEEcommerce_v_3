@@ -20,7 +20,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <!-- <link rel="manife  st" href="%PUBLIC_URL%/manifest.json" /> -->
-    <link rel="stylesheet" href="../src/assets/font-awsome.css">
+    <link rel="stylesheet" href="./src/assets/font-awsome.css">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -51,21 +51,10 @@
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
 
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
-<script>
-  var options = {
-  width: 400, // required
-  // more options here
-};
-new ImageZoom(document.getElementById("img-container"), options);
-</script>
-    <script src="./chat.js"></script>
-  <!-- Start of LiveChat (www.livechat.com) code -->
+ 
+    
+
+<!-- Start of LiveChat (www.livechat.com) code -->
 <!-- <script>
   window.__lc = window.__lc || {};
   window.__lc.license = 14912388;
@@ -92,6 +81,6 @@ new ImageZoom(document.getElementById("img-container"), options);
  
  <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0" nonce="RNKW7pW6"></script>
-
-  </body>
+<script type="module" src="./src/index.jsx"></script>
+   </body>
 </html>

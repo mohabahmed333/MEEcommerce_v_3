@@ -1,25 +1,16 @@
 import React,{useContext, useEffect, useState} from "react";
-import{EyeTwoTone, ShareAltOutlined, StarOutlined} from '@ant-design/icons';
-import { Badge, Button, Image, message, notification, Rate, Tag, Tooltip } from 'antd';
-import { ReactComponent as Cart } from "../../assets/addToCart.svg";
-import './collection-item.scss';
-import ToolTip from "../customs/AntToolTip/ToolTip";
-import{AddItemToCartFunc}from '../../store/cart/cart.action'
+   import './collection-item.scss';
+ import{AddItemToCartFunc}from '../../store/cart/cart.action'
 import { WishListContext } from "../../contexts/wishList";
 import {  useNavigate } from "react-router-dom";
 import{handleRouteGuide} from '../../componentsutlts/handleRouteGuide'
-import { AddToCartButton } from "../addToCart/addToCartButton/AddToCartButton";
-import { useDispatch, useSelector } from "react-redux";
+ import { useDispatch, useSelector } from "react-redux";
 import{CatougriesSelector} from '../../store/categories/category.selector'
 import { cartItems } from "../../store/cart/cart.selector";
-import { PreviewComponent } from "../previewComponent/preview";
-import { PreviewContext } from "../../contexts/previewContext";
-import Item from "antd/lib/list/Item";
-import { UploadUserDataStart, UploadUserDataSuccess } from "../../store/user/user.actions";
+ import { PreviewContext } from "../../contexts/previewContext";
+ import { UploadUserDataStart, UploadUserDataSuccess } from "../../store/user/user.actions";
 import { userSelectMemo } from "../../store/user/user.selector";
-import { DownOutlined, SmileOutlined } from '@ant-design/icons';
-import { Dropdown, Space } from 'antd';
-import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
+ import ShareWIthADD from "../share with Component/ADDTOCOLLECTIONShareWIth";
 import {LazyLoadImage} from 'react-lazy-load-image-component'
  const CollectionItem = ({ col,url='',item,cat})=>{
  //js script

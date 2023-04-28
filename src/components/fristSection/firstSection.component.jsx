@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom";
 import { CatougriesSelector } from "../../store/categories/category.selector"
-import { Dailu_item_image } from "../first_sections/collectionCarousel/carousel.style";
-
+ 
 export default function FirstSection() {
   let items =[] ;
    const categories = useSelector(CatougriesSelector);
