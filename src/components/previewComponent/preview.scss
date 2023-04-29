@@ -237,6 +237,7 @@ button.btn-close {
     height: 500px;
     overflow: auto;
     margin: auto;
+    padding-top: 25px;
     &::-webkit-scrollbar-thumb:hover {
       background: #333; 
     }
@@ -256,6 +257,7 @@ button.btn-close {
 }
 .modal-body ,.modal-header{
   background: #f8f9fb;
+  padding: 0px;
 }
 
 p.pro_desc {

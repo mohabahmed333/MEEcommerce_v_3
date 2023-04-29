@@ -1,4 +1,4 @@
-import {   useContext, useState } from 'react'
+import {   useContext, useEffect, useState } from 'react'
   import { StarIcon } from '@heroicons/react/20/solid'
 import { PreviewContext } from '../../contexts/previewContext'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,8 +9,9 @@ import { Divider, Image, InputNumber, Space, Tag, message } from 'antd';
   import './preview.scss';
 import {  FacebookFilled, InstagramOutlined, TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons'
  import Modal from 'react-bootstrap/Modal';
+import { CatougriesSelector } from '../../store/categories/category.selector'
+import { useParams } from 'react-router-dom'
 
- 
 const product = {
     name: 'Basic Tee 6-Pack ',
     price: '$192',
@@ -43,8 +44,13 @@ export const PreviewComponent = ( )=>{
     const {item,open,setOpen} = useContext(PreviewContext);
     const onChange = (value) => {
      };
+ const {cat}= useParams( )
     
-    const products = useSelector(cartItems)
+     const Categoriesitems = useSelector(CatougriesSelector);
+     const [item_old,setNewItem]=useState(item)
+
+console.log(item_old)
+     const products = useSelector(cartItems)
     const dispatch = useDispatch();
     let mql = window.matchMedia('(max-width: 600px)');
      const addToCart = (e)=>{
@@ -54,6 +60,33 @@ setOpen(false);
 return message.success(`added ${item.name} to cart`)
     }
   //  const el_height =  ;
+ 
+useEffect(()=>{ setNewItem(item) },[item])
+
+
+const upToNext = (item)=>{
+console.log(item )
+  //FIND ITEM_INDEX
+  let count= 0;
+  Categoriesitems&&  Object.values(Categoriesitems).map(
+    (items,idx)=>{
+  
+ items.map((item_e,idx)=>{
+    
+ 
+   if(item_e.id===item.id){
+const next_index = ++idx
+ setNewItem(()=>items[next_index])
+
+   }
+  }
+    
+)
+ 
+  }  )
+
+
+}
      return (
      <>
     
@@ -77,13 +110,17 @@ return message.success(`added ${item.name} to cart`)
 <button>
 <i class="fa-solid fa-chevron-left"></i>  </button>
   <button>
-  <i class="fa-solid fa-chevron-right"></i>
+  <i class="fa-solid fa-chevron-right" onClick={()=>upToNext(item)}></i>
   </button>
                 </div>
                            <div className="row w-full grid-cols-1 items-start gap-y-8 gap-x-6 sm:grid-cols-12 lg:gap-x-8">
-            <div style={{height:'-webkit-fill-available',position:'relative'}}
-             className="col-md-5 aspect-w-2 aspect-h-3 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
-              <Image width={'100%'} height={'500px'}   style={{width:'100%',height:'100%'}} src={item.imageUrl} alt={product.imageAlt} className="object-cover object-center" />
+            <div style={{height:'-webkit-fill-available',
+            position:'relative',padding:'0px'}}
+             className="col-md-5 aspect-w-2 aspect-h-3 
+             overflow-hidden   bg-gray-100
+              sm:col-span-4 lg:col-span-5">
+              <Image width={'100%'} height={'500px'} 
+                style={{width:'100%',height:'100%'}} src={item_old.imageUrl} alt={product.imageAlt} className="object-cover object-center" />
            
            <div className='image_header_preview'>
       <i className="fa-solid fa-heart"></i>         <i className="fa-regular fa-bookmark"></i>
@@ -119,14 +156,14 @@ return message.success(`added ${item.name} to cart`)
                     </a>
                   </div>
                 </div>
-              <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">{item.name}</h2>
+              <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">{item_old.name}</h2>
 
               <section aria-labelledby="information-heading" className="mt-2">
                 <h3 id="information-heading" className="sr-only">
                   Product information
                 </h3>
 
-                <p className="text-2xl text-gray-900 id_price">{item.price} $</p>
+                <p className="text-2xl text-gray-900 id_price">{item_old.price} $</p>
 <p className='pro_desc'>
 
 Curabitur egestas malesuada volutpat.
