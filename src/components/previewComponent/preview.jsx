@@ -62,24 +62,37 @@ return message.success(`added ${item.name} to cart`)
   //  const el_height =  ;
  
 useEffect(()=>{ setNewItem(item) },[item])
-
+let count= 0;
 
 const upToNext = (item)=>{
 console.log(item )
   //FIND ITEM_INDEX
-  let count= 0;
   Categoriesitems&&  Object.values(Categoriesitems).map(
     (items,idx)=>{
-  
- items.map((item_e,idx)=>{
-    
- 
-   if(item_e.id===item.id){
-const next_index = ++idx
- setNewItem(()=>items[next_index])
+      console.log(items);
+      let currentIndex=0;
+ items.forEach((item_e,index,array)=>{
+ if(item_e.id===item.id){
+  currentIndex = index;
 
+  currentIndex++;
+   if (currentIndex >= items.length) {
+     currentIndex = 0;
    }
-  }
+   currentIndex++
+   console.log(currentIndex,console.log(index));
+   setNewItem(items[currentIndex]);
+ }
+ }
+//    if(item_e.id===item.id){
+// const next_index = idx++;
+// count++
+//  setNewItem(()=>items[idx+count])
+//  console.log(idx+count)
+
+
+//    }
+  // }
     
 )
  
@@ -232,16 +245,7 @@ est imperdiet, a malesuada sem rutrum
 <span>XXL</span>
 </label>
 </fieldset>
-     <div className='product_add'>
-   <InputNumber className='i_number' min={1} max={10} defaultValue={3} onChange={onChange} />
-
-    <button
-                    type="submit"
-                    className="mt-6  preview_button flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Add to bag
-                  </button>
-    </div>
+ 
      {/* <Tabs
 defaultActiveKey="home"
 id="uncontrolled-tab-example"
@@ -285,7 +289,18 @@ Instgran
           </div>
 
              </Modal.Body>
-           
+             <Modal.Footer>
+             <div className='product_add'>
+   <InputNumber className='i_number' min={1} max={10} defaultValue={3} onChange={onChange} />
+
+    <button
+                    type="submit"
+                    className="mt-6  preview_button flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  >
+                    Add to bag
+                  </button>
+    </div>
+        </Modal.Footer>
            </Modal>
 
         

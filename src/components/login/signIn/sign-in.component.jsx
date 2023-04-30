@@ -23,6 +23,7 @@ const SignIn =  ()=> {
     const dispatch = useDispatch()
     const [stateValue,SetStateValue] = useState(initializingState);
     const {email,password} = stateValue;
+    const user = useSelector(userSelectMemo)
     const navigate = useNavigate()
 
     
@@ -46,10 +47,139 @@ const SignIn =  ()=> {
         const{user:{error}} = ErrorMess;
         if(error&&error.length!==0){return  HandeleErrorMessage(error['message'])}else{
 
-     navigate('/')
+    
+
 
         };
+      user!==null
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      ?navigate('/'):HandeleErrorMessage(error['message'])
 }
 const HandleChange=(event)=>{
     // console.log(event.target.name)
@@ -84,7 +214,7 @@ return (
 <label htmlFor="email"> Emal Adress</label>
         <Input
         id="email"
-
+required
         type="email"
         name="email"
         label='email'
@@ -99,6 +229,7 @@ return (
         name="password"
         label='password'
         value={password}
+        required
         onChange={HandleChange}/>
 <div className="error text-danger mb-3">
     {err}

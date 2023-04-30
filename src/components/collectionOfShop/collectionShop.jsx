@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { CatougriesSelector, ItemImage } from "../../store/categories/category.selector";
+import { CatougriesSelector } from "../../store/categories/category.selector";
 import { useEffect, useState ,useContext} from "react";
 import { useParams } from "react-router-dom";
 import searchImage from '../../assets/undraw_landscape_photographer_b0ad.svg'
