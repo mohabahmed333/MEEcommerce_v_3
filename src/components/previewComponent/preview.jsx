@@ -11,7 +11,8 @@ import {  FacebookFilled, InstagramOutlined, TwitterOutlined, WhatsAppOutlined }
  import Modal from 'react-bootstrap/Modal';
 import { CatougriesSelector } from '../../store/categories/category.selector'
 import { useParams } from 'react-router-dom'
-
+import $ from 'jquery'
+import { touchHelper } from '../../componentsutlts/touch_helber_function'
 const product = {
     name: 'Basic Tee 6-Pack ',
     price: '$192',
@@ -49,8 +50,7 @@ export const PreviewComponent = ( )=>{
      const Categoriesitems = useSelector(CatougriesSelector);
      const [item_old,setNewItem]=useState(item)
 
-console.log(item_old)
-     const products = useSelector(cartItems)
+      const products = useSelector(cartItems)
     const dispatch = useDispatch();
     let mql = window.matchMedia('(max-width: 600px)');
      const addToCart = (e)=>{
@@ -62,44 +62,98 @@ return message.success(`added ${item.name} to cart`)
   //  const el_height =  ;
  
 useEffect(()=>{ setNewItem(item) },[item])
-let count= 0;
-
-const upToNext = (item)=>{
-console.log(item )
-  //FIND ITEM_INDEX
-  Categoriesitems&&  Object.values(Categoriesitems).map(
-    (items,idx)=>{
-      console.log(items);
-      let currentIndex=0;
- items.forEach((item_e,index,array)=>{
- if(item_e.id===item.id){
-  currentIndex = index;
-
-  currentIndex++;
-   if (currentIndex >= items.length) {
-     currentIndex = 0;
-   }
-   currentIndex++
-   console.log(currentIndex,console.log(index));
-   setNewItem(items[currentIndex]);
- }
- }
-//    if(item_e.id===item.id){
-// const next_index = idx++;
-// count++
-//  setNewItem(()=>items[idx+count])
-//  console.log(idx+count)
-
-
-//    }
-  // }
-    
-)
  
-  }  )
-
-
+ 
+const UpToNext_2 =()=>{
+   Categoriesitems&&  Object.values(Categoriesitems).map(
+    (items,idx)=>{
+  items.map((item_e,index,array)=>{
+ if(item_e.id===item_old.id){
+   let next_index = index+1
+   setNewItem(items[next_index])
+  if(next_index   >= array.length)  setNewItem(array[0])  ;
 }
+
+})
+  
+
+})
+}
+const backToPrev =()=>{
+   Categoriesitems&&  Object.values(Categoriesitems).map(
+    (items,idx)=>{
+  items.map((item_e,index,array)=>{
+ if(item_e.id===item_old.id){
+   let brev = index-1
+   setNewItem(items[brev])
+  if(brev   <= 0)  setNewItem(array[array.length-1])  ;
+}
+
+})
+  
+
+})
+}
+
+useEffect(()=>{
+ 
+  if(open){
+
+ 
+      const element = document.getElementById('preview');
+  let initialX = null;
+  let initialY = null;
+  
+  element.addEventListener('touchstart', handleTouchStart);
+  element.addEventListener('touchmove', handleTouchMove);
+  
+  function handleTouchStart(event) {
+    const firstTouch = event.touches[0];
+    initialX = firstTouch.clientX;
+    initialY = firstTouch.clientY;
+  }
+  
+  function handleTouchMove(event) {
+    if (initialX === null || initialY === null) {
+      return;
+    }
+  
+    const currentX = event.touches[0].clientX;
+    const currentY = event.touches[0].clientY;
+  
+    const diffX = initialX - currentX;
+    const diffY = initialY - currentY;
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+          console.log('Swipe left');
+          return backToPrev()
+   
+        } else {
+          console.log('Swipe right');
+      return UpToNext_2()
+  
+        }
+    // } else {
+    //   if (diffY > 0) {
+    //     console.log('Swipe up');
+    
+    //   } else {
+    //     console.log('Swipe down');
+    
+    //   }
+    }
+  
+    initialX = null;
+    initialY = null;
+  
+    
+  }
+  }
+     
+ 
+
+
+},[item_old])
      return (
      <>
     
@@ -114,16 +168,17 @@ console.log(item )
        
              
              <Modal show={open} 
+             id='preview'
              size="lg"
              onHide={()=>setOpen(!open)}>
              <Modal.Header closeButton>
               </Modal.Header>
              <Modal.Body>
               <div className='let-right-buttons'>
-<button>
+<button onClick={backToPrev}>
 <i class="fa-solid fa-chevron-left"></i>  </button>
-  <button>
-  <i class="fa-solid fa-chevron-right" onClick={()=>upToNext(item)}></i>
+  <button onClick={()=>UpToNext_2()}>
+  <i class="fa-solid fa-chevron-right" ></i>
   </button>
                 </div>
                            <div className="row w-full grid-cols-1 items-start gap-y-8 gap-x-6 sm:grid-cols-12 lg:gap-x-8">
@@ -311,4 +366,4 @@ Instgran
           }
    </>
     )
-}
+        }
