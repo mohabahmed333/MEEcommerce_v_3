@@ -1,4 +1,4 @@
-export function touchHelper(id,callback){
+export function touchHelper(id){
 
     const element = document.getElementById(id);
 let initialX = null;
@@ -13,7 +13,6 @@ function handleTouchStart(event) {
   initialY = firstTouch.clientY;
 }
 
-let  position = ''
 function handleTouchMove(event) {
   if (initialX === null || initialY === null) {
     return;
@@ -51,6 +50,4 @@ function handleTouchMove(event) {
 
   
 }
-console.log(position);
-return callback.bind(position)
 }

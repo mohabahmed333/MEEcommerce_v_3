@@ -26,6 +26,7 @@ import { Input } from 'antd';
  import {searchContext} from '../../contexts/searchContext'
 import SearchDrawer from '../SearchDrawerComponent/Search.Drawer.component'
 import { cartItems } from '../../store/cart/cart.selector'
+import { Button, ButtonGroup, Dropdown } from 'react-bootstrap'
 
     const navigation = {
 
@@ -324,7 +325,7 @@ function First() {
                     </div>
                   ))}
                 </div>
-
+             
                 <div className="space-y-6 border-t border-gray-200 py-6 px-4  only_s">
                 {  currentUser!==null?(<></> ):
 ( 
@@ -548,7 +549,25 @@ lg:justify-end lg:space-x-6">
 
   )}
      
+     <Dropdown as={ButtonGroup} id='notification'>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+       <i class="fa-regular fa-bell"></i>
+       </Dropdown.Toggle>
+ 
+      <Dropdown.Menu>
+       
+        <Dropdown.Item href="#/action-3">
+          <span className='tag_new'>#   new</span>
+          New Sipe has been released  in Mobile 
+        when you click on item to prevew just swipe 
+        right and left for the next and previous Product 
 
+        <span className='tag_new' style={{marginLeft:'auto'}}>What's Next!</span>
+
+
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
            
 
          
