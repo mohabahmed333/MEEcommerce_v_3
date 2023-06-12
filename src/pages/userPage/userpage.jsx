@@ -9,6 +9,9 @@ import { WishListContainerStyle } from './userpage.styles';
 
 
 const UserPage = () => {
+  
+
+
   const user= useSelector(userSelectMemo);
   if(!user)return;
  return( 

@@ -23,6 +23,8 @@ const UserSettinglazy = lazy(()=>import('./pages/userPage/usersettings/usersetti
 const UserPage_lazy = lazy(()=>import('./pages/userPage/userpage'))
 const Shop_lazy = lazy(()=>import('./pages/shoppage/shoppage.component'));
 const CheckOutPage_lazy = lazy(()=>import('./pages/checkoutpage/checkout.page'));
+import {connect}  from 'mongoose'
+
 const  App = ()=> {
    const dispatch = useDispatch();
    

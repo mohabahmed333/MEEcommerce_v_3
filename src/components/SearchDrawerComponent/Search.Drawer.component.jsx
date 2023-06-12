@@ -80,7 +80,7 @@ const SearchDrawer = () => {
      type="search"
     />
      <button   className='se' onClick={searchStart} >
-   search <i className="fa-solid fa-magnifying-glass text-gray"></i>
+search <i className="fa-solid fa-magnifying-glass text-gray"></i>
     </button>
 </div>
  
@@ -112,8 +112,8 @@ const SearchDrawer = () => {
                        </form>
                           </div>
                           <div className="recentlysearch">
-  <h6 className='text-center'><p>recently search Items</p> 
-   <Button type="text"  style={{display:'flex',alignItems:'center'}} > View History 
+  <h6 className='text-center'><p className='p'>recently search Items</p> 
+   <Button type="text"className='history_button'  style={{display:'flex',alignItems:'center'}} > View History 
    <i className="fa-solid fa-arrow-right ms-3"></i></Button> </h6>
  <ul className='recently_search_item' style={{maxHeight:'300px',overflow:'auto'}}>
   {user&&user.recentSearch&&

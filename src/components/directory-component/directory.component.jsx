@@ -81,7 +81,8 @@ constructor(){
                },
                1500: {
                    items: 2,
-                   stagePadding:50
+                   stagePadding:50,
+                   margin:3
        
                },
                600:{
@@ -108,7 +109,7 @@ return (
 
 <div className='directory-menu'>
 
-<h2 className="text-center" style={{    fontFamily: 'cursive'   ,margin:'auto' ,   textDecorationLine: 'underline',
+<h2 className="text-center" style={{    fontFamily: 'unset'   ,margin:'auto' ,   textDecorationLine: 'underline',
     padding: '12px' }}>Explore Categories</h2>
 {
   <OwlCarouselComponent {...this.state.options} >

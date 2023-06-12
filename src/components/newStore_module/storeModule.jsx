@@ -72,7 +72,7 @@ let FiltersItem = [];
   }
 
 const StoreModule =()=>{
-const [col,setCol]=useState('col-md-4')
+const [col,setCol]=useState('col-md-4 col-sm-6')
 const catogriesItems = useSelector(CatougriesSelector);
 const category_image = useSelector(CategoryImage);
 const [cat_image,Setmage]=useState(category_image);
@@ -212,7 +212,7 @@ const min_value =  Math.min(...products.map(item=>item.price))
         <main className="mx-auto max-w-8xl    px-2">
  
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-1">
+          <section aria-labelledby="products-heading" className="  pt-1">
             <h2 id="products-heading" className="sr-only">
               Products
             </h2>
@@ -268,33 +268,43 @@ const min_value =  Math.min(...products.map(item=>item.price))
               
             </ol>
           </nav>
-  <h1  >New Arraival</h1>
-
-                   {/* <div className='categories_flex'>
+  {/* <h1  >New Arraival</h1> */}
+  <div className='categories_flex  big_screen'>
             <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
-                      {FiltersItem.map((category) => (
-                        <li key={category.name}   >
-                          <Link to={`/shop/${category.href}`} className="block px-2 py-3">
-                            {category.name}
-                          </Link>
-                        </li>
-                      ))}
+                        
+           { catogriesItems&&Object.keys(catogriesItems).map((category) => (
+                        <li key={category}   >
+                          <Link to={`/shop/${category}`} className="block c_length px-2 py-3">
+                            {category}
+<p>{catogriesItems[category].length}</p>
+                           </Link>
+                           
+                           </li>
+                              ))}
+                         
                     </ul>
            </div>
-  */}
+ 
            
-           
-              <button
-                type="button"
-                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-                onClick={() => setMobileFiltersOpen(true)}
-              >
-                <span className="sr-only">Filters</span>
-                <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
+            
 
               <p className='Results'>  {products.length}/Results</p>
 </div>  
+<div className='categories_flex  small_screen'>
+            <ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
+                        
+           { catogriesItems&&Object.keys(catogriesItems).map((category) => (
+                        <li key={category}   >
+                          <Link to={`/shop/${category}`} className="block c_length px-2 py-3">
+                            {category}
+<p>{catogriesItems[category].length}</p>
+                           </Link>
+                           
+                           </li>
+                              ))}
+                         
+                    </ul>
+           </div>
  <div className='best_product'>
 
  <h1 className='head'>Best Broducts</h1>
@@ -363,25 +373,7 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
 </div>
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="1" alwaysOpen  >
-        <Accordion.Header>select Categores</Accordion.Header>
-        <Accordion.Body>
-        <div className='categories_options'>
-<ul role="list" className="px-2 py-3 font-medium text-gray-900" style={{display:'flex'}}> 
-                      {
-                      
-                       catogriesItems&&Object.keys(catogriesItems).map((category) => (
-                        <li key={category}   >
-                          <Link to={`/shop/${category}`} className="block c_length px-2 py-3">
-                            {category}
-<p>{catogriesItems[category].length}</p>
-                           </Link>
-                        </li>
-                      ))}
-                    </ul> 
-</div>
-        </Accordion.Body>
-      </Accordion.Item>
+    
     </Accordion>
 
 <div className='acc_footer'>
@@ -426,19 +418,19 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
                  <div className='collections_order_history'>
                   
                   <button>
-                  collections <i class="fa-solid fa-bookmark"></i>
+                  collections <i className="fa-solid fa-bookmark"></i>
                     </button>
                     
                     <button>
 
                       order history
-                      <i class="fa-solid fa-clock-rotate-left"></i>
+                      <i className="fa-solid fa-clock-rotate-left"></i>
                     </button>
                   </div>     
 </div>
 
 </div>
-<div className='row col-md-9'>
+<div className='row col-md-9 col-sm-11'>
 
   { 
          //safe gards 
@@ -461,8 +453,8 @@ return          (  <div className='new_item  ' key={item.name} style={{backgroun
     <FloatButton
 
     className='float_mobile'
-      shape="square"
-      type="primary"
+      shape=""
+      type="white"
       style={{
         right: 24,
       }}

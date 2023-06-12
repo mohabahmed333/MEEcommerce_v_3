@@ -1,7 +1,6 @@
  
-a{
-    text-decoration:none;
-    color:black
+ a.L-Affiliate-Tagged {
+    color: #333;
 }
 html,body{
     height:auto !important;
@@ -73,12 +72,30 @@ body,html{
     background-color: #1a1a1af7;} */
 
     .carousel-control-next, .carousel-control-prev{
-         background: rgba(51, 51, 51, 0.425) !important;
-        color: #333 !important;
-        width: 41px !important;
-        height: 19% !important;
-        border-radius: 10px;
-        margin: auto   !important; 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15%;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        background: 0 0;
+        border: 0;
+        opacity: .5;
+        transition: opacity .15s ease;
+        background: none !IMPORTANT;
+        /* color: #333 !IMPORTANT; */
+        border: 1px solid #eee;
+        padding: 1px !IMPORTANT;
+        height: 41px !IMPORTANT;
+        width: 23px !IMPORTANT;
+        background: #737373 !IMPORTANT;
+        border-radius: 0px  !important;
+     
     }
     @media(min-width:768px){
         .copyright-area {
@@ -133,15 +150,75 @@ body,html{
     white-space: pre-wrap;
   }
   @media(max-width:768px){
-
+    .av {
+        flex-direction: column;
+        align-items: flex-start !IMPORTANT;
+        justify-content: flex-start;
+        margin: auto;
+        height: auto !IMPORTANT;
+    }
 
       div#root {
           overflow-x: hidden;
         }
+        .hamburger__container{
+            display: none;
+        }
+        .search___bar {
+            background: #eeeeee47;
+            padding: 8px;
+            width: 119px !important;
+            height: 28px !important; 
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            justify-content: space-between;
+            align-items: center;
+            color: gray;
+            font-size: 13px;
+        }
+        .p {
+            padding: 13px;
+            border-radius: 10px;
+            color: #000000;
+            font-family: emoji;
+            text-align: left;
+            padding-left: 0px;
+            text-transform: uppercase;
+            font-size: smaller;
+            font-size: 12px;
+            margin: 0px;
+        }
 }
+
+@media(min-width:768px){
+
+}
+ 
 #dropdown-basic {
     background: none;
     border: 0px !IMPORTANT;
     color: gray;
     box-shadow: none !IMPORTANT;
 }
+.tawk-min-container .tawk-button-circle.tawk-button-large {
+    width: 35px !IMPORTANT;
+    height: 37px !IMPORTANT;
+    padding: 22px !IMPORTANT;
+    display: flex !IMPORTANT;
+    align-items: center !IMPORTANT;
+    justify-content: center !IMPORTANT;
+   
+}
+.nav-tabs .nav-link {
+ 
+    color: #333;
+}
+.carousel_right .boxses .blue_box h5{
+color:#f1f1f1
+}
+
+
+ 

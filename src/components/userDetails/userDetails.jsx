@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 
+
+// const mongoose  =require('mongoose')
 export const UserDetails=({user})=>{
- 
-
+  
+  
 
     return(
         <div className="container-fluid">

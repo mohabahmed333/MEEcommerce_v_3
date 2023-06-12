@@ -138,8 +138,9 @@ const HandleCartSubmit = (e)=>{
       
        <div    className={col?col:'item' }>
        <div className='new_item  '>
-       <p className='product_name'>   {name} 
+       <p className='product_name'> 
         <i className="fa-solid fa-bookmark"></i>
+        <i className="fa-solid fa-heart"></i>
         </p>
     <div className='new_item_image'    >
       <LazyLoadImage src={imageUrl}  filter='blur'  onClick={handleLink}/>
@@ -154,24 +155,34 @@ const HandleCartSubmit = (e)=>{
     </div>
     <div className='p_end'>
 
-    <div className='rev'>
- 
-      <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i className="fa-regular fa-heart"></i> 250 <span>loves</span> </p>
-      <p className='rev_inner'><i className="fa-regular fa-message"></i>25 <span>review</span> </p>
+  <div className="rev_name">
+<p className="name">
+  
+{name}
+</p>
+
+  </div>
+
 
 
     </div>
+    <div className="menu_end">
+    <div className='rev'>
+ 
+ <p className='rev_inner' onClick={()=>HandleWishList(user,product)}><i className="fa-regular fa-heart"></i> 250 <span>loves</span> </p>
+ <p className='rev_inner'><i className="fa-regular fa-message"></i>25 <span>review</span> </p>
 
 
-    <i className="fa-regular fa-eye" onClick={openPreviewItem}></i>
+</div>
+      
     <div className="menu">
+    <i className="fa-regular fa-eye" onClick={openPreviewItem}></i>
           
           <a onClick={(e) => showModal(e)}>
              <i className="fa-solid fa-ellipsis-vertical"></i>
            </a>
                    </div>
-
-    </div>
+                   </div>
   </div>
   
 

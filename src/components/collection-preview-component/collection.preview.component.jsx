@@ -30,21 +30,22 @@ const ProductAfterWishList  =[];
               responsive: {
                   0: {
                       items: 1,
-                      stagePadding:10,
-                  },
+                       stagePadding:20
+
+                   },
                   400: {
-                      items: 1,
+                      items: 2,
                margin: 2,
                stagePadding:10,
 
                   },
                   600: {
-                      items:1,
+                      items:2,
                       stagePadding:10,
 
                   },
                   700: {
-                      items: 1,
+                      items: 2,
                       stagePadding:10,
 
                   },
